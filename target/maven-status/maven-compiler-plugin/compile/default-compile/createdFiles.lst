@@ -1,2 +1,11 @@
-com\mycompany\webproject\resources\JavaEE8Resource.class
+com\mycompany\webproject\entity\Category.class
 com\mycompany\webproject\JAXRSConfiguration.class
+com\mycompany\webproject\servlet\NewServlet.class
+com\mycompany\webproject\entity\Product.class
+com\mycompany\webproject\entity\OrderDetailPK.class
+com\mycompany\webproject\entity\Orders.class
+com\mycompany\webproject\entity\ProductDetail.class
+com\mycompany\webproject\entity\OrderDetail.class
+com\mycompany\webproject\resources\JavaEE8Resource.class
+com\mycompany\webproject\entity\Customers.class
+com\mycompany\webproject\servlet\LoginServlet.class
