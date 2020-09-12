@@ -2,12 +2,12 @@
 <persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <!-- Define Persistence Unit -->
   <persistence-unit name="webpro_Nogproject">
-    <class>com.mycompany.webproject.entity.Customers</class>
     <class>com.mycompany.webproject.entity.Category</class>
     <class>com.mycompany.webproject.entity.ProductDetail</class>
     <class>com.mycompany.webproject.entity.Product</class>
     <class>com.mycompany.webproject.entity.OrderDetail</class>
     <class>com.mycompany.webproject.entity.Orders</class>
+    <class>com.mycompany.webproject.entity.Customers</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nogproject?useSSL=false"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
