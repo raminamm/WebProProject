@@ -198,7 +198,7 @@
         <link href="signin.css" rel="stylesheet">
 
 
-    
+
 
     </head>
     <script language=Javascript>
@@ -222,10 +222,10 @@
                         <div id="container" class="bbb">
                             <img class="mb-4" src="images/Asset 1.png" alt="" width="72" height="72">
                             <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
-                            <label for="inputEmail" class="sr-only">Email address</label><!-- Email address -->
+                            <label for="inputEmail" class="sr-only"></label><!-- Email address -->
                             <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
                                    style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus=""name="email">
-                                   <label for="inputPassword" class="sr-only" >Password</label><!-- Password -->
+                            <label for="inputPassword" class="sr-only" ></label><!-- Password -->
                             <input type="password" id="inputPassword" class="form-control" placeholder="Password"
                                    style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password">
                             <div class="checkbox mb-3 text-white">
@@ -235,9 +235,13 @@
                             </div>
                             <button class="btn btn-lg btn-danger btn-block" type="submit"name="Login">Sign in</button>
                             <br><p class="h8 mb-3 font-weight-normal text-white">━━━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━━</p>
-                            <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
                         </div>
                     </form>
+                    <div id="container" class="bbb">
+                        <form action="registration" method="GET">
+                            <button class="btn btn-lg btn-danger btn-block" type="submit" >Register</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         </table>

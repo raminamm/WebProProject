@@ -6,6 +6,7 @@
 package com.mycompany.webproject.servlet;
 
 import com.mycompany.webproject.entity.Customers;
+import com.mysql.cj.xdevapi.PreparableStatement;
 import java.io.IOException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
