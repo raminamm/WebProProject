@@ -198,7 +198,7 @@
         <link href="signin.css" rel="stylesheet">
 
 
-    <form class="form-signin"action="Login" method="POST">
+    
 
     </head>
     <script language=Javascript>
@@ -217,15 +217,15 @@
                     <!--                 ข้อความนี้อยู่กลางจอภาพ
                                     <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
                                     <br />และสูงของ จอภาพ -->    
-                    <form class="form-signin">
+                    <form class="form-signin"action="Login" method="POST">
 
                         <div id="container" class="bbb">
                             <img class="mb-4" src="images/Asset 1.png" alt="" width="72" height="72">
                             <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
                             <label for="inputEmail" class="sr-only">Email address</label><!-- Email address -->
                             <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                   style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus="">
-                                   <label for="inputPassword" class="sr-only" name="email">Password</label><!-- Password -->
+                                   style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus=""name="email">
+                                   <label for="inputPassword" class="sr-only" >Password</label><!-- Password -->
                             <input type="password" id="inputPassword" class="form-control" placeholder="Password"
                                    style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password">
                             <div class="checkbox mb-3 text-white">

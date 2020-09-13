@@ -44,8 +44,9 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         //int id = Integer.parseInt(email);
         
-        Customers c = em.createQuery("select c from Customers c where c.email = :email",Customers.class).
-                setParameter("email", email).getSingleResult();
+//        Customers c = em.createQuery("select c from Customers c where c.email = :email",Customers.class).
+//               setParameter("email", email).getSingleResult();
+        Customers c = em.createNamedQuery("Customers.findByEmail",Customers.class).setParameter("email",email).getSingleResult();
         if(c != null && c.getPassword().equals(password)){
 //            HttpSession session = request.getSession();
 //            session.setAttribute("user", c);

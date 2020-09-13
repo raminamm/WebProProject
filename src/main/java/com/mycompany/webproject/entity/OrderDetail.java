@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Entity
 @Table(name = "order_detail")
