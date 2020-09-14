@@ -1,11 +1,12 @@
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\servlet\NewServlet.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Customers.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Orders.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\OrderDetailPK.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\ProductDetail.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Category.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\OrderDetail.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Product.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\JAXRSConfiguration.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
-D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\resources\JavaEE8Resource.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\OrderDetailPK.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Category.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Customers.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Product.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\NewServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\registrationServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\ProductDetail.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\OrderDetail.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\JAXRSConfiguration.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\resources\JavaEE8Resource.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Orders.java

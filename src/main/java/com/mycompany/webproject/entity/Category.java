@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Entity
 @Table(name = "category")
