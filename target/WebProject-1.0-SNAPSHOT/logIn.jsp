@@ -230,7 +230,7 @@
                                    style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password">
                             <div class="checkbox mb-3 text-white">
                                 <label>
-                                    <input type="checkbox" value="remember-me"> Remember me
+                                    <input type="checkbox" value="remember-me"name="remember"> Remember me
                                 </label>
                             </div>
                             <button class="btn btn-lg btn-danger btn-block" type="submit"name="Login">Sign in</button>

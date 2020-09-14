@@ -43,24 +43,30 @@ public class LoginServlet extends HttpServlet {
         EntityManager em = emf.createEntityManager();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String remember = request.getParameter("remember");
         //int id = Integer.parseInt(email);
         
 //        Customers c = em.createQuery("select c from Customers c where c.email = :email",Customers.class).
 //               setParameter("email", email).getSingleResult();
         Customers c = em.createNamedQuery("Customers.findByEmail",Customers.class).setParameter("email",email).getSingleResult();
         if(c != null && c.getPassword().equals(password)){
-//            HttpSession session = request.getSession();
-//            session.setAttribute("user", c);
-//            Cookie ck1 = new Cookie("ck1_email",userid);
-//            Cookie ck2 = new Cookie("ck2_pass",c.getEmail());
-//            ck1.setMaxAge(60*60*24*7);
+            if(remember != null){
+                
+            
+            HttpSession session = request.getSession();
+            session.setAttribute("user", c);
+            Cookie ck1 = new Cookie("ck1_email",email);
+//            Cookie ck2 = new Cookie("ck2_pass",password);
+            ck1.setMaxAge(60*60*24*7);
 //            ck2.setMaxAge(60*60*24*7);         
-//            response.addCookie(ck1);
+            response.addCookie(ck1);
 //            response.addCookie(ck2);
+            }
             request.getRequestDispatcher("/firstpage.jsp").forward(request, response);
         } else {
-            
+            request.setAttribute("message", "Invalid User Email  or password"); 
             request.getRequestDispatcher("/logIn.jsp").forward(request, response);
+                      
         }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
