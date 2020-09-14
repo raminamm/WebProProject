@@ -177,14 +177,14 @@
                             <div class="row">
                                 <div class="col-xs-8 col-sm-6" ><!-- col-xs-12 col-sm-6  -->
                                     <div class="form-group">
-                                        <input type="text" name="first_name" id="first_name" 
+                                        <input type="text" name="firstname" id="first_name" 
                                         class="form-control input-lg" placeholder="First Name" tabindex="1" 
                                         style="border-radius: 5px 5px 5px 5px;height: 48px;">
                                     </div>
                                 </div>
                                 <div class="col-xs-8 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="last_name" id="last_name" 
+                                        <input type="text" name="lastname" id="last_name" 
                                         class="form-control input-lg" placeholder="Last Name" tabindex="2"
                                         style="border-radius: 5px 5px 5px 5px;height: 48px;">
                                     </div>
@@ -204,7 +204,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+<!--                            <div class="form-group">
                                 <label for="username" class="sr-only">Username</label>
                                 <div class="cols-sm-10">
                                     <div class="input-group">
@@ -215,7 +215,7 @@
                                             style="border-radius: 5px 5px 5px 5px;height: 48px;">
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-6">
@@ -237,13 +237,13 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="number" min="0" name="phone" id="phone" class="form-control my-input" 
+                                <input type="number" min="0" name="phone_no" id="phone" class="form-control my-input" 
                                 placeholder="Phone" style="border-radius: 5px 5px 5px 5px;height: 48px;">
                              </div>
 
                             <div class="form-group">
                                 <label for="birthDate" class="sr-only">Date of Birth</label>
-                                <input type="date" id="birthDate" class="form-control" placeholder="birthDate"
+                                <input type="date" id="birthDate" name="date_of_birth" class="form-control" placeholder="birthDate"
                                     style="border-radius: 5px 5px 5px 5px;height: 48px;">
                             </div>
 
