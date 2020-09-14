@@ -17,7 +17,7 @@
         <meta name="generator" content="Jekyll v4.1.1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
               integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="icon" type="image/gif" href="images/097-user.png"/>
+        <link rel="icon" type="image/gif" href="images/097-user.png">
 
         <title>LogIn</title>
 
@@ -198,60 +198,62 @@
         <link href="signin.css" rel="stylesheet">
 
 
-    <form class="form-signin"action="Login" method="POST">
+    <form class="form-signin"action="Login" method="POST"/>
 
-    </head>
-    <script language=Javascript>
-        function ResizeTable() {
-            var objTable = document.getElementById("maintable");
-            objTable.style.width = (screen.width - 20);
-            objTable.style.height = (screen.height - 100);
-        }
-    </script>
+</head>
 
-    <body bgcolor=white leftmargin=0 topmargin=0 onLoad="ResizeTable();">
-        <!--ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
-        <table id=maintable border=0 cellpadding=0 cellspacing=0 align=center width=100%>
-            <tr>
-                <td align=center valign=middle>
-                    <!--                 ข้อความนี้อยู่กลางจอภาพ
-                                    <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
-                                    <br />และสูงของ จอภาพ -->    
-                    <form class="form-signin">
+<script language=Javascript>
+    function ResizeTable() {
+        var objTable = document.getElementById("maintable");
+        objTable.style.width = (screen.width - 20);
+        objTable.style.height = (screen.height - 100);
+    }
+</script>
 
-                        <div id="container" class="bbb">
-                            <img class="mb-4" src="images/Asset 1.png" alt="" width="72" height="72">
-                            <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
-                            <label for="inputEmail" class="sr-only">Email address</label><!-- Email address -->
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                   style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus="">
-                                   <label for="inputPassword" class="sr-only" name="email">Password</label><!-- Password -->
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                   style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password">
-                            <div class="checkbox mb-3 text-white">
-                                <label>
-                                    <input type="checkbox" value="remember-me"> Remember me
-                                </label>
-                            </div>
-                            <button class="btn btn-lg btn-danger btn-block" type="submit"name="Login">Sign in</button>
-                            <br><p class="h8 mb-3 font-weight-normal text-white">━━━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━━</p>
-                            <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
+<body bgcolor=white leftmargin=0 topmargin=0 onLoad="ResizeTable();">
+    <!--ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
+    <table id=maintable border=0 cellpadding=0 cellspacing=0 align=center width=100%>
+        <tr>
+            <td align=center valign=middle>
+                <!--                 ข้อความนี้อยู่กลางจอภาพ
+                                <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
+                                <br />และสูงของ จอภาพ -->    
+                <form class="form-signin">
+
+                    <div id="container" class="bbb">
+                        <img class="mb-4" src="images/Asset 1.png" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
+                        <label for="inputEmail" class="sr-only">Email address</label><!-- Email address -->
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                               style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus="">
+                        <label for="inputPassword" class="sr-only" name="email">Password</label><!-- Password -->
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                               style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password">
+                        <div class="checkbox mb-3 text-white">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
                         </div>
-                    </form>
-                </td>
-            </tr>
-        </table>
-        <!--จบ ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
+                        <button class="btn btn-lg btn-danger btn-block" type="submit"name="Login">Sign in</button>
+                        <br><p class="h8 mb-3 font-weight-normal text-white">━━━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━━</p>
+                        <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
+                    </div>
+                </form>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    </body>
+            </td>
+        </tr>
+    </table>
+    <!--จบ ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
 
 </html>
