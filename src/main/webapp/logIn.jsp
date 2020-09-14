@@ -213,7 +213,7 @@
         <!--ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
         <table id=maintable border=0 cellpadding=0 cellspacing=0 align=center width=100%>
             <tr>
-                <td align=center valign=middle>
+                <td style="color: red" align=center valign=middle>
                     <!--                 ข้อความนี้อยู่กลางจอภาพ
                                     <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
                                     <br />และสูงของ จอภาพ -->    
@@ -224,10 +224,10 @@
                             <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
                             <label for="inputEmail" class="sr-only"></label><!-- Email address -->
                             <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                   style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus=""name="email">
+                                   style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus=""name="email"value="${cookie.ck1_email.value}">
                             <label for="inputPassword" class="sr-only" ></label><!-- Password -->
                             <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                   style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password">
+                                   style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password"value="${cookie.ck2_pass.value}">${message}
                             <div class="checkbox mb-3 text-white">
                                 <label>
                                     <input type="checkbox" value="remember-me"name="remember"> Remember me

@@ -42,8 +42,11 @@ public class NewServlet extends HttpServlet {
         EntityManagerFactory emf
                 = Persistence.createEntityManagerFactory("webpro_Nogproject");
         EntityManager em = emf.createEntityManager();
-        List<Customers> customers = em.createQuery("select c from Customers c").getResultList();
+        String email = "aaa@hotmail.com";
+        List<Customers> c = em.createNamedQuery("Customers.findByEmail",Customers.class).setParameter("email",email).getResultList();
+//        Customers c = em.createNamedQuery("Customers.findByEmail",Customers.class).setParameter("email",email).getSingleResult();
 //        Connection conn = ConnectionFactory.getInstance();
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -52,10 +55,11 @@ public class NewServlet extends HttpServlet {
             out.println("<title>Servlet NewServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + customers.size() + "</h1>");
-            for (Customers customer : customers) {
-                out.println(customer.getId()+ ":" + customer.getEmail()+ "<br>");
-            }
+            out.println("<h1>Servlet NewServlet at + </h1>");
+//            for (Customers customer : customers) {
+//                out.println(customer.getId()+ ":" + customer.getEmail()+ "<br>");
+//            }
+            out.println(c.size());
             out.println("</body>");
             out.println("</html>");
 
@@ -92,7 +96,7 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("/Login_1.jsp").forward(request, response);
     }
 
     /**

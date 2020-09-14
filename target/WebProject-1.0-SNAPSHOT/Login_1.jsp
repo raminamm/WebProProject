@@ -12,7 +12,7 @@
         <title>JSP Page</title>
         
     <div style="margin-left: 100px">
-            <form action = "Login" method="POST">
+            <form action = "Login_1" method="POST">
                 <table>
                     <tr style="height: 50px">
                         <td>Customer number: </td>                
@@ -24,7 +24,7 @@
                         <td><input type = "password" name="password"/> </td>                       
                     </tr>
                     <tr style="height: 50px">
-                        <td><input type = "submit" name ="Login"/> </td>                       
+                        <td><input type = "submit" name ="Login_1"/> </td>                       
                     </tr>
                     <tr style="height: 50px">
                         <td style="color: red">${message}</td>

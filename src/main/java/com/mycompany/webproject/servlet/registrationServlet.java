@@ -5,8 +5,15 @@
  */
 package com.mycompany.webproject.servlet;
 
+import com.mycompany.webproject.entity.Customers;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.util.Date;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "registrationServlet", urlPatterns = {"/registration"})
 public class registrationServlet extends HttpServlet {
-
+@PersistenceUnit(unitName = "webpro_Nogproject")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,6 +38,21 @@ public class registrationServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("webpro_Nogproject");
+        EntityManager em = emf.createEntityManager();
+        String email = request.getParameter("email");
+        String fname = request.getParameter("firstname");
+        String lname = request.getParameter("lastname");
+        String phone_no = request.getParameter("phone_no");
+        String date_of_birth = request.getParameter("date_of_birth");
+        String sex = request.getParameter("gender");
+        String password = request.getParameter("password");
+        String address = request.getParameter("password");
+        LocalDate dob = LocalDate.parse(date_of_birth);
+        
+        
+        
+        
         request.getRequestDispatcher("/registration.jsp").forward(request, response);
     }
 
@@ -46,7 +68,7 @@ public class registrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("/registration.jsp").forward(request, response);
     }
 
     /**
