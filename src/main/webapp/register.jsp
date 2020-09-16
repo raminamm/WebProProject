@@ -258,12 +258,12 @@
                                 </select>
                             </div>
 
-                            <!--                             <div class="form-group">
+                                                         <div class="form-group">
                                                             <label for="address" class="sr-only">Your Address</label>
                                                             <textarea class="form-control" id="address" name="address" placeholder="address"
                                                                 style="border-radius: 5px 5px 5px 5px;height: 48px;"></textarea>
-                                                        </div> -->
-
+                                                        </div> 
+<!-- เก็บไว้เผื่อทำได้
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
@@ -362,7 +362,7 @@
                                         <select name="district_id" id="district" class="form-control">
                                             <option value=" ">Select district</option>
                                         </select>
-                                    </div>
+                                    </div> -->
 
                                     <!-- <div class="mb-3 text-white"> -->
                                     <!--                                 <p style="color:white">Terms and Conditions</p>
