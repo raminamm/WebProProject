@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  *
- * @author Admin
+ * @author GLA-Notebook
  */
 @Embeddable
 public class OrderDetailPK implements Serializable {

@@ -6,7 +6,7 @@
 package com.mycompany.webproject.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Admin
+ * @author GLA-Notebook
  */
 @Entity
 @Table(name = "product")
@@ -62,9 +62,9 @@ public class Product implements Serializable {
     @ManyToOne(optional = false)
     private Category categoryCategoryId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productProductId")
-    private Collection<ProductDetail> productDetailCollection;
+    private List<ProductDetail> productDetailList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
-    private Collection<OrderDetail> orderDetailCollection;
+    private List<OrderDetail> orderDetailList;
 
     public Product() {
     }
@@ -121,21 +121,21 @@ public class Product implements Serializable {
     }
 
     @XmlTransient
-    public Collection<ProductDetail> getProductDetailCollection() {
-        return productDetailCollection;
+    public List<ProductDetail> getProductDetailList() {
+        return productDetailList;
     }
 
-    public void setProductDetailCollection(Collection<ProductDetail> productDetailCollection) {
-        this.productDetailCollection = productDetailCollection;
+    public void setProductDetailList(List<ProductDetail> productDetailList) {
+        this.productDetailList = productDetailList;
     }
 
     @XmlTransient
-    public Collection<OrderDetail> getOrderDetailCollection() {
-        return orderDetailCollection;
+    public List<OrderDetail> getOrderDetailList() {
+        return orderDetailList;
     }
 
-    public void setOrderDetailCollection(Collection<OrderDetail> orderDetailCollection) {
-        this.orderDetailCollection = orderDetailCollection;
+    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
+        this.orderDetailList = orderDetailList;
     }
 
     @Override
