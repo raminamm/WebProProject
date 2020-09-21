@@ -1,6 +1,6 @@
 com\mycompany\webproject\entity\Category.class
 com\mycompany\webproject\entity\OrderDetailPK.class
-com\mycompany\webproject\servlet\registrationServlet.class
+com\mycompany\webproject\servlet\registerServlet.class
 com\mycompany\webproject\JAXRSConfiguration.class
 com\mycompany\webproject\servlet\NewServlet.class
 com\mycompany\webproject\entity\Product.class

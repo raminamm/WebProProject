@@ -10,10 +10,11 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Embeddable
 public class OrderDetailPK implements Serializable {
@@ -24,15 +25,16 @@ public class OrderDetailPK implements Serializable {
     private int ordersOrderId;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "product_product_id")
-    private int productProductId;
+    @Size(min = 1, max = 100)
+    @Column(name = "product_id")
+    private String productId;
 
     public OrderDetailPK() {
     }
 
-    public OrderDetailPK(int ordersOrderId, int productProductId) {
+    public OrderDetailPK(int ordersOrderId, String productId) {
         this.ordersOrderId = ordersOrderId;
-        this.productProductId = productProductId;
+        this.productId = productId;
     }
 
     public int getOrdersOrderId() {
@@ -43,19 +45,19 @@ public class OrderDetailPK implements Serializable {
         this.ordersOrderId = ordersOrderId;
     }
 
-    public int getProductProductId() {
-        return productProductId;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProductProductId(int productProductId) {
-        this.productProductId = productProductId;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
         hash += (int) ordersOrderId;
-        hash += (int) productProductId;
+        hash += (productId != null ? productId.hashCode() : 0);
         return hash;
     }
 
@@ -69,7 +71,7 @@ public class OrderDetailPK implements Serializable {
         if (this.ordersOrderId != other.ordersOrderId) {
             return false;
         }
-        if (this.productProductId != other.productProductId) {
+        if ((this.productId == null && other.productId != null) || (this.productId != null && !this.productId.equals(other.productId))) {
             return false;
         }
         return true;
@@ -77,7 +79,7 @@ public class OrderDetailPK implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.webproject.entity.OrderDetailPK[ ordersOrderId=" + ordersOrderId + ", productProductId=" + productProductId + " ]";
+        return "com.mycompany.webproject.entity.OrderDetailPK[ ordersOrderId=" + ordersOrderId + ", productId=" + productId + " ]";
     }
     
 }

@@ -144,18 +144,19 @@
 
         <link href="signin.css" rel="stylesheet">
 
-
-    <form class="form-signin" action="Login" method="POST" />
-
-</head>
-
-<script language=Javascript>
+        </head>
+        <script language=Javascript>
     function ResizeTable() {
         var objTable = document.getElementById("maintable");
         objTable.style.width = (screen.width - 20);
         objTable.style.height = (screen.height - 100);
     }
 </script>
+    
+
+
+
+
 
 <body bgcolor=white leftmargin=0 topmargin=0 onLoad="ResizeTable();">
     <!--ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
@@ -163,7 +164,7 @@
         <tr>
             <td align=center valign=middle>
 
-                <form class="form-signin">
+                <form class="form-signin" action="register" method="POST" />
 
                     <div id="container" class="bbb">
 
@@ -231,7 +232,7 @@
                                         <label for="confirm" class="sr-only">Confirm Password</label>
                                         <input type="password" name="password_confirmation" id="password_confirmation"
                                                class="form-control" placeholder="Confirm Password" tabindex="6"
-                                               style="border-radius: 5px 5px 5px 5px;height: 48px;">
+                                               style="border-radius: 5px 5px 5px 5px;height: 48px;">${invalidpass}
                                     </div>
                                 </div>
                             </div>
@@ -374,7 +375,7 @@
                                     <!--                             </div>
                                     -->
                                     <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
-
+                                    ${message}
 
 
                                 </div>

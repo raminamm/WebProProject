@@ -26,14 +26,13 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Entity
 @Table(name = "customers")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Customers.findAll", query = "SELECT c FROM Customers c"),
-    @NamedQuery(name = "Customers.findById", query = "SELECT c FROM Customers c WHERE c.id = :id"),
     @NamedQuery(name = "Customers.findByEmail", query = "SELECT c FROM Customers c WHERE c.email = :email"),
     @NamedQuery(name = "Customers.findByFirstname", query = "SELECT c FROM Customers c WHERE c.firstname = :firstname"),
     @NamedQuery(name = "Customers.findByLastname", query = "SELECT c FROM Customers c WHERE c.lastname = :lastname"),
@@ -45,12 +44,8 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Customers implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "id")
-    private Integer id;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Id
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -85,31 +80,22 @@ public class Customers implements Serializable {
     @Size(min = 1, max = 200)
     @Column(name = "address")
     private String address;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customersId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "email")
     private List<Orders> ordersList;
 
     public Customers() {
     }
 
-    public Customers(Integer id) {
-        this.id = id;
+    public Customers(String email) {
+        this.email = email;
     }
 
-    public Customers(Integer id, String email, String firstname, String lastname, String phoneNo, String address) {
-        this.id = id;
+    public Customers(String email, String firstname, String lastname, String phoneNo, String address) {
         this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
         this.phoneNo = phoneNo;
         this.address = address;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getEmail() {
@@ -188,7 +174,7 @@ public class Customers implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (email != null ? email.hashCode() : 0);
         return hash;
     }
 
@@ -199,7 +185,7 @@ public class Customers implements Serializable {
             return false;
         }
         Customers other = (Customers) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.email == null && other.email != null) || (this.email != null && !this.email.equals(other.email))) {
             return false;
         }
         return true;
@@ -207,7 +193,7 @@ public class Customers implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.webproject.entity.Customers[ id=" + id + " ]";
+        return "com.mycompany.webproject.entity.Customers[ email=" + email + " ]";
     }
     
 }

@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Entity
 @Table(name = "orders")
@@ -54,9 +54,9 @@ public class Orders implements Serializable {
     @NotNull
     @Column(name = "amount")
     private long amount;
-    @JoinColumn(name = "customers_id", referencedColumnName = "id")
+    @JoinColumn(name = "email", referencedColumnName = "email")
     @ManyToOne(optional = false)
-    private Customers customersId;
+    private Customers email;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "orders")
     private List<OrderDetail> orderDetailList;
 
@@ -97,12 +97,12 @@ public class Orders implements Serializable {
         this.amount = amount;
     }
 
-    public Customers getCustomersId() {
-        return customersId;
+    public Customers getEmail() {
+        return email;
     }
 
-    public void setCustomersId(Customers customersId) {
-        this.customersId = customersId;
+    public void setEmail(Customers email) {
+        this.email = email;
     }
 
     @XmlTransient

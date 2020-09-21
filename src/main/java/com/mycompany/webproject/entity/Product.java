@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Entity
 @Table(name = "product")
@@ -35,15 +35,16 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Product.findByProductId", query = "SELECT p FROM Product p WHERE p.productId = :productId"),
     @NamedQuery(name = "Product.findByName", query = "SELECT p FROM Product p WHERE p.name = :name"),
     @NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price = :price"),
-    @NamedQuery(name = "Product.findByAvailable", query = "SELECT p FROM Product p WHERE p.available = :available")})
+    @NamedQuery(name = "Product.findByProductDescription", query = "SELECT p FROM Product p WHERE p.productDescription = :productDescription")})
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "product_id")
-    private Integer productId;
+    private String productId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -53,15 +54,13 @@ public class Product implements Serializable {
     @NotNull
     @Column(name = "price")
     private double price;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 1)
-    @Column(name = "available")
-    private String available;
-    @JoinColumn(name = "category_category_id", referencedColumnName = "category_id")
+    @Size(max = 2000)
+    @Column(name = "productDescription")
+    private String productDescription;
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     @ManyToOne(optional = false)
-    private Category categoryCategoryId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productProductId")
+    private Category categoryId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
     private List<ProductDetail> productDetailList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private List<OrderDetail> orderDetailList;
@@ -69,22 +68,21 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Integer productId) {
+    public Product(String productId) {
         this.productId = productId;
     }
 
-    public Product(Integer productId, String name, double price, String available) {
+    public Product(String productId, String name, double price) {
         this.productId = productId;
         this.name = name;
         this.price = price;
-        this.available = available;
     }
 
-    public Integer getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Integer productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
@@ -104,20 +102,20 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public String getAvailable() {
-        return available;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setAvailable(String available) {
-        this.available = available;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
-    public Category getCategoryCategoryId() {
-        return categoryCategoryId;
+    public Category getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategoryCategoryId(Category categoryCategoryId) {
-        this.categoryCategoryId = categoryCategoryId;
+    public void setCategoryId(Category categoryId) {
+        this.categoryId = categoryId;
     }
 
     @XmlTransient

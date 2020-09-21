@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Entity
 @Table(name = "product_detail")
@@ -38,8 +38,9 @@ public class ProductDetail implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "product_detail_id")
-    private Integer productDetailId;
+    private String productDetailId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -52,28 +53,28 @@ public class ProductDetail implements Serializable {
     @NotNull
     @Column(name = "quantity")
     private int quantity;
-    @JoinColumn(name = "product_product_id", referencedColumnName = "product_id")
+    @JoinColumn(name = "product_id", referencedColumnName = "product_id")
     @ManyToOne(optional = false)
-    private Product productProductId;
+    private Product productId;
 
     public ProductDetail() {
     }
 
-    public ProductDetail(Integer productDetailId) {
+    public ProductDetail(String productDetailId) {
         this.productDetailId = productDetailId;
     }
 
-    public ProductDetail(Integer productDetailId, String colour, int quantity) {
+    public ProductDetail(String productDetailId, String colour, int quantity) {
         this.productDetailId = productDetailId;
         this.colour = colour;
         this.quantity = quantity;
     }
 
-    public Integer getProductDetailId() {
+    public String getProductDetailId() {
         return productDetailId;
     }
 
-    public void setProductDetailId(Integer productDetailId) {
+    public void setProductDetailId(String productDetailId) {
         this.productDetailId = productDetailId;
     }
 
@@ -101,12 +102,12 @@ public class ProductDetail implements Serializable {
         this.quantity = quantity;
     }
 
-    public Product getProductProductId() {
-        return productProductId;
+    public Product getProductId() {
+        return productId;
     }
 
-    public void setProductProductId(Product productProductId) {
-        this.productProductId = productProductId;
+    public void setProductId(Product productId) {
+        this.productId = productId;
     }
 
     @Override

@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author GLA-Notebook
+ * @author Admin
  */
 @Entity
 @Table(name = "order_detail")
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "OrderDetail.findAll", query = "SELECT o FROM OrderDetail o"),
     @NamedQuery(name = "OrderDetail.findByOrdersOrderId", query = "SELECT o FROM OrderDetail o WHERE o.orderDetailPK.ordersOrderId = :ordersOrderId"),
-    @NamedQuery(name = "OrderDetail.findByProductProductId", query = "SELECT o FROM OrderDetail o WHERE o.orderDetailPK.productProductId = :productProductId"),
+    @NamedQuery(name = "OrderDetail.findByProductId", query = "SELECT o FROM OrderDetail o WHERE o.orderDetailPK.productId = :productId"),
     @NamedQuery(name = "OrderDetail.findByQuantity", query = "SELECT o FROM OrderDetail o WHERE o.quantity = :quantity")})
 public class OrderDetail implements Serializable {
 
@@ -38,7 +38,7 @@ public class OrderDetail implements Serializable {
     @JoinColumn(name = "orders_order_id", referencedColumnName = "order_id", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Orders orders;
-    @JoinColumn(name = "product_product_id", referencedColumnName = "product_id", insertable = false, updatable = false)
+    @JoinColumn(name = "product_id", referencedColumnName = "product_id", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Product product;
 
@@ -49,8 +49,8 @@ public class OrderDetail implements Serializable {
         this.orderDetailPK = orderDetailPK;
     }
 
-    public OrderDetail(int ordersOrderId, int productProductId) {
-        this.orderDetailPK = new OrderDetailPK(ordersOrderId, productProductId);
+    public OrderDetail(int ordersOrderId, String productId) {
+        this.orderDetailPK = new OrderDetailPK(ordersOrderId, productId);
     }
 
     public OrderDetailPK getOrderDetailPK() {
