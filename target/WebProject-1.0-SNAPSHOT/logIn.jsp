@@ -213,8 +213,9 @@
 
     <body bgcolor=white leftmargin=0 topmargin=0 onLoad="ResizeTable();">
         <!--ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
+
         <table id=maintable border=0 cellpadding=0 cellspacing=0 align=center width=100%>
-            <tr>
+           
                 <td style="color: red" align=center valign=middle>
                     <!--                 ข้อความนี้อยู่กลางจอภาพ
                                     <br />มีความกว้างทั้งหมดไม่เกินความกว้าง

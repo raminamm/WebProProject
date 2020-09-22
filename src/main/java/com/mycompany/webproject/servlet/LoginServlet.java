@@ -52,9 +52,9 @@ public class LoginServlet extends HttpServlet {
         try {
             Customers c = em.createNamedQuery("Customers.findByEmail", Customers.class).setParameter("email", email).getSingleResult();
             if (c != null && c.getPassword().equals(password)) {
-                if (remember) {
-                    HttpSession session = request.getSession();
+                HttpSession session = request.getSession();
                     session.setAttribute("email", c);
+                if (remember) {                    
                     Cookie ck1 = new Cookie("ck1_email", email);
                     Cookie ck2 = new Cookie("ck2_pass", password);
                     ck1.setMaxAge(60 * 60 * 24 * 7);

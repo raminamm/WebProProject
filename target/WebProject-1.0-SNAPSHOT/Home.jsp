@@ -108,14 +108,17 @@
 </head>
 
 <body class="text-center" cz-shortcut-listen="true">
+    
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
                 <h3 class="masthead-brand">NOG</h3>
                 <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Login</a>
-                    <a class="nav-link" href="#">Register</a>
+                    
+                    <a class="nav-link"href="${email==null ?'Login' : 'Logout'}">
+                    ${email==null ?'Login' : 'Logout'}
+                    <a class="nav-link" href="register">Register</a>
                 </nav>
             </div>
         </header>

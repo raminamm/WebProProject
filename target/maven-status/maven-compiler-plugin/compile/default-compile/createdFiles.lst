@@ -1,4 +1,5 @@
 com\mycompany\webproject\entity\Category.class
+com\mycompany\webproject\servlet\LogoutServlet.class
 com\mycompany\webproject\entity\OrderDetailPK.class
 com\mycompany\webproject\servlet\registerServlet.class
 com\mycompany\webproject\JAXRSConfiguration.class
