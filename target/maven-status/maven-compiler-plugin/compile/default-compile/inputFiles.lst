@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Customers.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Orders.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\OrderDetailPK.java
@@ -11,3 +12,20 @@ D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\JAXRSConfiguration.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\resources\JavaEE8Resource.java
+=======
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\OrderDetailPK.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Customers.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\LogoutServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\ProductDetail.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\OrderDetail.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\JAXRSConfiguration.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\AdminLoginServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\registerServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Category.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Product.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\servlet\NewServlet.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Admin.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\resources\JavaEE8Resource.java
+C:\Users\Admin\Desktop\WebProProject\src\main\java\com\mycompany\webproject\entity\Orders.java
+>>>>>>> master
