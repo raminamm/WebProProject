@@ -166,7 +166,7 @@
                 <!--                 ข้อความนี้อยู่กลางจอภาพ
                 <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
                 <br />และสูงของ จอภาพ -->
-                <form class="form-signin">
+                <form class="form-signin"action="AdminLogin" method="POST">
                     <div id="container" class="bbb">
                         <img class="mb-2" src="images/Asset 1.png" alt="" width="72" height="72">
                             <h1 class="h3 mb-3 font-weight-normal text-white">Admin</h1>
@@ -191,7 +191,7 @@
                                         <span class="input-group-addon"><i class="fa fa-users fa"
                                                 aria-hidden="true"></i></span>
                                                 <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                                required="" style="border-radius: 5px 5px 5px 5px; height: 48px;">
+                                                       required="" style="border-radius: 5px 5px 5px 5px; height: 48px;"name="password">
                                     </div>
                                 </div>
                             </div>

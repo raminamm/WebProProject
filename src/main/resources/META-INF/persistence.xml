@@ -8,6 +8,7 @@
     <class>com.mycompany.webproject.entity.Orders</class>
     <class>com.mycompany.webproject.entity.OrderDetail</class>
     <class>com.mycompany.webproject.entity.Category</class>
+    <class>com.mycompany.webproject.entity.Admin</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nogproject?useSSL=false"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
