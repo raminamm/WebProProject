@@ -231,10 +231,8 @@
                             <label for="inputPassword" class="sr-only" ></label><!-- Password -->
                             <input type="password" id="inputPassword" class="form-control" placeholder="Password"
                                    style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password"value="${cookie.ck2_pass.value}">${message}
-                            <div class="checkbox mb-3 text-white">
-                                <label>
+                            <div class="checkbox mb-3 text-white">                                
                                     <input type="checkbox" value="remember-me"name="remember"> Remember me
-                                </label>
                             </div>
                             <button class="btn btn-lg btn-danger btn-block" type="submit"name="Login">Sign in</button>
                             <br><p class="h8 mb-3 font-weight-normal text-white">━━━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━━</p>

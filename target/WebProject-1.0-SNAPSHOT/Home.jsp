@@ -119,6 +119,7 @@
                     <a class="nav-link"href="${email==null ?'Login' : 'Logout'}">
                     ${email==null ?'Login' : 'Logout'}
                     <a class="nav-link" href="register">Register</a>
+                    <a class="nav-link">Hello ${email==null ? 'Guest' : email.firstname}</a>
                 </nav>
             </div>
         </header>

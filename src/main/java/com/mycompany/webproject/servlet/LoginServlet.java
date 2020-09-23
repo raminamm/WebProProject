@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
             Customers c = em.createNamedQuery("Customers.findByEmail", Customers.class).setParameter("email", email).getSingleResult();
             if (c != null && c.getPassword().equals(password)) {
                 HttpSession session = request.getSession();
-                    session.setAttribute("email", c);
+                    session.setAttribute("email", c);                   
                 if (remember) {                    
                     Cookie ck1 = new Cookie("ck1_email", email);
                     Cookie ck2 = new Cookie("ck2_pass", password);
