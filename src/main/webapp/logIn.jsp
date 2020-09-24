@@ -159,6 +159,34 @@
             } 
 
             .btn {background-color: #ec5f5f;}
+             .alert {
+            padding: 5px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .alert.warning {
+            background-color: #ff9800;
+            font-size: 1px;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 5px;
+            line-height: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
 
 
         </style>
@@ -166,16 +194,16 @@
         <link href="signin.css" rel="stylesheet">
 
 
- 
 
-</head>
+
+    </head>
 
 
     <script language=Javascript>
         function ResizeTable() {
-            var objTable = document.getElementById("maintable");
-            objTable.style.width = (screen.width - 20);
-            objTable.style.height = (screen.height - 100);
+        var objTable = document.getElementById("maintable");
+        objTable.style.width = (screen.width - 20);
+        objTable.style.height = (screen.height - 100);
         }
     </script>
 
@@ -183,49 +211,68 @@
         <!--ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
 
         <table id=maintable border=0 cellpadding=0 cellspacing=0 align=center width=100%>
-           
-                <td style="color: red" align=center valign=middle>
-                    <!--                 ข้อความนี้อยู่กลางจอภาพ
-                                    <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
-                                    <br />และสูงของ จอภาพ -->    
-                    <form class="form-signin"action="Login" method="POST">
 
-                        <div id="container" class="bbb">
-                            <img class="mb-4" src="images/Asset 1.png" alt="" width="72" height="72">
-                            <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
-                            <label for="inputEmail" class="sr-only"></label><!-- Email address -->
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                   style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus=""name="email"value="${cookie.ck1_email.value}">
-                            <label for="inputPassword" class="sr-only" ></label><!-- Password -->
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                   style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password"value="${cookie.ck2_pass.value}">${message}
-                            <div class="checkbox mb-3 text-white">                                
-                                    <input type="checkbox" value="remember-me"name="remember"> Remember me
-                            </div>
-                            <button class="btn btn-lg btn-danger btn-block" type="submit"name="Login">Sign in</button>
-                            <br><p class="h8 mb-3 font-weight-normal text-white">━━━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━━</p>
-                        </div>
-                    </form>
+            <td style="color: red" align=center valign=middle>
+                <!--                 ข้อความนี้อยู่กลางจอภาพ
+                                <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
+                                <br />และสูงของ จอภาพ -->    
+                <form class="form-signin"action="Login" method="POST">
+
                     <div id="container" class="bbb">
-                        <form action="registration" method="GET">
-                            <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <!--จบ ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
+                        <img class="mb-4" src="images/Asset 1.png" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
+                        <label for="inputEmail" class="sr-only"></label><!-- Email address -->
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                               style="border-radius: 5px 5px 0px 0px;height: 48px;" required="" autofocus=""name="email"value="${cookie.ck1_email.value}">
+                        <label for="inputPassword" class="sr-only" ></label><!-- Password -->
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                               style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password"value="${cookie.ck2_pass.value}">
+                        
+                        <div class="alert warning">
+                            <span class="closebtn">&times;</span>
+                            ${message}
+                        </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    </body>
+                        <script>
+                            var close = document.getElementsByClassName("closebtn");
+                            var i;
+
+                            for (i = 0; i < close.length; i++) {
+                                close[i].onclick = function () {
+                                    var div = this.parentElement;
+                                    div.style.opacity = "0";
+                                    setTimeout(function () { div.style.display = "none"; }, 600);
+                                }
+                            }
+                        </script>
+                        
+                        <div class="checkbox mb-3 text-white">                                
+                            <input type="checkbox" value="remember-me"name="remember"> Remember me
+                        </div>
+                        <button class="btn btn-lg btn-danger btn-block" type="submit"name="Login">Sign in</button>
+                        <br><p class="h8 mb-3 font-weight-normal text-white">━━━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━━</p>
+                    </div>
+                </form>
+                <div id="container" class="bbb">
+                    <form action="registration" method="GET">
+                        <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!--จบ ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
 
 
 </html>
