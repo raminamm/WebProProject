@@ -4,6 +4,7 @@
     Author     : NAMM
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -170,7 +171,7 @@
 
         .alert.warning {
             background-color: #ff9800;
-            font-size: 1px;
+            font-size: 10px;
         }
 
         .closebtn {
@@ -178,7 +179,7 @@
             color: white;
             font-weight: bold;
             float: right;
-            font-size: 5px;
+            font-size: 15px;
             line-height: 5px;
             cursor: pointer;
             transition: 0.3s;
@@ -227,12 +228,14 @@
                         <label for="inputPassword" class="sr-only" ></label><!-- Password -->
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password"
                                style="border-radius: 0px 0px 5px 5px;height: 48px;" required=""name="password"value="${cookie.ck2_pass.value}">
-                        
+                        <c:choose>
+                            <c:when test="${message!=null}">
                         <div class="alert warning">
                             <span class="closebtn">&times;</span>
                             ${message}
                         </div>
-
+                        </c:when>
+                        </c:choose>
                         <script>
                             var close = document.getElementsByClassName("closebtn");
                             var i;
@@ -244,6 +247,8 @@
                                     setTimeout(function () { div.style.display = "none"; }, 600);
                                 }
                             }
+                            
+                        
                         </script>
                         
                         <div class="checkbox mb-3 text-white">                                

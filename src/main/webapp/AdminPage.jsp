@@ -190,7 +190,7 @@
         div.gallery:hover,
         a:active {
             border: 1px solid #777;
-            text-decoration: none; //เอาขีดเส้นใต้ออก
+            text-decoration: none; /*//เอาขีดเส้นใต้ออก*/
             background-color: grey;
         }
 
