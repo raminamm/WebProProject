@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
  * @author Admin
  */
 public class AdminLoginServlet extends HttpServlet {
-@PersistenceUnit(unitName = "webpro_Nogproject")
+@PersistenceUnit(unitName = "com.mycompany_WebProject_war_1.0-SNAPSHOTPU")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,7 +37,7 @@ public class AdminLoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("webpro_Nogproject");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
         String userName = request.getParameter("username");
         String password = request.getParameter("password");

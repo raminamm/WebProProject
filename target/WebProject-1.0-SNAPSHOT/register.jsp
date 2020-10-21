@@ -140,6 +140,26 @@
             .btn {
                 background-color: #ec5f5f;
             }
+            
+            .alert.warning {
+            background-color: #ff9800;
+            font-size: 10px;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 15px;
+            line-height: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
         </style>
 
         <link href="signin.css" rel="stylesheet">
@@ -151,6 +171,7 @@
         objTable.style.width = (screen.width - 20);
         objTable.style.height = (screen.height - 100);
     }
+    
 </script>
     
 
@@ -164,7 +185,7 @@
         <tr>
             <td align=center valign=middle>
 
-                <form class="form-signin" action="register" method="POST" />
+                <form class="form-signin" action="register" method="POST">
 
                     <div id="container" class="bbb">
 
@@ -180,14 +201,14 @@
                                     <div class="form-group">
                                         <input type="text" name="firstname" id="first_name" 
                                                class="form-control input-lg" placeholder="First Name" tabindex="1" 
-                                               style="border-radius: 5px 5px 5px 5px;height: 48px;">
+                                               style="border-radius: 5px 5px 5px 5px;height: 48px;" required="">
                                     </div>
                                 </div>
                                 <div class="col-xs-8 col-sm-6">
                                     <div class="form-group">
                                         <input type="text" name="lastname" id="last_name" 
                                                class="form-control input-lg" placeholder="Last Name" tabindex="2"
-                                               style="border-radius: 5px 5px 5px 5px;height: 48px;">
+                                               style="border-radius: 5px 5px 5px 5px;height: 48px;"required="">
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +221,7 @@
                                                                            aria-hidden="true"></i></span>
                                         <input type="text" class="form-control" name="email" id="email"
                                                placeholder="Enter your Email"
-                                               style="border-radius: 5px 5px 5px 5px;height: 48px;">
+                                               style="border-radius: 5px 5px 5px 5px;height: 48px;"required="">
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +245,7 @@
                                         <label for="password" class="sr-only">Password</label>
                                         <input type="password" name="password" id="password" class="form-control"
                                                placeholder="Password" tabindex="5"
-                                               style="border-radius: 5px 5px 5px 5px;height: 48px;">
+                                               style="border-radius: 5px 5px 5px 5px;height: 48px;"required="">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">
@@ -232,26 +253,26 @@
                                         <label for="confirm" class="sr-only">Confirm Password</label>
                                         <input type="password" name="password_confirmation" id="password_confirmation"
                                                class="form-control" placeholder="Confirm Password" tabindex="6"
-                                               style="border-radius: 5px 5px 5px 5px;height: 48px;">${invalidpass}
+                                               style="border-radius: 5px 5px 5px 5px;height: 48px;"required="">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <input type="number" min="0" name="phone_no" id="phone" class="form-control my-input" 
-                                       placeholder="Phone" style="border-radius: 5px 5px 5px 5px;height: 48px;">
+                                       placeholder="Phone" style="border-radius: 5px 5px 5px 5px;height: 48px;"required="">
                             </div>
 
                             <div class="form-group">
                                 <label for="birthDate" class="sr-only">Date of Birth</label>
                                 <input type="date" id="birthDate" name="date_of_birth" class="form-control" placeholder="birthDate"
-                                       style="border-radius: 5px 5px 5px 5px;height: 48px;">
+                                       style="border-radius: 5px 5px 5px 5px;height: 48px;"required="">
                             </div>
 
                             <div class="form-group">
                                 <label for="gender" class="sr-only">Your Gender</label>
                                 <select id="gender" class="form-control" name="gender" id="gender" placeholder="Gender"
-                                        style="height: 48px;">
+                                        style="height: 48px;"required="">
                                     <option value="Gender" DISABLED selected>Your Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -262,7 +283,7 @@
                                                          <div class="form-group">
                                                             <label for="address" class="sr-only">Your Address</label>
                                                             <textarea class="form-control" id="address" name="address" placeholder="address"
-                                                                style="border-radius: 5px 5px 5px 5px;height: 48px;"></textarea>
+                                                                style="border-radius: 5px 5px 5px 5px;height: 48px;"required=""></textarea>
                                                         </div> 
 <!-- เก็บไว้เผื่อทำได้
                             <form>
@@ -376,6 +397,11 @@
                                     -->
                                     <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
                                     ${message}
+                        
+                            
+                            
+                        
+                        
 
 
                                 </div>

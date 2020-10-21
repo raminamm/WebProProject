@@ -6,10 +6,11 @@
 package com.mycompany.webproject.servlet;
 
 import com.mycompany.webproject.entity.Customers;
+import com.mycompany.webproject.function.AES;
+import com.mycompany.webproject.function.GenerateCode;
+import com.mycompany.webproject.function.sendMail;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -38,10 +39,9 @@ public class registerServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("webpro_Nogproject");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         try{
         EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
         String email = request.getParameter("email");
         String fname = request.getParameter("firstname");
         String lname = request.getParameter("lastname");
@@ -53,24 +53,39 @@ public class registerServlet extends HttpServlet {
         String address = request.getParameter("address");
         LocalDate dob = LocalDate.parse(date_of_birth);
         
-        if(password.equals(con_password)){                    
-        em.createNativeQuery("Insert into customers (email, firstname, lastname, phone_no, date_of_birth, sex, password, address) values"
-                + " ('" + email+"','"+fname+"','"+lname+"','"+phone_no+"','"+dob+"','"+sex+"','"+password+"','"+address+"')")
-                .executeUpdate();
-            em.getTransaction().commit();
-            em.close();
+        
+            Customers c = em.find(Customers.class, email);
+            if(c==null){
+        
+        String g = GenerateCode.gencode();
+        
+        if(password.equals(con_password)){   
+//        em.getTransaction().begin();
+//        em.createNativeQuery("Insert into customersforverify (email, firstname, lastname, phone_no, date_of_birth, sex, password, address, verifykey) values"
+//                + " ('" + email+"','"+fname+"','"+lname+"','"+phone_no+"','"+dob+"','"+sex+"','"+password+"','"+address+"','"+g+"')")
+//                .executeUpdate();
+//            em.getTransaction().commit();
+//            em.close();
+            
+            
+            String link = "http://localhost:8080/WebProProject/activatePage.jsp?key="+AES.encrypt(email+g);
+            sendMail sm = new sendMail();
+            sm.sendVerifyEmail(email,link);
+            
             request.setAttribute("message", "Success");
             request.getRequestDispatcher("/register.jsp").forward(request, response);
+            
         }
-        request.setAttribute("invalidpass", "Passwords Don't Match");
+        request.setAttribute("message", "Passwords Don't Match");
         request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
-        catch  (IOException | ServletException ex){
+        request.setAttribute("message", "This Email is already taken");
+        request.getRequestDispatcher("/register.jsp").forward(request, response);
+        } 
+        catch  (IOException ex){
             request.setAttribute("message", ex.getMessage());
             request.getRequestDispatcher("/register.jsp").forward(request, response);
-        
-        
-    }
+        }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

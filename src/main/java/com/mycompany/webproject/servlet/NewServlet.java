@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "NewServlet", urlPatterns = {"/NewServlet"})
 public class NewServlet extends HttpServlet {
-@PersistenceUnit(unitName = "webpro_Nogproject")
+@PersistenceUnit(unitName = "com.mycompany_WebProject_war_1.0-SNAPSHOTPU")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,7 +40,7 @@ public class NewServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         EntityManagerFactory emf
-                = Persistence.createEntityManagerFactory("webpro_Nogproject");
+                = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
         String email = "aaa@hotmail.com";
         List<Customers> c = em.createNamedQuery("Customers.findByEmail",Customers.class).setParameter("email",email).getResultList();

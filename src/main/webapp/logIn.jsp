@@ -259,7 +259,7 @@
                     </div>
                 </form>
                 <div id="container" class="bbb">
-                    <form action="registration" method="GET">
+                    <form action="register" method="GET">
                         <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
                     </form>
                 </div>

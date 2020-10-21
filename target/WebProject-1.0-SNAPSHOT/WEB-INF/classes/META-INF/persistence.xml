@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-  <!-- Define Persistence Unit -->
-  <persistence-unit name="webpro_Nogproject">
-    <class>com.mycompany.webproject.entity.ProductDetail</class>
-    <class>com.mycompany.webproject.entity.Product</class>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.mycompany_WebProject_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <class>com.mycompany.webproject.entity.Customersforverify</class>
     <class>com.mycompany.webproject.entity.Customers</class>
-    <class>com.mycompany.webproject.entity.Orders</class>
-    <class>com.mycompany.webproject.entity.OrderDetail</class>
-    <class>com.mycompany.webproject.entity.Category</class>
     <class>com.mycompany.webproject.entity.Admin</class>
+    <class>com.mycompany.webproject.entity.Orders</class>
+    <class>com.mycompany.webproject.entity.Category</class>
+    <class>com.mycompany.webproject.entity.OrderDetail</class>
+    <class>com.mycompany.webproject.entity.Product</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nogproject?useSSL=false"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="tooRLQSyM"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
 </persistence>
