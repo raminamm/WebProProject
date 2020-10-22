@@ -16,6 +16,7 @@ com/mycompany/webproject/function/sendMail.class
 com/mycompany/webproject/entity/OrderDetail.class
 com/mycompany/webproject/entity/Category.class
 com/mycompany/webproject/function/AES.class
+com/mycompany/webproject/function/NewClass.class
 com/mycompany/webproject/servlet/LogoutServlet.class
 com/mycompany/webproject/function/sendMail$1.class
 com/mycompany/webproject/function/GenerateCode.class

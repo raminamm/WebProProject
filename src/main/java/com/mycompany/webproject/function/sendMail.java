@@ -88,7 +88,7 @@ public class sendMail {
       
       
       try {
-         Message message = new MimeMessage(session);
+         MimeMessage message = new MimeMessage(session);
          message.setFrom(new InternetAddress(from));
          message.setRecipients(Message.RecipientType.TO,
          InternetAddress.parse(emailAddressTo));
