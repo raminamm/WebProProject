@@ -259,8 +259,13 @@
                             </div>
 
                             <div class="form-group">
+<<<<<<< Updated upstream
                                 <input type="number" min="0" name="phone_no" id="phone" class="form-control my-input" 
                                        placeholder="Phone" style="border-radius: 5px 5px 5px 5px;height: 48px;"required="">
+=======
+                                <input type="text" min="0" name="phone_no" id="phone" class="form-control my-input" 
+                                       placeholder="Phone" style="border-radius: 5px 5px 5px 5px;height: 48px;">
+>>>>>>> Stashed changes
                             </div>
 
                             <div class="form-group">
