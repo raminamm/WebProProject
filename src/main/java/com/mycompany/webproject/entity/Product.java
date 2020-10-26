@@ -54,9 +54,9 @@ public class Product implements Serializable {
     @Size(max = 2000)
     @Column(name = "productDescription")
     private String productDescription;
-    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+    @JoinColumn(name = "category", referencedColumnName = "category")
     @ManyToOne(optional = false)
-    private Category categoryId;
+    private Category category;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private List<OrderDetail> orderDetailList;
 
@@ -105,12 +105,12 @@ public class Product implements Serializable {
         this.productDescription = productDescription;
     }
 
-    public Category getCategoryId() {
-        return categoryId;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategoryId(Category categoryId) {
-        this.categoryId = categoryId;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public List<OrderDetail> getOrderDetailList() {

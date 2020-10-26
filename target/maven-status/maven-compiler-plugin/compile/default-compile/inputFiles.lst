@@ -9,6 +9,7 @@
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/NewServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/OrderDetail.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Product.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ProductListServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/GenerateCode.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/registerServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/AES.java

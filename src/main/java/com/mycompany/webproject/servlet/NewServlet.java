@@ -7,6 +7,9 @@ package com.mycompany.webproject.servlet;
 
 
 import com.mycompany.webproject.entity.Customers;
+import com.mycompany.webproject.function.AES;
+import com.mycompany.webproject.function.GenerateCode;
+import com.mycompany.webproject.function.sendMail;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -38,34 +41,29 @@ public class NewServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
         EntityManagerFactory emf
                 = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        String email = "aaa@hotmail.com";
-        List<Customers> c = em.createNamedQuery("Customers.findByEmail",Customers.class).setParameter("email",email).getResultList();
-//        Customers c = em.createNamedQuery("Customers.findByEmail",Customers.class).setParameter("email",email).getSingleResult();
-//        Connection conn = ConnectionFactory.getInstance();
+        String email = request.getParameter("email");
+        String g = GenerateCode.gencode();
 
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewServlet at + </h1>");
-//            for (Customers customer : customers) {
-//                out.println(customer.getId()+ ":" + customer.getEmail()+ "<br>");
-//            }
-            out.println(c.size());
-            out.println("</body>");
-            out.println("</html>");
+                
+//        em.getTransaction().begin();
+//        em.createNativeQuery("Insert into customersforverify (email, firstname, lastname, phone_no, date_of_birth, sex, password, address, verifykey) values"
+//                + " ('" + email+"','"+fname+"','"+lname+"','"+phone_no+"','"+dob+"','"+sex+"','"+password+"','"+address+"','"+g+"')")
+//                .executeUpdate();
+//            em.getTransaction().commit();
+//            em.close();
 
-            out.print("/body");
-            out.print("/html");
-        }
+                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?key="+AES.encrypt(email + g);
+                    sendMail sm = new sendMail();
+                    sm.sendVerifyEmail(email, link);
+
+                    request.setAttribute("message", "Success");
+                    request.getRequestDispatcher("/registation.jsp").forward(request, response);
+
+                
     }
     
         
@@ -82,7 +80,8 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+            request.getRequestDispatcher("/registation.jsp").forward(request, response);
+            //processRequest(request, response);
     }
 
     /**
@@ -96,7 +95,7 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/Login_1.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**

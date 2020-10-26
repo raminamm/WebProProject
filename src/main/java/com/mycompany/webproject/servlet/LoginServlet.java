@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
                     response.addCookie(ck1);
                     response.addCookie(ck2);
                 }
-                request.getRequestDispatcher("/Home.jsp").forward(request, response);
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {
                 request.setAttribute("message", "Invalid User Email  or password");
                 request.getRequestDispatcher("/logIn.jsp").forward(request, response);
