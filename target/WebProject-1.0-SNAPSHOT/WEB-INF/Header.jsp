@@ -31,8 +31,9 @@
             </form>
             <a class="py-2 d-none d-md-inline-block" href="#" style="text-decoration:none">Contact</a>
             <a class="py-2 d-none d-md-inline-block" href="#" style="text-decoration:none">Cart</a>
-            <a class="py-2 d-none d-md-inline-block" href="#" style="text-decoration:none">LogOut</a>
-
+            <a class="py-2 d-none d-md-inline-block" href="${email==null ?'Login' : 'Logout'}" style="text-decoration:none">${email==null ?'Login' : 'Logout'}</a>
+                
+             
         </div>
     </nav>
   

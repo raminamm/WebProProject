@@ -27,7 +27,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "register", urlPatterns = {"/register"})
 public class registerServlet extends HttpServlet {
-@PersistenceUnit(unitName = "webpro_Nogproject")
+
+    @PersistenceUnit(unitName = "webpro_Nogproject")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,53 +41,51 @@ public class registerServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
-        try{
-        EntityManager em = emf.createEntityManager();
-        String email = request.getParameter("email");
-        String fname = request.getParameter("firstname");
-        String lname = request.getParameter("lastname");
-        String phone_no = request.getParameter("phone_no");
-        String date_of_birth = request.getParameter("date_of_birth");
-        String sex = request.getParameter("gender");
-        String password = request.getParameter("password");
-        String con_password = request.getParameter("password_confirmation");
-        String address = request.getParameter("address");
-        LocalDate dob = LocalDate.parse(date_of_birth);
-        
-        
+        try {
+            EntityManager em = emf.createEntityManager();
+            String email = request.getParameter("email");
+            String fname = request.getParameter("firstname");
+            String lname = request.getParameter("lastname");
+            String phone_no = request.getParameter("phone_no");
+            String date_of_birth = request.getParameter("date_of_birth");
+            String sex = request.getParameter("gender");
+            String password = request.getParameter("password");
+            String con_password = request.getParameter("password_confirmation");
+            String address = request.getParameter("address");
+            LocalDate dob = LocalDate.parse(date_of_birth);
+
             Customers c = em.find(Customers.class, email);
-            if(c==null){
-        
-        String g = GenerateCode.gencode();
-        
-        if(password.equals(con_password)){   
+            if (c == null) {
+
+                String g = GenerateCode.gencode();
+
+                if (password.equals(con_password)) {
 //        em.getTransaction().begin();
 //        em.createNativeQuery("Insert into customersforverify (email, firstname, lastname, phone_no, date_of_birth, sex, password, address, verifykey) values"
 //                + " ('" + email+"','"+fname+"','"+lname+"','"+phone_no+"','"+dob+"','"+sex+"','"+password+"','"+address+"','"+g+"')")
 //                .executeUpdate();
 //            em.getTransaction().commit();
 //            em.close();
-            
-            
-            String link = "http://localhost:8080/WebProProject/activatePage.jsp?key="+AES.encrypt(email+g);
-            sendMail sm = new sendMail();
-            sm.sendVerifyEmail(email,link);
-            
-            request.setAttribute("message", "Success");
+
+                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?key=" + AES.encrypt(email + g);
+                    sendMail sm = new sendMail();
+                    sm.sendVerifyEmail(email, link);
+
+                    request.setAttribute("message", "Success");
+                    request.getRequestDispatcher("/register.jsp").forward(request, response);
+
+                }
+                request.setAttribute("message", "Passwords Don't Match");
+                request.getRequestDispatcher("/register.jsp").forward(request, response);
+            }
+            request.setAttribute("message", "This Email is already taken");
             request.getRequestDispatcher("/register.jsp").forward(request, response);
-            
-        }
-        request.setAttribute("message", "Passwords Don't Match");
-        request.getRequestDispatcher("/register.jsp").forward(request, response);
-        }
-        request.setAttribute("message", "This Email is already taken");
-        request.getRequestDispatcher("/register.jsp").forward(request, response);
-        } 
-        catch  (IOException ex){
+        } catch (IOException ex) {
             request.setAttribute("message", ex.getMessage());
             request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

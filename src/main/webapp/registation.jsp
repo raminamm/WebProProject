@@ -13,13 +13,13 @@
     </head>
     <body>
         <h1>Register Form</h1>
-        <form action="registation" method="post">
+        <form action="NewServlet" method="post">
             <table style="with: 50%">
                 <tr>
                     <td>Email</td>
                     <td><input type="email"name="email"></td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <td>First Name</td>
                     <td><input type="text" name="firstname" /></td>
                 </tr>
@@ -49,7 +49,7 @@
                 <tr>
                     <td>Address</td>
                     <td style="color: red"><input type="text" name="address" /><div>${message}</div></td>
-                </tr>
+                </tr>-->
                 </table>
             <input type="submit" value="Submit" /></form>
         

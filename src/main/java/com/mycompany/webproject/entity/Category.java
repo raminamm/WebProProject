@@ -27,8 +27,7 @@ import javax.validation.constraints.Size;
 @Table(name = "category")
 @NamedQueries({
     @NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c"),
-    @NamedQuery(name = "Category.findByCategoryId", query = "SELECT c FROM Category c WHERE c.categoryId = :categoryId"),
-    @NamedQuery(name = "Category.findByName", query = "SELECT c FROM Category c WHERE c.name = :name"),
+    @NamedQuery(name = "Category.findByCategory", query = "SELECT c FROM Category c WHERE c.category = :category"),
     @NamedQuery(name = "Category.findByTextDescription", query = "SELECT c FROM Category c WHERE c.textDescription = :textDescription")})
 public class Category implements Serializable {
 
@@ -37,45 +36,27 @@ public class Category implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "category_id")
-    private String categoryId;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "name")
-    private String name;
+    @Column(name = "category")
+    private String category;
     @Size(max = 2000)
     @Column(name = "textDescription")
     private String textDescription;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoryId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private List<Product> productList;
 
     public Category() {
     }
 
-    public Category(String categoryId) {
-        this.categoryId = categoryId;
+    public Category(String category) {
+        this.category = category;
     }
 
-    public Category(String categoryId, String name) {
-        this.categoryId = categoryId;
-        this.name = name;
+    public String getCategory() {
+        return category;
     }
 
-    public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getTextDescription() {
@@ -97,7 +78,7 @@ public class Category implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (categoryId != null ? categoryId.hashCode() : 0);
+        hash += (category != null ? category.hashCode() : 0);
         return hash;
     }
 
@@ -108,7 +89,7 @@ public class Category implements Serializable {
             return false;
         }
         Category other = (Category) object;
-        if ((this.categoryId == null && other.categoryId != null) || (this.categoryId != null && !this.categoryId.equals(other.categoryId))) {
+        if ((this.category == null && other.category != null) || (this.category != null && !this.category.equals(other.category))) {
             return false;
         }
         return true;
@@ -116,7 +97,7 @@ public class Category implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.webproject.entity.Category[ categoryId=" + categoryId + " ]";
+        return "com.mycompany.webproject.entity.Category[ category=" + category + " ]";
     }
     
 }

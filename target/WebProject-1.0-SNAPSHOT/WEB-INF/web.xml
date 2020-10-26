@@ -12,6 +12,10 @@
         <servlet-name>AdminLoginServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.AdminLoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductListServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.ProductListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrrationServlet</servlet-name>
         <url-pattern>/registrration</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>AdminLoginServlet</servlet-name>
         <url-pattern>/AdminLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductListServlet</servlet-name>
+        <url-pattern>/ProductList</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
