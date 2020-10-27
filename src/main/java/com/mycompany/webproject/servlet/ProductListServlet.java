@@ -5,7 +5,7 @@
  */
 package com.mycompany.webproject.servlet;
 
-
+import com.mycompany.webproject.entity.Category;
 import com.mycompany.webproject.entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author glajaja
  */
 public class ProductListServlet extends HttpServlet {
+
     @PersistenceUnit(unitName = "com.mycompany_WebProject_war_1.0-SNAPSHOTPU")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,18 +38,37 @@ public class ProductListServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String sch = request.getParameter("search");
+        String category = request.getParameter("category");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        String sql = "select p from Product p";
-        
+        String cat = "select c from Category c";
+        Query c = em.createQuery(cat);
+        List<Category> allcat = c.getResultList();
+        request.setAttribute("allcat", allcat);
+        if(category!=null){
+            String sql = "select p from Product p where p.category.category like :category";
+            Query qry = em.createQuery(sql);
+            qry.setParameter("category", "%" + category + "%");
+            List<Product> allpd = qry.getResultList();
+            request.setAttribute("allpd", allpd);
+            request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
+        }
+        if (sch == null||sch.equals("AllProduct")) {
+            String sql = "select p from Product p";
+            Query qry = em.createQuery(sql);
+            List<Product> allpd = qry.getResultList();
+            request.setAttribute("allpd", allpd);
+            request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
+        }
+        String sql = "select p from Product p where p.name like :search";
         Query qry = em.createQuery(sql);
-        
-        List <Product> allpd = qry.getResultList();
-        
+        qry.setParameter("search", "%" + sch + "%");
+        List<Product> allpd = qry.getResultList();
+
 //        for (Product p : allpd) {
 //            System.out.println(p.getCategoryname()+","+p.getProductId()+","+p.getName());
 //        }
-        
         request.setAttribute("allpd", allpd);
         request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
     }
@@ -65,6 +85,7 @@ public class ProductListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         processRequest(request, response);
     }
 
