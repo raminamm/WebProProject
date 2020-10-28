@@ -190,11 +190,8 @@
         div.gallery:hover,
         a:active {
             border: 1px solid #777;
-<<<<<<< Updated upstream
             text-decoration: none; /*//เอาขีดเส้นใต้ออก*/
-=======
             text-decoration: none; 
->>>>>>> Stashed changes
             background-color: grey;
         }
 

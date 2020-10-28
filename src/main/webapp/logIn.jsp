@@ -21,6 +21,7 @@
         <link rel="icon" type="image/gif" href="images/097-user.png">
 
         <title>LogIn</title>
+    <link rel="icon" href="logo/ทดลอง2.png">
 
         <style>
             .bd-placeholder-img {

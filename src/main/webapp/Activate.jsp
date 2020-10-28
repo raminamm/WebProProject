@@ -1,9 +1,9 @@
 <%-- 
-    Document   : firstpage
-    Created on : Aug 29, 2020, 12:47:37 PM
+    Document   : Activate
+    Created on : Oct 28, 2020, 7:54:02 PM
     Author     : NAMM
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -17,19 +17,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Home</title>
+    <title>Activate</title>
     <link rel="icon" href="logo/ทดลอง2.png">
+
 
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
 
-    <!--         <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
- -->
-    <!-- Bootstrap core CSS -->
-    <!--     <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
- -->
-    <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -55,9 +50,7 @@
                 font-size: 3.5rem;
             }
         }
-        
-/*         font-family: 'ชื่อฟ้อนต์อังกฤษ', 'ชื่อฟ้อนต์ไทย', sans-serif; */
-/* font-family: 'Prompt', sans-serif;*/
+
 
         html {
             font-family: 'Prompt', sans-serif;            
@@ -75,7 +68,6 @@
             display: flex;
             color: #fff;
             text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, .5);
-            /*             box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);*/
             font-family: 'Prompt', sans-serif;
         }
 
@@ -91,8 +83,7 @@
         html,
         body {
             height: 100%;
-            /*             background-color:indianred;
- */
+
         }
 
         .btn {
@@ -102,38 +93,32 @@
     </style>
 
 
-    <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
 
 </head>
 
 <body class="text-center" cz-shortcut-listen="true">
-    
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
-            <div class="inner">
-                <h3 class="masthead-brand">NOG</h3>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="/WebProProject/index.jsp">Home</a>
-                    
-                    <a class="nav-link"href="${email==null ?'Login' : 'Logout'}">
-                    ${email==null ?'Login' : 'Logout'}
-                    <a class="nav-link" href="register">Register</a>
-                    <a class="nav-link">Hello ${email==null ? 'Guest' : email.firstname}</a>
-                </nav>
-            </div>
-        </header>
+        <jsp:include page="/WEB-INF/Header.jsp?title=Activate"/>
 
-        <main role="main" class="inner cover">
-            <h1 class="cover-heading">N O G</h1><br>
-            <p class="lead">NOG เว็บไซต์สำหรับคุณผู้ชาย เรารวบรวมสินค้าคุณภาพ 
-                ที่ถูกถักทอจากด้ายพิเศษนำเข้า รับประกันความใส่สวมสบาย <br>
-                ไม่ระคายผิว พิสูจน์แล้วโดยผู้เชี่ยวชาญ ท่านสามารถเข้ามาเยี่ยมชมสินค้าเราก่อนได้ ทางเรามีสินค้าสำหรับท่านสุภาพบุรุษให้เลือกชมมากมาย
-            </p><br>
-            <p class="lead">
-                <a href="ProductList" class="btn btn-lg btn-danger">เข้าสู่หน้าหลัก</a>
-            </p>
-        </main>
+        <header class="masthead mb-auto">
+        </header>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xl-6 col-lg-7 col-md-9">
+                <div class="card shadow-lg">
+                  <div class="card-body p-4 p-md-5">
+                    <p style="color: black;font-size: 35px;" class="display-4">Activate</p>
+                    <p class="lead"></p><br>
+                    <a href="#" class="btn btn-primary btn-lg">Home</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
 
         <footer class="mastfoot mt-auto">
                          <div class="inner" style="font-size: 10px;margin-bottom: -20px;">
@@ -141,9 +126,6 @@
         </footer>
     </div>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

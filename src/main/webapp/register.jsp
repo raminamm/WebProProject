@@ -19,7 +19,7 @@
         <link rel="icon" type="image/gif" href="images/097-user.png">
 
         <title>Register</title>
-
+    <link rel="icon" href="logo/ทดลอง2.png">
         <style>
             .bd-placeholder-img {
                 font-size: 1.125rem;
