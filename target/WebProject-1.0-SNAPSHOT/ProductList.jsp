@@ -334,8 +334,8 @@
                 <c:forEach items="${allpd}" var="p" varStatus="vs">
                     
                     <div class="col-md-4">
-                        <a href="https://www.google.com" target="_top" style="text-decoration:none ;color:black;">
                             <div class="gallery card mb-4 shadow-sm">
+                        <a href="https://www.google.com" target="_top" style="text-decoration:none ;color:black;">
                                 <div align="middle">
                                 <img src="Product-images/${p.category.category}/${p.productId}.jpg" width="75%" height="75%" alt="alt"/>
                                 
@@ -358,16 +358,17 @@
                                     <p class="card-text">${p.name}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <!--                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            -->
-                                            <!--                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                            -->
                                             <small class="text-muted">ราคา ${p.price} บาท</small>
                                         </div>
                                     </div>
                                 </div>
-                            </div>         
                         </a>
+                                            <!--                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                            -->
+                                            <!--                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            -->
+                        
+                            </div>         
 
                     </div>
                     

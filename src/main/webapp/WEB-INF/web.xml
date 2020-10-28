@@ -16,6 +16,10 @@
         <servlet-name>ProductListServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.ProductListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddProductToCartServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.AddProductToCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrrationServlet</servlet-name>
         <url-pattern>/registrration</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ProductListServlet</servlet-name>
         <url-pattern>/ProductList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddProductToCartServlet</servlet-name>
+        <url-pattern>/AddProductToCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

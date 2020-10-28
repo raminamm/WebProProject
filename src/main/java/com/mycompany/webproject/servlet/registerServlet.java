@@ -60,14 +60,14 @@ public class registerServlet extends HttpServlet {
                 String g = GenerateCode.gencode();
 
                 if (password.equals(con_password)) {
-//        em.getTransaction().begin();
-//        em.createNativeQuery("Insert into customersforverify (email, firstname, lastname, phone_no, date_of_birth, sex, password, address, verifykey) values"
-//                + " ('" + email+"','"+fname+"','"+lname+"','"+phone_no+"','"+dob+"','"+sex+"','"+password+"','"+address+"','"+g+"')")
-//                .executeUpdate();
-//            em.getTransaction().commit();
-//            em.close();
+        em.getTransaction().begin();
+        em.createNativeQuery("Insert into customersforverify (email, firstname, lastname, phone_no, date_of_birth, sex, password, address, verifykey) values"
+                + " ('" + email+"','"+fname+"','"+lname+"','"+phone_no+"','"+dob+"','"+sex+"','"+password+"','"+address+"','"+g+"')")
+                .executeUpdate();
+            em.getTransaction().commit();
+            em.close();
 
-                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?key=" + AES.encrypt(email + g);
+                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?email="+email+"&key=" + AES.encrypt(g);
                     sendMail sm = new sendMail();
                     sm.sendVerifyEmail(email, link);
 

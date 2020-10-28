@@ -22,9 +22,9 @@ public class sendMail {
 
     private String emailAddressTo = new String();
     // Sender's email ID needs to be mentioned
-    private final String from = "wachrspong@gmail.com";//change accordingly
-    private final String username = "wachrspong@gmail.com";//change accordingly
-    private final String password = "24Feb2000";//change accordingly
+    private final String from = "NOG";//change accordingly
+    private final String username = "nogPJ248@gmail.com";//change accordingly
+    private final String password = "NOGnog248";//change accordingly
 
     // Assuming you are sending email through relay.jangosmtp.net
     private static String host = "smtp.gmail.com";
@@ -65,10 +65,10 @@ public class sendMail {
 
     public void SendActivateUrl() {
         Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
 
         // Get the Session object.
         Session session = Session.getInstance(props,
@@ -83,9 +83,9 @@ public class sendMail {
             message.setFrom(new InternetAddress(from));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(emailAddressTo));
-            message.setSubject("Testing Subject");
-            message.setText("Hello, this is sample for to check send "
-                    + "email using JavaMailAPI Your link : " + massage);
+            message.setSubject("Your NOG Account - Verify Your Email Address");
+            message.setText("Dear "+this.emailAddressTo+",\n" +
+"Please verify your email address to complete your NOG Account. " + massage);
             Transport.send(message);
 
             System.out.println("Sent message successfully....");

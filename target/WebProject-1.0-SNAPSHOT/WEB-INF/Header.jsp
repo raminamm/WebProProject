@@ -13,7 +13,7 @@
       <nav class="site-header sticky-top py-3">
         <div class="container d-flex flex-column flex-md-row justify-content-between" ;>
             <a class="py-2" href="" aria-label="Product"></a>
-            <a class="py-2 d-none d-md-inline-block" href="ProductList?search=AllProduct" style="text-decoration:none">N O G</a>
+            <a class="py-2 d-none d-md-inline-block" href="ProductList?search=" style="text-decoration:none">N O G</a>
             <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false" style="text-decoration:none">Categories</a>
             <div class="dropdown-menu" aria-labelledby="dropdown09">

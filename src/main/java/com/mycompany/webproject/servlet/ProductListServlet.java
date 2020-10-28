@@ -54,7 +54,7 @@ public class ProductListServlet extends HttpServlet {
             request.setAttribute("allpd", allpd);
             request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
         }
-        if (sch == null||sch.equals("AllProduct")) {
+        if (sch == null) {
             String sql = "select p from Product p";
             Query qry = em.createQuery(sql);
             List<Product> allpd = qry.getResultList();
