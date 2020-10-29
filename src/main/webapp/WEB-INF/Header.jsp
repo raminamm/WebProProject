@@ -6,7 +6,7 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-      <nav class="site-header sticky-top py-3">
+      <nav style="background: #222222;" class="site-header sticky-top py-3">
         <div class="container d-flex flex-column flex-md-row justify-content-between" ;>
             <a class="py-2" href="" aria-label="Product"></a>
             <a class="py-2 d-none d-md-inline-block" href="ProductList?search=" style="text-decoration:none">N O G</a>
