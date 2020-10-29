@@ -86,10 +86,6 @@
 
         }
 
-        .btn {
-            background-color: #ec5f5f;
-        }
-
     </style>
 
 
@@ -105,17 +101,18 @@
         </header>
           <div class="container">
             <div class="row justify-content-center">
-              <div class="col-xl-6 col-lg-7 col-md-9">
-                <div class="card shadow-lg">
-                  <div class="card-body p-4 p-md-5">
-                    <p style="color: black;font-size: 35px;" class="display-4">Activate</p>
-                    <p class="lead"></p><br>
-                    <a href="#" class="btn btn-primary btn-lg">Home</a>
-                  </div>
+                <div class="col-xl-5 col-lg-7 col-md-9">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-4 p-md-10">
+                            <img style="width:100px;height:100px" src="images/protection.png"><br><br>
+                            <p style="color: black;font-size: 35px;" class="display-4">Activated</p>
+                            <p class="lead"></p><br>
+                                <button href="#" class="btn btn-primary btn-lg">Home</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
 
 
 
