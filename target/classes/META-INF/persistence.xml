@@ -7,6 +7,7 @@
     <class>com.mycompany.webproject.entity.Customers</class>
     <class>com.mycompany.webproject.entity.Product</class>
     <class>com.mycompany.webproject.entity.Admin</class>
+    <class>com.mycompany.webproject.entity.Customersforverify</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nogproject?useSSL=false"/>

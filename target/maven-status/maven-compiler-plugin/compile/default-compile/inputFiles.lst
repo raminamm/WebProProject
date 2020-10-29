@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\servlet\ActivateServlet.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Customers.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\entity\Orders.java
@@ -19,3 +20,27 @@ D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\resources\JavaEE8Resource.java
 D:\Work\Web Pro\New folder\WebProProject\src\main\java\com\mycompany\webproject\servlet\ProductDetailServlet.java
+=======
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Customersforverify.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/LogoutServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ProductDetailServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/sendMail.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/LoginServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/model/Cart.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ActivateServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/NewClass.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/AdminLoginServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/resources/JavaEE8Resource.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/JAXRSConfiguration.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/NewServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Product.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ProductListServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/GenerateCode.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/registerServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/AddProductToCartServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/AES.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Category.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Admin.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Orders.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Customers.java
+>>>>>>> Stashed changes
