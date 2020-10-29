@@ -1,14 +1,14 @@
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/LogoutServlet.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ProductDetailServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/sendMail.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/LoginServlet.java
-/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/OrderDetailPK.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/model/Cart.java
+/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ActivateServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/NewClass.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/AdminLoginServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/resources/JavaEE8Resource.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/JAXRSConfiguration.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/NewServlet.java
-/Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/OrderDetail.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/entity/Product.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ProductListServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/GenerateCode.java

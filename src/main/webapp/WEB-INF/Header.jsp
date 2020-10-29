@@ -3,11 +3,7 @@
     Created on : Sep 24, 2020, 12:40:43 AM
     Author     : NAMM
 --%>
-<%@page import="com.mycompany.webproject.entity.Category"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%> 
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
       <nav class="site-header sticky-top py-3">

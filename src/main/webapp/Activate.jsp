@@ -100,7 +100,7 @@
 <body class="text-center" cz-shortcut-listen="true">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <jsp:include page="/WEB-INF/Header.jsp?title=Activate"/>
-
+        
         <header class="masthead mb-auto">
         </header>
           <div class="container">

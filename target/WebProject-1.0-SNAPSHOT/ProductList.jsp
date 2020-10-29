@@ -335,7 +335,7 @@
                     
                     <div class="col-md-4">
                             <div class="gallery card mb-4 shadow-sm">
-                        <a href="https://www.google.com" target="_top" style="text-decoration:none ;color:black;">
+                        <a href="ProductDetail?productId=${p.productId}" target="_top" style="text-decoration:none ;color:black;">
                                 <div align="middle">
                                 <img src="Product-images/${p.category.category}/${p.productId}.jpg" width="75%" height="75%" alt="alt"/>
                                 

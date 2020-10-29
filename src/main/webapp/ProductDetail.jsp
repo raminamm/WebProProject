@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : ProductDetail
     Created on : Oct 28, 2020, 7:48:15 PM
@@ -13,6 +14,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -415,6 +417,7 @@
 
 
 <body bgcolor=white leftmargin=0 topmargin=0 onLoad="ResizeTable();">
+        <jsp:include page="/WEB-INF/Header.jsp?title=ProductDetail"/>
     <!--ตาราง พื้นที่แสดงผล เพื่อปรับขนาดพื้นที่ให้อยู่ตรงกลางจอภาพ-->
     <table id=maintable border=0 cellpadding=0 cellspacing=0 align=center width=100%>
         <tr>
@@ -422,7 +425,6 @@
                 <!--                 ข้อความนี้อยู่กลางจอภาพ
                 <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
                 <br />และสูงของ จอภาพ -->
-        <jsp:include page="/WEB-INF/Header.jsp?title=ProductDetail"/>
 
                 <section class="jumbotron text-center">
                     <div class="container">
@@ -450,7 +452,7 @@
                                 </div>
                                 <div class="product-gallery-featured">
 
-                                    <img style="width: 350px;height: 350px;" src="ไว้ลอง/Loose fit t-shirt-D.OR.jpg"
+                                    <img style="width: 350px;height: 350px;" src="Product-images/${product.category.category}/${product.productId}.jpg"
                                         alt="">
                                 </div>
                             </div>
@@ -461,11 +463,11 @@
                         <div class="col-md-6">
                             <div class="product-dtl">
                                 <div class="product-info">
-                                    <div class="product-name">Product Name</div>
+                                    <div class="product-name">${product.name}</div>
 
-                                    <div class="product-price-discount"><span>ราคา ฿</span></div>
+                                    <div class="product-price-discount"><span>ราคา ${product.price} ฿</span></div>
                                 </div>
-                                <p>คำอธิบาย</p>
+                                <p>${product.productDescription}</p>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="size">Size</label>
@@ -476,14 +478,7 @@
                                             <option>XL</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="color">Color</label>
-                                        <select id="color" name="color" class="form-control">
-                                            <option>Blue</option>
-                                            <option>Green</option>
-                                            <option>Red</option>
-                                        </select>
-                                    </div>
+                                    
                                 </div>
                                 <div class="product-count">
                                     <label for="size">Quantity</label>

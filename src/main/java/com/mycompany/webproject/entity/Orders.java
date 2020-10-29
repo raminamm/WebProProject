@@ -7,9 +7,7 @@ package com.mycompany.webproject.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,11 +15,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -29,9 +27,11 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "orders")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o"),
     @NamedQuery(name = "Orders.findByOrderId", query = "SELECT o FROM Orders o WHERE o.orderId = :orderId"),
+    @NamedQuery(name = "Orders.findByQuantity", query = "SELECT o FROM Orders o WHERE o.quantity = :quantity"),
     @NamedQuery(name = "Orders.findByCreated", query = "SELECT o FROM Orders o WHERE o.created = :created"),
     @NamedQuery(name = "Orders.findByAmount", query = "SELECT o FROM Orders o WHERE o.amount = :amount")})
 public class Orders implements Serializable {
@@ -44,6 +44,10 @@ public class Orders implements Serializable {
     private Integer orderId;
     @Basic(optional = false)
     @NotNull
+    @Column(name = "quantity")
+    private int quantity;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "created")
     @Temporal(TemporalType.DATE)
     private Date created;
@@ -54,8 +58,9 @@ public class Orders implements Serializable {
     @JoinColumn(name = "email", referencedColumnName = "email")
     @ManyToOne(optional = false)
     private Customers email;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "orders")
-    private List<OrderDetail> orderDetailList;
+    @JoinColumn(name = "product_id", referencedColumnName = "product_id")
+    @ManyToOne(optional = false)
+    private Product productId;
 
     public Orders() {
     }
@@ -64,8 +69,9 @@ public class Orders implements Serializable {
         this.orderId = orderId;
     }
 
-    public Orders(Integer orderId, Date created, long amount) {
+    public Orders(Integer orderId, int quantity, Date created, long amount) {
         this.orderId = orderId;
+        this.quantity = quantity;
         this.created = created;
         this.amount = amount;
     }
@@ -76,6 +82,14 @@ public class Orders implements Serializable {
 
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Date getCreated() {
@@ -102,12 +116,12 @@ public class Orders implements Serializable {
         this.email = email;
     }
 
-    public List<OrderDetail> getOrderDetailList() {
-        return orderDetailList;
+    public Product getProductId() {
+        return productId;
     }
 
-    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
-        this.orderDetailList = orderDetailList;
+    public void setProductId(Product productId) {
+        this.productId = productId;
     }
 
     @Override
