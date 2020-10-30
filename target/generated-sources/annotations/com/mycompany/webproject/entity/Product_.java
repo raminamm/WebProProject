@@ -7,11 +7,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-<<<<<<< Updated upstream
-@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2563-10-29T16:41:53")
-=======
-@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2020-10-29T20:59:05")
->>>>>>> Stashed changes
+@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2020-10-30T11:41:23")
 @StaticMetamodel(Product.class)
 public class Product_ { 
 

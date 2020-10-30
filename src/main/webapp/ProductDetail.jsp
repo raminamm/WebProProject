@@ -33,7 +33,7 @@
         <link rel="stylesheet" type="text/css"
               href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 ---------->
-        <title>Product Detail</title>
+        <title>${product.name}</title>
         <link rel="icon" href="logo/ทดลอง2.png">
 
         <style>

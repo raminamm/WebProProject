@@ -19,6 +19,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -42,10 +43,15 @@ public class ProductListServlet extends HttpServlet {
         String category = request.getParameter("category");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
+        
+        HttpSession catsession = request.getSession();
+        if(catsession.getAttribute("allcat")==null){
         String cat = "select c from Category c";
         Query c = em.createQuery(cat);
         List<Category> allcat = c.getResultList();
-        request.setAttribute("allcat", allcat);
+        catsession.setAttribute("allcat", allcat);
+        }
+        
         if(category!=null){
             String sql = "select p from Product p where p.category.category like :category";
             Query qry = em.createQuery(sql);

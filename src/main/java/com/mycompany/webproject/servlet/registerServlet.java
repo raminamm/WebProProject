@@ -67,7 +67,7 @@ public class registerServlet extends HttpServlet {
             em.getTransaction().commit();
             em.close();
 
-                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?email="+email+"&key=" + AES.encrypt(g);
+                    String link = "http://localhost:8080/WebProProject/Activate?email="+email+"&key=" + AES.encrypt(g);
                     sendMail sm = new sendMail();
                     sm.sendVerifyEmail(email, link);
 

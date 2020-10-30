@@ -31,7 +31,10 @@ public class NewClass {
 //                }catch (Exception ex){
 //                    ex.getMessage();
 //                }
-    sendMail s = new sendMail();
-    s.sendVerifyEmail("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
+//    sendMail s = new sendMail();
+//    s.sendVerifyEmail("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
+
+        String key = AES.encrypt("1943875");
+        System.out.println(key);
     }
 }

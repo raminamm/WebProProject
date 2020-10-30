@@ -19,6 +19,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,10 +42,14 @@ public class ProductDetailServlet extends HttpServlet {
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        String category = "select c from Category c";
-        Query c = em.createQuery(category);
+        
+        HttpSession catsession = request.getSession();
+        if(catsession.getAttribute("allcat")==null){
+        String cat = "select c from Category c";
+        Query c = em.createQuery(cat);
         List<Category> allcat = c.getResultList();
-        request.setAttribute("allcat", allcat);
+        catsession.setAttribute("allcat", allcat);
+        }
         
         String productId = request.getParameter("productId");
         Product p = em.find(Product.class, productId);

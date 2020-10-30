@@ -19,6 +19,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,10 +42,15 @@ public class ActivateServlet extends HttpServlet {
         String key = request.getParameter("key");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        String category = "select c from Category c";
-        Query c = em.createQuery(category);
+        
+        HttpSession catsession = request.getSession();
+        if(catsession.getAttribute("allcat")==null){
+        String cat = "select c from Category c";
+        Query c = em.createQuery(cat);
         List<Category> allcat = c.getResultList();
-        request.setAttribute("allcat", allcat);
+        catsession.setAttribute("allcat", allcat);
+        }
+        
         String verifykey = AES.decrypt(key);
         
 //        String customer = "select c from customersforverify c where email like"+email+"and verifykey like"+verifykey;
@@ -55,7 +61,7 @@ public class ActivateServlet extends HttpServlet {
             request.setAttribute("message", "Your NOG account are Activated");
             request.getRequestDispatcher("/Activate.jsp").forward(request, response);
             em.getTransaction().begin();
-        em.createNativeQuery("Insert into customer (email, firstname, lastname, phone_no, date_of_birth, sex, password, address) "
+        em.createNativeQuery("Insert into customer (email, firstname, lastname, phone_no, date_o_birth, sex, password, address) "
                 + "select (email, firstname, lastname, phone_no, date_of_birth, sex, password, address) where email like '"+email+"' and verify like '"+verifykey+"';"
                         + "DELETE FROM customersforverify WHERE where email like '"+email+"' and verify like '"+verifykey+"';")
                 
