@@ -57,19 +57,22 @@ public class ActivateServlet extends HttpServlet {
 //        Query query = em.createQuery(customer);
 //        Customersforverify cus = query.getSingleResult();
         Customersforverify cus = em.find(Customersforverify.class, email);
-        if(cus==null&&verifykey.equals(cus.getVerifykey())){
-            request.setAttribute("message", "Your NOG account are Activated");
-            request.getRequestDispatcher("/Activate.jsp").forward(request, response);
+        System.out.println(cus);
+        if(cus!=null&&verifykey.equals(cus.getVerifykey())){            
             em.getTransaction().begin();
-        em.createNativeQuery("Insert into customer (email, firstname, lastname, phone_no, date_o_birth, sex, password, address) "
-                + "select (email, firstname, lastname, phone_no, date_of_birth, sex, password, address) where email like '"+email+"' and verify like '"+verifykey+"';"
-                        + "DELETE FROM customersforverify WHERE where email like '"+email+"' and verify like '"+verifykey+"';")
-                
+        em.createNativeQuery("Insert into customers (email, firstname, lastname, phone_no, date_of_birth, sex, password, address)" 
+                + "select email, firstname, lastname, phone_no, date_of_birth, sex, password, address from customersforverify where email like '"+email+"' and verifykey like '"+verifykey+"'; " )
+                .executeUpdate();
+        em.createNativeQuery("DELETE FROM customersforverify WHERE email like '"+email+"' and verifykey like '"+verifykey+"';")        
                 .executeUpdate();
             em.getTransaction().commit();
             em.close();
+            request.setAttribute("message", "Your NOG account are Activated");
+            request.setAttribute("photo", "protection");
+            request.getRequestDispatcher("/Activate.jsp").forward(request, response);
         }
-        request.setAttribute("message", "Invalid!!! Verifycode");
+        request.setAttribute("message", "Invalid ! link");
+        request.setAttribute("photo", "cancel");
         request.getRequestDispatcher("/Activate.jsp").forward(request, response);
         
     }

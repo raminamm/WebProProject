@@ -104,8 +104,8 @@
                 <div class="col-xl-5 col-lg-7 col-md-9">
                     <div class="card shadow-lg">
                         <div class="card-body p-4 p-md-10">
-                            <img style="width:100px;height:100px" src="images/protection.png"><br><br>
-                            <p style="color: black;font-size: 35px;" class="display-4">Activated</p>
+                            <img style="width:100px;height:100px" src="images/${photo}.png"><br><br>
+                            <p style="color: black;font-size: 35px;" class="display-4">${message}</p>
                             <p class="lead"></p><br>
                                 <button href="#" class="btn btn-primary btn-lg">Home</a>
                         </div>

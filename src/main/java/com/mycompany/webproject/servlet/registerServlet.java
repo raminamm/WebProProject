@@ -70,7 +70,7 @@ public class registerServlet extends HttpServlet {
                     String link = "http://localhost:8080/WebProProject/Activate?email="+email+"&key=" + AES.encrypt(g);
                     sendMail sm = new sendMail();
                     sm.sendVerifyEmail(email, link);
-
+                    
                     request.setAttribute("message", "Success");
                     request.getRequestDispatcher("/Login.jsp").forward(request, response);
 

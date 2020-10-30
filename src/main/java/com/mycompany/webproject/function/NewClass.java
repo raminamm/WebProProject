@@ -34,7 +34,9 @@ public class NewClass {
 //    sendMail s = new sendMail();
 //    s.sendVerifyEmail("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
 
-        String key = AES.encrypt("1943875");
-        System.out.println(key);
+        String key = AES.encrypt("6119053");
+        System.out.println("Encrypt :"+key);
+        String dy = AES.decrypt(key);
+        System.out.println("Dycrypt :"+dy);
     }
 }
