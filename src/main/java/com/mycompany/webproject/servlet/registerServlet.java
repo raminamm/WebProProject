@@ -72,7 +72,7 @@ public class registerServlet extends HttpServlet {
                     sm.sendVerifyEmail(email, link);
                     
                     request.setAttribute("message", "Success");
-                    request.getRequestDispatcher("/Login.jsp").forward(request, response);
+                    request.getRequestDispatcher("/register.jsp").forward(request, response);
 
                 }
                 request.setAttribute("message", "Passwords Don't Match");

@@ -63,7 +63,7 @@
             box-sizing: border-box;
         }
 
-        html[Attributes Style] {
+        html[Attributes] {
             -webkit-locale: "en";
         }
 
