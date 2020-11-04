@@ -62,6 +62,7 @@ public class sendMail {
         this.massage = url;
         SendActivateUrl();
     }
+    
 
     public void SendActivateUrl() {
         Properties props = new Properties();
@@ -88,11 +89,44 @@ public class sendMail {
 "Please verify your email address to complete your NOG Account. " + massage);
             Transport.send(message);
 
-            System.out.println("Sent message successfully....");
+            System.out.println("Sent activateurl successfully....");
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
     }
+     
+    
+    public void SendResetPasswordUrl(String emailAddressTo, String data) {
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
 
+        // Get the Session object.
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(emailAddressTo));
+            message.setSubject("Your NOG Account - ResetPassword");
+            message.setText("Dear "+emailAddressTo+",\n" +
+"Please Reset you Password in this URL. " + data);
+            Transport.send(message);
+
+            System.out.println("Sent resetpassword successfully....");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
 }

@@ -263,7 +263,7 @@
                     <form action="register" method="GET">
                         <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
                     </form>
-                     <br><a href="#" class="aaaaaa" style="color: #fff;">Forget password?</a>
+                     <br><a href="Forgot.jsp" class="aaaaaa" style="color: #fff;">Forget password?</a>
                 </div>
             </td>
         </tr>

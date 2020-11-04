@@ -324,10 +324,10 @@
  <div class="album py-3">
         
                 <section class="section-pagetop bg" style="padding: 1.5ex;">
-            <h2 class="title-page">Products</h2>
+            <h2 class="title-page">Product List</h2>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="ProductList.jsp">Home</a></li>
                     <li class="breadcrumb-item" aria-current="page">Product List</li>
                 </ol>
             </nav>

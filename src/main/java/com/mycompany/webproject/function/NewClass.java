@@ -31,12 +31,10 @@ public class NewClass {
 //                }catch (Exception ex){
 //                    ex.getMessage();
 //                }
-//    sendMail s = new sendMail();
-//    s.sendVerifyEmail("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
+    sendMail s = new sendMail();
+    s.sendVerifyEmail("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
 
-        String key = AES.encrypt("6119053");
-        System.out.println("Encrypt :"+key);
-        String dy = AES.decrypt(key);
-        System.out.println("Dycrypt :"+dy);
-    }
-}
+        String key = AES.encrypt("glaa656@hotmail.co.th");
+        
+        s.SendResetPasswordUrl("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/ResetPassword?key="+key+"");
+}}

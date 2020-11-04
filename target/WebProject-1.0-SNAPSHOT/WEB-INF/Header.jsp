@@ -245,7 +245,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdown09">
                 <c:forEach items="${allcat}" var="c">
                     <a class="dropdown-item" href="ProductList?category=${c.category}">${c.category}</a>
-                </c:forEach>
+                </c:forEach> 
             </div>
             <form class="form-inline my-2 my-md-0">
                 <input class="form-control" type="text" placeholder="Search for products" maxlength="128"
@@ -253,8 +253,8 @@
                     action="ProductList" method="GET">
             </form>
  
-            <a href="#" class="nav-item nav-link"><span>Cart </span><i class="fa fa-cart-arrow-down fa-6"><span
-                        class="badge">( 1 )</span></i></a>
+                    <a href="Cart" class="nav-item nav-link"><span>Cart </span><i class="fa fa-cart-arrow-down fa-6"><span
+                                class="badge"><%--( 1 )--%>(${cart.getItemCount()})</span></i></a>
  
  
             <div class="nav-item dropdown">
@@ -265,11 +265,34 @@
                     <a href="#" class="dropdown-item"><i class="fa fa-truck"></i> Purchase History</a>
                     <a href="#" class="dropdown-item"><i class="fa fa-address-card-o"></i> My Address</a>
                     <div class="divider dropdown-divider"></div>
-                    <a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+                    <a href="${email==null ?'Login' : 'Logout'}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
                 </div>
             </div>
  
- 
+                    <%--
+                          <nav style="background: #222222;" class="site-header sticky-top py-3">
+        <div class="container d-flex flex-column flex-md-row justify-content-between" ;>
+            <a class="py-2" href="" aria-label="Product"></a>
+            <a class="py-2 d-none d-md-inline-block" href="ProductList?search=" style="text-decoration:none">N O G</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false" style="text-decoration:none">Categories</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown09">
+                <c:forEach items="${allcat}" var="c">
+                    <a class="dropdown-item" href="ProductList?category=${c.category}">${c.category}</a>                    
+                </c:forEach>
+            </div>
+            <form class="form-inline my-2 my-md-0" >
+                <input class="form-control" type="text" placeholder="Search for products" maxlength="128" aria-label="Search"
+                       autocomplete="off" value="${param.search}" style="width: 500px;" name="search" action="ProductList" method="GET">
+            </form>
+            <a class="py-2 d-none d-md-inline-block" href="#" style="text-decoration:none">Contact</a>
+            <a class="py-2 d-none d-md-inline-block" href="Cart" style="text-decoration:none">Cart (${cart.getItemCount()})</a>
+            <a class="py-2 d-none d-md-inline-block" href="${email==null ?'Login' : 'Logout'}" style="text-decoration:none">${email==null ?'Login' : 'Logout'}</a>
+                
+             
+        </div>
+    </nav>
+                    --%>
  
         </div>
     </nav>

@@ -432,6 +432,15 @@
                         </div>
                     </section>-->
 
+                    <section class="section-pagetop bg" style="padding: 1.5ex;">
+            <h2 class="title-page">Product Detail</h2>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="ProductList.jsp">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Product Detail</li>
+                </ol>
+            </nav>
+        </section>
 
                     <div class="container">
                         <div class="heading-section">
