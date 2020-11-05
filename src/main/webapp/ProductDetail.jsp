@@ -436,7 +436,7 @@
             <h2 class="title-page">Product Detail</h2>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="ProductList.jsp">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/ProductList">Home</a></li>
                     <li class="breadcrumb-item" aria-current="page">Product Detail</li>
                 </ol>
             </nav>
@@ -508,7 +508,7 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-6 pl-1">
                                             <div class="form-group">
-                                                <a type="submit" class="round-black-btn" style="width: 100%;">Buy Now</a>
+                                                <a type="submit" class="round-black-btn" style="width: 100%;color: #fff">Buy Now</a>
                                             </div>
                                         </div>
                                     </div>
