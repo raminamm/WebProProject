@@ -123,90 +123,103 @@
 
                     <jsp:include page="/WEB-INF/Header.jsp?title=Cart"/>
 
-                    <section class="jumbotron text-center">
-                        <div class="container">
-                            <h1 class="jumbotron-heading">CART</h1>
-                        </div>
-                    </section>
+                            <section class="jumbotron text-center">
+                                <div class="container">
+                                    <h1 class="jumbotron-heading">CART</h1>
+                                </div>
+                            </section>
 
                     <c:choose>
-                        <c:when test="${cart==null}">
-                            ${nocart}
-                        </c:when>
-                        <c:otherwise>
-                    <div class="container mb-4">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"> </th>
-                                                <th scope="col">Product</th>
-                                                
-                                                <th scope="col" class="text-center">Quantity</th>
-                                                <th scope="col" class="text-right">Price</th>
-                                                <th> </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:forEach items="${cart.items}"var="lineItem" varStatus="vs">
-                                            <tr>
-                                                <td><img style="width:210px ;height:210px ;" src="Product-images/${lineItem.category.category}/${lineItem.product.productId}.jpg" /> </td>
-                                                <td>${lineItem.product.name}</td>
-                                            <form action="Cart?cartid=${lineItem.cartid}" method="POST">
-                                                <td><input name="updatequantity" class="form-control" type="number" value="${lineItem.quantity}"/></td>
-                                            </form>
-                                                <td class="text-right">${lineItem.totalPrice} ฿</td>
-                                                <td class="text-right"><button class="btn btn-sm btn-danger"><i
-                                                            class="fa fa-trash"></i> </button> </td>
-                                            </tr>
-                                            </c:forEach>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Sub-Total</td>
-                                                <td class="text-right"> ฿</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Shipping</td>
-                                                <td class="text-right"> ฿</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><strong>Total</strong></td>
-                                                <td class="text-right"><strong> ฿</strong></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        <c:when test="${cart!=null}">                    
+
+                            <div class="container mb-4">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col"> </th>
+                                                        <th scope="col">Product</th>
+
+                                                        <th scope="col" class="text-center">Quantity</th>
+                                                        <th scope="col" class="text-right">Price</th>
+                                                        <th> </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <c:forEach items="${cart.items}"var="lineItem" varStatus="vs">
+                                                        <tr>
+                                                            <td><img style="width:210px ;height:210px ;" src="Product-images/${lineItem.category.category}/${lineItem.product.productId}.jpg" /> </td>
+                                                            <td>${lineItem.product.name}</td>
+                                                    <form action="Cart?cartid=${lineItem.cartid}" method="POST">
+                                                        <td><input name="updatequantity" class="form-control" type="number" value="${lineItem.quantity}"/></td>
+                                                    </form>
+                                                    <td class="text-right">${lineItem.totalPrice} ฿</td>
+                                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i
+                                                                class="fa fa-trash"></i> </button> </td>
+                                                    </tr>
+                                                </c:forEach>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>Sub-Total</td>
+                                                    <td class="text-right"> ฿</td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>Shipping</td>
+                                                    <td class="text-right"> ฿</td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><strong>Total</strong></td>
+                                                    <td class="text-right"><strong> ฿</strong></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="container">
+                                        <div class="row justify-content-end">
+                                            <div class="col-12 col-md-8">
+                                                <!--                                     <button class="btn btn-lg btn-block btn btn-outline-dark text-uppercase">Continue Shopping</button>
+                                                -->                                </div>
+                                            <div class="col-6 col-md-4">
+                                                <button class="btn btn-lg btn-block btn btn-success text-uppercase">Buy</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-
-
-                            <div class="container">
-                                <div class="row justify-content-end">
-                                    <div class="col-12 col-md-8">
-                                        <!--                                     <button class="btn btn-lg btn-block btn btn-outline-dark text-uppercase">Continue Shopping</button>
-                                        -->                                </div>
-                                    <div class="col-6 col-md-4">
-                                        <button class="btn btn-lg btn-block btn btn-success text-uppercase">Buy</button>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="row justify-content-center">
+                                <div class="col-xl-3 col-lg-7 col-md-9">
+                                    <div class="card shadow-lg">
+                                        <div class="card-body p-4 p-md-10">
+                                            <i style="font-size: 50px" class="fa fa-cart-plus"></i><br><br>
+                                            <p style="color: black;font-size: 20px;" class="display-4">${nocart}</p>
+                                            <p class="lead"></p><br>
+                                            <a href="ProductList" class="btn btn-primary btn-lg">Home</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                    </c:otherwise>
-                </c:choose>
+                        </c:otherwise>
+                    </c:choose>
 
                 </td>
             </tr>

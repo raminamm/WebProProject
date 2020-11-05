@@ -3,7 +3,6 @@
     Created on : Oct 28, 2020, 7:54:02 PM
     Author     : NAMM
 --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -95,7 +94,6 @@
 
 <body class="text-center" cz-shortcut-listen="true">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <jsp:include page="/WEB-INF/Header.jsp?title=Activate"/>
         
         <header class="masthead mb-auto">
         </header>
@@ -107,7 +105,7 @@
                             <img style="width:100px;height:100px" src="images/${photo}.png"><br><br>
                             <p style="color: black;font-size: 35px;" class="display-4">${message}</p>
                             <p class="lead"></p><br>
-                                <button href="#" class="btn btn-primary btn-lg">Home</a>
+                            <a href="ProductList" class="btn btn-primary btn-lg">Home</a>
                         </div>
                     </div>
                 </div>
