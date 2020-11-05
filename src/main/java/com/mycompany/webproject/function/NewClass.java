@@ -6,10 +6,14 @@
 package com.mycompany.webproject.function;
 
 import com.mycompany.webproject.entity.Category;
+import com.mycompany.webproject.entity.Product;
+import com.mycompany.webproject.model.Cart;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 
 /**
@@ -34,7 +38,15 @@ public class NewClass {
     sendMail s = new sendMail();
     s.sendVerifyEmail("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
 
+<<<<<<< Updated upstream
         String key = AES.encrypt("glaa656@hotmail.co.th");
         
         s.SendResetPasswordUrl("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/ResetPassword?key="+key+"");
+=======
+//        String key = AES.encrypt("6119053");
+//        System.out.println("Encrypt :"+key);
+//        String dy = AES.decrypt(key);
+//        System.out.println("Dycrypt :"+dy);
+
+>>>>>>> Stashed changes
 }}

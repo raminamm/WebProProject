@@ -4,7 +4,7 @@
     Author     : NAMM
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -363,7 +363,7 @@
                                     <p class="card-text">${p.name}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <small class="text-muted">ราคา ${p.price} บาท</small>
+                                            <small class="text-muted">ราคา <fmt:formatNumber pattern="#,###.00" value="${p.price}"/> บาท</small>
                                         </div>
                                     </div>
                                 </div>

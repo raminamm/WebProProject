@@ -5,19 +5,28 @@
  */
 package com.mycompany.webproject.servlet;
 
+import com.mycompany.webproject.entity.Product;
+import com.mycompany.webproject.model.Cart;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author glajaja
  */
 public class AddProductToCartServlet extends HttpServlet {
-
+@PersistenceUnit(unitName = "com.mycompany_WebProject_war_1.0-SNAPSHOTPU")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -30,7 +39,26 @@ public class AddProductToCartServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String productId = request.getParameter("productId");
+        String size = request.getParameter("size");
+        String quan = request.getParameter("quantity");
         
+        int quantity = Integer.parseInt(quan);
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
+        EntityManager em = emf.createEntityManager();
+        Product p = em.find(Product.class, productId);
+        if (p != null) {
+            HttpSession session = request.getSession(true);
+            Cart cart = (Cart) session.getAttribute("cart");
+            if (cart == null) {
+                cart = new Cart();
+                session.setAttribute("cart", cart);
+            }
+            String c = Long.toString(LocalDateTime.now().toEpochSecond(ZoneOffset.UTC));
+            cart.add(c, p, quantity, size, p.getCategory());
+            
+        }
+        request.getRequestDispatcher("ProductDetail?productId="+productId).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

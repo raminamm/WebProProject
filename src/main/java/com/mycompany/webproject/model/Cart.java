@@ -5,6 +5,7 @@
  */
 package com.mycompany.webproject.model;
 
+import com.mycompany.webproject.entity.Category;
 import com.mycompany.webproject.entity.Product;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,25 +24,30 @@ public class Cart {
         map = new HashMap(32);
     }
     
-    public void add(Product product) {
-        add(product, 1);
+    public void add(String cartid, Product product,String size,Category category) {
+        add(cartid, product, 1, size,category);
     }
     
-    public void add(Product product, int quantity) {
-        LineItem item = map.get(product.getProductId());
+    public void add(String cartid, Product product, int quantity, String size,Category category) {
+        LineItem item = map.get(cartid);
         if (item == null) {
-            map.put(product.getProductId(), 
-                    new LineItem(product, quantity, product.getPrice()));
+            map.put(cartid, 
+                    new LineItem(cartid, product, quantity, size, product.getPrice(),category));
         } else {
             item.setQuantity(item.getQuantity()+quantity);
         }
     }
-    public void remove(Product product) {
-        remove(product.getProductId());
+    public void update(String cartid,int update){
+        LineItem item = map.get(cartid);
+        item.setQuantity(update);
     }
     
-    public void remove(String productId) {
-        map.remove(productId);
+//    public void remove(Product product) {
+//        remove(product.getProductId());
+//    }
+    
+    public void remove(String cartid) {
+        map.remove(cartid);
     }
     
     public int getItemCount() {
@@ -60,20 +66,33 @@ public class Cart {
         }
         return total ;
     }
+
+    @Override
+    public String toString() {
+        return "Cart{" + "map=" + map + '}';
+    }
+    
+    
     
     public static class LineItem {
+        private String cartid;
         private Product product ;
         private int quantity ;
+        private String size;
         private double price;
+        private Category category;
 
-        public LineItem(Product product, double price) {
-            this(product, 1, price);
+        public LineItem(String cartid, Product product, double price, String size,Category category) {
+            this(cartid, product, 1, size, price,category);
         }
         
-        public LineItem(Product product, int quantity, double price) {
+        public LineItem(String cartid, Product product, int quantity, String size, double price,Category category) {
+            this.cartid = cartid;
             this.product = product;
             this.quantity = quantity;
+            this.size = size;
             this.price = price;
+            this.category = category;
         }
         public double getTotalPrice() {   // EL ${pl.totalPrice}
             return quantity * price;
@@ -102,7 +121,39 @@ public class Cart {
         public void setPrice(double price) {
             this.price = price;
         }
+
+        public String getSize() {
+            return size;
+        }
+
+        public void setSize(String size) {
+            this.size = size;
+        }
+
+        public String getCartid() {
+            return cartid;
+        }
+
+        public void setCartid(String cartid) {
+            this.cartid = cartid;
+        }
+
+        public Category getCategory() {
+            return category;
+        }
+
+        public void setCategory(Category category) {
+            this.category = category;
+        }
+
+        @Override
+        public String toString() {
+            return "LineItem{" + "cartid=" + cartid + ", product=" + product + ", quantity=" + quantity + ", size=" + size + ", price=" + price + ", category=" + category + '}';
+        }
+        
         
 
     }
 }
+
+

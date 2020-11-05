@@ -25,8 +25,13 @@
         <servlet-class>com.mycompany.webproject.servlet.ActivateServlet</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< Updated upstream
         <servlet-name>ResetPasswordServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.ResetPasswordServlet</servlet-class>
+=======
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.CartServlet</servlet-class>
+>>>>>>> Stashed changes
     </servlet>
     <servlet-mapping>
         <servlet-name>registrrationServlet</servlet-name>
@@ -53,8 +58,13 @@
         <url-pattern>/Activate</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< Updated upstream
         <servlet-name>ResetPasswordServlet</servlet-name>
         <url-pattern>/ResetPassword</url-pattern>
+=======
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/Cart</url-pattern>
+>>>>>>> Stashed changes
     </servlet-mapping>
     <session-config>
         <session-timeout>

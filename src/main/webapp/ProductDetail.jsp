@@ -5,7 +5,7 @@
     Author     : NAMM
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -470,27 +470,31 @@
 
 
                             <div class="col-md-6">
+                                <form action="AddProductToCart" method="GET">
                                 <div class="product-dtl">
                                     <div class="product-info">
                                         <div class="product-name">${product.name}</div>
 
-                                        <div class="product-price-discount"><span>ราคา ${product.price} ฿</span></div>
+                                        <div class="product-price-discount"><span>ราคา <fmt:formatNumber pattern="#,###.00" value="${product.price}"/> ฿</span></div>
                                     </div>
                                     <p>${product.productDescription}</p>
 
+                                    
                                             <label for="size">Size</label>
-                                            <select id="size" name="size" class="form-control">
-                                                <option>S</option>
-                                                <option>M</option>
-                                                <option>L</option>
-                                                <option>XL</option>
+                                            <select id="size" name="size" class="form-control" required="">
+                                                <option value="s">S</option>
+                                                <option value="m">M</option>
+                                                <option value="l">L</option>
+                                                <option value="xl">XL</option>
                                             </select>
-
+                                
+                                            
+                                            
                                     <div class="product-count">
                                         <label for="size">Quantity</label>
 
-                                        <input type="number" name="quantity" min="1" id="quant"
-                                               class="form-control mb-2 input-lg" placeholder="Choose the quantity">
+                                        <input type="number" name="quantity" min="1" id="quant" required=""
+                                               class="form-control mb-2 input-lg" placeholder="Choose the quantity"/>
 
 
                                     </div>
@@ -499,18 +503,18 @@
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6 col-md-6 pr-1">
                                             <div class="form-group">
-                                                <a href="#" class="round-black-btn" style="width: 100%;">Add to
-                                                    Cart</a>
+                                                <button type="submit" class="round-black-btn" style="width: 100%;" name="productId" value="${product.productId}">Add to Cart</button>
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-6 pl-1">
                                             <div class="form-group">
-                                                <a href="#" class="round-black-btn" style="width: 100%;">Buy Now</a>
+                                                <a type="submit" class="round-black-btn" style="width: 100%;">Buy Now</a>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
+                            </form>
                             </div>
                         </div>
                         <div class="product-info-tabs">
