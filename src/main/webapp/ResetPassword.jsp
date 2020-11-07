@@ -34,8 +34,44 @@
             .form-gap {
                 padding-top: 240px;
             }
+            
+            body {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                align-items: center;
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
 
-<<<<<<< HEAD
+
+            #container {
+                display: flexbox;
+                align-items: center;
+                justify-content: center;
+
+                padding-top: 0px;
+                padding-right: 610px;
+                padding-left: 610px;
+                padding-bottom: 0px;
+                width: 100%;
+            } 
+
+            body {
+                background-image: url('images/pexels-eberhard-grossgasteiger-1287145.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-position-y: bottom;
+                filter: opacity(90%);
+            }
+
+            body {
+                font-family: 'Prompt', sans-serif;
+
+            }   
+
+
   </style>
 </head>
 <script language=Javascript>
@@ -88,46 +124,6 @@
 
 
 
-
-=======
-            body {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-align: center;
-                align-items: center;
-                padding-top: 0px;
-                padding-bottom: 0px;
-            }
->>>>>>> master
-
-            #container {
-                display: flexbox;
-                align-items: center;
-                justify-content: center;
-
-                padding-top: 0px;
-                padding-right: 610px;
-                padding-left: 610px;
-                padding-bottom: 0px;
-                width: 100%;
-            } 
-
-            body {
-                background-image: url('images/pexels-eberhard-grossgasteiger-1287145.jpg');
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: cover;
-                background-position-y: bottom;
-                filter: opacity(90%);
-            }
-
-            body {
-                font-family: 'Prompt', sans-serif;
-
-            }   
-
-
-<<<<<<< HEAD
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -146,9 +142,8 @@
         console.log(key[1])
     </script>
 </body>
-=======
-        </style>
-    </head>
+        
+   
     <script language=Javascript>
         function ResizeTable() {
             var objTable = document.getElementById("maintable");
@@ -251,6 +246,6 @@
                 integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     </body>
->>>>>>> master
+
 
 </html>

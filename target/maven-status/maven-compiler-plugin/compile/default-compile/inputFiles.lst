@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\LogoutServlet.java
 D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
 D:\WebProProject\src\main\java\com\mycompany\webproject\function\sendMail.java
@@ -25,30 +24,3 @@ D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Customersforverif
 D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\AdminLoginServlet.java
 D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Category.java
 D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Admin.java
-=======
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\ProductDetailServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\registerServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\entity\Customersforverify.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\ActivateServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\CartServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\JAXRSConfiguration.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\ProductListServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\function\sendMail.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\resources\JavaEE8Resource.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\function\AES.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\LogoutServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\AdminLoginServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\entity\Product.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\entity\Category.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\AddProductToCartServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\entity\Orders.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\ResetPasswordServlet.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\entity\Productsize.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\entity\Admin.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\model\Cart.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\function\NewClass.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\entity\Customers.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\function\GenerateCode.java
-D:\Work\Web Pro ??????\WebProProject\src\main\java\com\mycompany\webproject\servlet\NewServlet.java
->>>>>>> master
