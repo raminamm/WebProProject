@@ -13,8 +13,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import static java.time.LocalDateTime.now;
 import java.time.ZoneOffset;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -43,6 +52,7 @@ public class NewClass {
 //        String key = AES.encrypt("glaa656@hotmail.co.th");
 //        
 //        s.SendResetPasswordUrl("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/ResetPassword?key="+key+"");
+<<<<<<< Updated upstream
 //        for(int i = 0; i < 50; i++){
 //        String key = AES.encrypt("rachawas8040@gmail.com");
         String key = AES.encrypt("oatter@hotmail.com");
@@ -66,4 +76,27 @@ public class NewClass {
         
                    
                    
+=======
+
+//        String key = AES.encrypt("6119053");
+//        System.out.println("Encrypt :"+key);
+//        String dy = AES.decrypt(key);
+//        System.out.println("Dycrypt :"+dy);
+
+        //LocalDateTime now = LocalDateTime.now();
+       // int e = Integer.parseInt(now.toString());
+        //System.out.println(e);
+        
+        GregorianCalendar c = new GregorianCalendar();
+    c.setTime(Date.from(Instant.now()));
+    int day = c.get(Calendar.DAY_OF_MONTH);
+    int month = c.get(Calendar.MONTH);
+    int year = c.get(Calendar.YEAR);
+    int hour = c.get(Calendar.HOUR);
+    int minute = c.get(Calendar.MINUTE);
+    String date = ""+day+month+year+hour+minute+"";
+    System.out.println(date);
+    
+    
+>>>>>>> Stashed changes
 }}

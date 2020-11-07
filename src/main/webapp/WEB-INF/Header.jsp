@@ -265,7 +265,7 @@
                     <a href="#" class="dropdown-item"><i class="fa fa-truck"></i> Purchase History</a>
                     <a href="#" class="dropdown-item"><i class="fa fa-address-card-o"></i> My Address</a>
                     <div class="divider dropdown-divider"></div>
-                    <a href="${email==null ?'Login' : 'Logout'}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+                    <a href="${email==null ?'Login' : 'Logout'}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i>${email==null ?'Login' : 'Logout'} </a>
                 </div>
             </div>
  

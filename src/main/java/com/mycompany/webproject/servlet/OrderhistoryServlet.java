@@ -6,14 +6,15 @@
 package com.mycompany.webproject.servlet;
 
 import com.mycompany.webproject.entity.Category;
-import com.mycompany.webproject.model.Cart;
-import com.mycompany.webproject.model.Cart.LineItem;
+import com.mycompany.webproject.entity.Customers;
+import com.mycompany.webproject.entity.Orders;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,8 +26,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author glajaja
  */
-public class CartServlet extends HttpServlet {
-
+public class OrderhistoryServlet extends HttpServlet {
+@PersistenceUnit(unitName = "com.mycompany_WebProject_war_1.0-SNAPSHOTPU")
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -50,16 +51,17 @@ public class CartServlet extends HttpServlet {
         }
         
         HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("cart") == null ) {
-            request.setAttribute("nocart", "Your cart are empthy. Please select you product");
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            return ;
-            
+        Customers email = (Customers) session.getAttribute("email");
+        if (session == null || email == null ) {
+            //nologin
+            request.getRequestDispatcher("/orderhis.jsp").forward(request, response);
         }
-        
-        
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
+        String sql = "select o from orders o where o.customers.email like :email";
+        Query qry = em.createQuery(sql);
+        qry.setParameter("email", email.getEmail());
+        List <Orders> order = qry.getResultList();
+        request.setAttribute("order", order);
+        request.getRequestDispatcher("/orderhis.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -88,13 +90,6 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.getAttribute("cart");
-        String cartid = request.getParameter("cartid");
-        String upquan = request.getParameter("updatequantity");
-        int updatequantity = Integer.parseInt(upquan);
-        Cart cart = (Cart) session.getAttribute("cart");
-        cart.update(cartid, updatequantity);
         processRequest(request, response);
     }
 

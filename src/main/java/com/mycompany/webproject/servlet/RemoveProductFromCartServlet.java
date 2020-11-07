@@ -5,16 +5,9 @@
  */
 package com.mycompany.webproject.servlet;
 
-import com.mycompany.webproject.entity.Category;
 import com.mycompany.webproject.model.Cart;
-import com.mycompany.webproject.model.Cart.LineItem;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author glajaja
  */
-public class CartServlet extends HttpServlet {
+public class RemoveProductFromCartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,28 +31,14 @@ public class CartServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
-        EntityManager em = emf.createEntityManager();
-        
-        HttpSession catsession = request.getSession();
-        if(catsession.getAttribute("allcat")==null){
-        String cat = "select c from Category c";
-        Query c = em.createQuery(cat);
-        List<Category> allcat = c.getResultList();
-        catsession.setAttribute("allcat", allcat);
-        }
-        
-        HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("cart") == null ) {
-            request.setAttribute("nocart", "Your cart are empthy. Please select you product");
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            return ;
-            
-        }
-        
-        
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
+        String cartid = request.getParameter("cartid");
+        HttpSession session = request.getSession(true);
+            Cart cart = (Cart) session.getAttribute("cart");
+            cart.remove(cartid);
+            if(cart.getItemCount()==0){
+                session.invalidate();
+            }
+            request.getRequestDispatcher("Cart").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -88,13 +67,6 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.getAttribute("cart");
-        String cartid = request.getParameter("cartid");
-        String upquan = request.getParameter("updatequantity");
-        int updatequantity = Integer.parseInt(upquan);
-        Cart cart = (Cart) session.getAttribute("cart");
-        cart.update(cartid, updatequantity);
         processRequest(request, response);
     }
 

@@ -7,7 +7,9 @@ package com.mycompany.webproject.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,10 +17,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -26,68 +32,62 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "orders")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o"),
-    @NamedQuery(name = "Orders.findByOrderId", query = "SELECT o FROM Orders o WHERE o.orderId = :orderId"),
-    @NamedQuery(name = "Orders.findByQuantity", query = "SELECT o FROM Orders o WHERE o.quantity = :quantity"),
+    @NamedQuery(name = "Orders.findByOrderid", query = "SELECT o FROM Orders o WHERE o.orderid = :orderid"),
     @NamedQuery(name = "Orders.findByCreated", query = "SELECT o FROM Orders o WHERE o.created = :created"),
-    @NamedQuery(name = "Orders.findByAmount", query = "SELECT o FROM Orders o WHERE o.amount = :amount")})
+    @NamedQuery(name = "Orders.findByAmount", query = "SELECT o FROM Orders o WHERE o.amount = :amount"),
+    @NamedQuery(name = "Orders.findByAddress", query = "SELECT o FROM Orders o WHERE o.address = :address")})
 public class Orders implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "order_id")
-    private Integer orderId;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "quantity")
-    private int quantity;
+    @Size(min = 1, max = 100)
+    @Column(name = "orderid")
+    private String orderid;
     @Basic(optional = false)
     @NotNull
     @Column(name = "created")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date created;
     @Basic(optional = false)
     @NotNull
     @Column(name = "amount")
     private long amount;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 200)
+    @Column(name = "address")
+    private String address;
     @JoinColumn(name = "email", referencedColumnName = "email")
     @ManyToOne(optional = false)
     private Customers email;
-    @JoinColumn(name = "product_id", referencedColumnName = "product_id")
-    @ManyToOne(optional = false)
-    private Product productId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "orderid")
+    private List<Orderdetail> orderdetailList;
 
     public Orders() {
     }
 
-    public Orders(Integer orderId) {
-        this.orderId = orderId;
+    public Orders(String orderid) {
+        this.orderid = orderid;
     }
 
-    public Orders(Integer orderId, int quantity, Date created, long amount) {
-        this.orderId = orderId;
-        this.quantity = quantity;
+    public Orders(String orderid, Date created, long amount, String address) {
+        this.orderid = orderid;
         this.created = created;
         this.amount = amount;
+        this.address = address;
     }
 
-    public Integer getOrderId() {
-        return orderId;
+    public String getOrderid() {
+        return orderid;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
     }
 
     public Date getCreated() {
@@ -106,6 +106,14 @@ public class Orders implements Serializable {
         this.amount = amount;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Customers getEmail() {
         return email;
     }
@@ -114,18 +122,19 @@ public class Orders implements Serializable {
         this.email = email;
     }
 
-    public Product getProductId() {
-        return productId;
+    @XmlTransient
+    public List<Orderdetail> getOrderdetailList() {
+        return orderdetailList;
     }
 
-    public void setProductId(Product productId) {
-        this.productId = productId;
+    public void setOrderdetailList(List<Orderdetail> orderdetailList) {
+        this.orderdetailList = orderdetailList;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (orderId != null ? orderId.hashCode() : 0);
+        hash += (orderid != null ? orderid.hashCode() : 0);
         return hash;
     }
 
@@ -136,7 +145,7 @@ public class Orders implements Serializable {
             return false;
         }
         Orders other = (Orders) object;
-        if ((this.orderId == null && other.orderId != null) || (this.orderId != null && !this.orderId.equals(other.orderId))) {
+        if ((this.orderid == null && other.orderid != null) || (this.orderid != null && !this.orderid.equals(other.orderid))) {
             return false;
         }
         return true;
@@ -144,7 +153,7 @@ public class Orders implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.webproject.entity.Orders[ orderId=" + orderId + " ]";
+        return "com.mycompany.webproject.entity.Orders[ orderid=" + orderid + " ]";
     }
     
 }

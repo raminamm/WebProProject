@@ -6,8 +6,7 @@
 package com.mycompany.webproject.servlet;
 
 import com.mycompany.webproject.entity.Category;
-import com.mycompany.webproject.model.Cart;
-import com.mycompany.webproject.model.Cart.LineItem;
+import com.mycompany.webproject.entity.Orderdetail;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -25,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author glajaja
  */
-public class CartServlet extends HttpServlet {
+public class orderdetailServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,17 +48,13 @@ public class CartServlet extends HttpServlet {
         catsession.setAttribute("allcat", allcat);
         }
         
-        HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("cart") == null ) {
-            request.setAttribute("nocart", "Your cart are empthy. Please select you product");
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            return ;
-            
-        }
-        
-        
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
+        String orderid = request.getParameter("orderid");
+        String sql = "select o from Order o where o.order.orderid like :orderid";
+            Query qry = em.createQuery(sql);
+            qry.setParameter("orderid", "%" + orderid + "%");
+            List<Orderdetail> orderdetail = qry.getResultList();
+            request.setAttribute("ordertail", orderdetail);
+            request.getRequestDispatcher("/orderdetail.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -88,13 +83,6 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.getAttribute("cart");
-        String cartid = request.getParameter("cartid");
-        String upquan = request.getParameter("updatequantity");
-        int updatequantity = Integer.parseInt(upquan);
-        Cart cart = (Cart) session.getAttribute("cart");
-        cart.update(cartid, updatequantity);
         processRequest(request, response);
     }
 

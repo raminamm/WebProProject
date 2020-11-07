@@ -5,6 +5,11 @@
  */
 package com.mycompany.webproject.function;
 
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author glajaja
@@ -24,6 +29,20 @@ public class GenerateCode {
         String otp = String.valueOf(randomPin);
         return otp; //returning value of otp 
     }
-			
+    
+    public static String genorderid(){
+        GregorianCalendar c = new GregorianCalendar();
+    c.setTime(Date.from(Instant.now()));
+    int day = c.get(Calendar.DAY_OF_MONTH);
+    int month = c.get(Calendar.MONTH);
+    int year = c.get(Calendar.YEAR);
+    int hour = c.get(Calendar.HOUR);
+    int minute = c.get(Calendar.MINUTE);
+    
+        int randomPin =(int) (Math.random()*9000)+1000; 
+        String otp = String.valueOf(randomPin);
+        String gen = ""+day+month+year+hour+minute+otp+"";
+        return gen;
+    }
 }// Here we are using Math.random() function. 
 // class in Java 

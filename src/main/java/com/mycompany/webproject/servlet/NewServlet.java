@@ -12,11 +12,15 @@ import com.mycompany.webproject.function.GenerateCode;
 import com.mycompany.webproject.function.sendMail;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,8 +49,8 @@ public class NewServlet extends HttpServlet {
         EntityManagerFactory emf
                 = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        String email = request.getParameter("email");
-        String g = GenerateCode.gencode();
+        //String email = request.getParameter("email");
+        //String g = GenerateCode.gencode();
 
                 
 //        em.getTransaction().begin();
@@ -56,14 +60,18 @@ public class NewServlet extends HttpServlet {
 //            em.getTransaction().commit();
 //            em.close();
 
-                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?key="+AES.encrypt(email + g);
-                    sendMail sm = new sendMail();
-                    sm.sendVerifyEmail(email, link);
+//                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?key="+AES.encrypt(email + g);
+//                    sendMail sm = new sendMail();
+//                    sm.sendVerifyEmail(email, link);
+//
+//                    request.setAttribute("message", "Success");
+//                    request.getRequestDispatcher("/registation.jsp").forward(request, response);
 
-                    request.setAttribute("message", "Success");
-                    request.getRequestDispatcher("/registation.jsp").forward(request, response);
-
-                
+        em.getTransaction().begin();
+        LocalDateTime now = LocalDateTime.now();       
+        em.createNativeQuery("INSERT INTO orders (orderid, email, created, amount, address) values ('1111111', 'aaa@hotmail.com', '"+now+"', 1200, 'sgegegeg')").executeUpdate();
+        em.getTransaction().commit();
+        em.close();
     }
     
         
@@ -80,8 +88,8 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            request.getRequestDispatcher("/registation.jsp").forward(request, response);
-            //processRequest(request, response);
+            
+            processRequest(request, response);
     }
 
     /**

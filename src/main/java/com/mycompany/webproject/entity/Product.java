@@ -20,6 +20,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -27,6 +29,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "product")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p"),
     @NamedQuery(name = "Product.findByProductId", query = "SELECT p FROM Product p WHERE p.productId = :productId"),
@@ -57,10 +60,8 @@ public class Product implements Serializable {
     @JoinColumn(name = "category", referencedColumnName = "category")
     @ManyToOne(optional = false)
     private Category category;
-    @OneToMany(mappedBy = "productId")
-    private List<Productsize> productsizeList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
-    private List<Orders> ordersList;
+    private List<Orderdetail> orderdetailList;
 
     public Product() {
     }
@@ -115,20 +116,13 @@ public class Product implements Serializable {
         this.category = category;
     }
 
-    public List<Productsize> getProductsizeList() {
-        return productsizeList;
+    @XmlTransient
+    public List<Orderdetail> getOrderdetailList() {
+        return orderdetailList;
     }
 
-    public void setProductsizeList(List<Productsize> productsizeList) {
-        this.productsizeList = productsizeList;
-    }
-
-    public List<Orders> getOrdersList() {
-        return ordersList;
-    }
-
-    public void setOrdersList(List<Orders> ordersList) {
-        this.ordersList = ordersList;
+    public void setOrderdetailList(List<Orderdetail> orderdetailList) {
+        this.orderdetailList = orderdetailList;
     }
 
     @Override

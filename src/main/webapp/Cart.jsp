@@ -155,9 +155,9 @@
                                                     <form action="Cart?cartid=${lineItem.cartid}" method="POST">
                                                         <td><input name="updatequantity" class="form-control" type="number" value="${lineItem.quantity}"/></td>
                                                     </form>
-                                                    <td class="text-right">${lineItem.totalPrice} ฿</td>
-                                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i
-                                                                class="fa fa-trash"></i> </button> </td>
+                                                    <td class="text-right">${lineItem.price} ฿</td>
+                                                    <td class="text-right"><a href="RemoveProductFromCart?cartid=${lineItem.cartid}" class="btn btn-sm btn-danger"><i
+                                                                class="fa fa-trash"></i> </a> </td>
                                                     </tr>
                                                 </c:forEach>
                                                 <tr>
@@ -166,7 +166,7 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td>Sub-Total</td>
-                                                    <td class="text-right"> ฿</td>
+                                                    <td class="text-right">${cart.getTotalPrice()} ฿</td>
                                                 </tr>
                                                 <tr>
                                                     <td></td>
@@ -196,7 +196,7 @@
                                                 <!--                                     <button class="btn btn-lg btn-block btn btn-outline-dark text-uppercase">Continue Shopping</button>
                                                 -->                                </div>
                                             <div class="col-6 col-md-4">
-                                                <button class="btn btn-lg btn-block btn btn-success text-uppercase">Buy</button>
+                                                <a href="AddOrder" class="btn btn-lg btn-block btn btn-success text-uppercase">Buy</a>
                                             </div>
                                         </div>
                                     </div>
