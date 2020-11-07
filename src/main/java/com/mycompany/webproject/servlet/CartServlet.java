@@ -37,6 +37,7 @@ public class CartServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("cart") == null ) {
             request.setAttribute("nocart", "Your cart are empthy. Please select you product");
+        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
             return ;
             
         }

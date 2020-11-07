@@ -7,7 +7,10 @@ com\mycompany\webproject\servlet\CartServlet.class
 com\mycompany\webproject\model\Cart$LineItem.class
 com\mycompany\webproject\entity\Customersforverify_.class
 com\mycompany\webproject\function\sendMail$1.class
+<<<<<<< HEAD
 com\mycompany\webproject\servlet\UpdatePasswordServlet.class
+=======
+>>>>>>> master
 com\mycompany\webproject\servlet\AddProductToCartServlet.class
 com\mycompany\webproject\servlet\ProductListServlet.class
 com\mycompany\webproject\JAXRSConfiguration.class

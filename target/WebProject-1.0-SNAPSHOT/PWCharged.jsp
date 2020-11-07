@@ -103,7 +103,7 @@
                      <h1><i style="font-size: 100px;" class="fa fa-check-circle"></i></h1>
                     <h2 class="text-center">Password Changed!</h2>
                     <p></p>
-                    <br><a href="ProductList.jsp" class="btn btn-lg btn-danger btn-block" >Home</a>
+                    <br><a href="ProductList" class="btn btn-lg btn-danger btn-block" >Home</a>
                   </div>
                 </div>
               </div>
