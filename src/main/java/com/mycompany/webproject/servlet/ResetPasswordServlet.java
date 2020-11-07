@@ -45,9 +45,11 @@ public class ResetPasswordServlet extends HttpServlet {
             if (c != null){
                    String key = AES.encrypt(email);
                    sendMail s = new sendMail();
-                   String link = "http://localhost:8080/WebProProject/ResetPassword?key="+key;
-                   s.SendResetPasswordUrl(email, link);
-                   
+                   StringBuilder str = new StringBuilder();
+                   str.append("http://localhost:8080/WebProProject/UpdatePassword?key=");
+                   str.append(key);
+                   s.SendResetPasswordUrl(email, str.toString());
+                   request.getRequestDispatcher("/CheckMail.jsp").forward(request, response);
             }
             request.setAttribute("message", "Invalid User Email");
         } catch (NoResultException e) {
@@ -68,7 +70,6 @@ public class ResetPasswordServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/CheckMail.jsp").forward(request, response);
     }
 
     /**

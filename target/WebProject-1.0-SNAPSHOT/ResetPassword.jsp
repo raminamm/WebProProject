@@ -103,13 +103,14 @@
                 <div class="panel-body">
                   <div class="text-center">
                     <i style="font-size: 3.0em;" class="fa fa-key"></i>
-                    <form class="form-signin">
+                    <form action="UpdatePassword" method="POST" class="form-signin">
                         <h1 class="h2 mb-3 font-weight-normal">Reset Password</h1>
                         <label for="password" class="sr-only">Password</label>
-                        <input type="password" id="password" class="form-control" placeholder="Password" required autofocus>
+                        <input name ="password" type="password" id="password" class="form-control" placeholder="Password" required autofocus>
                         <label for="verifiedPassword" class="sr-only">Confirm Password</label>
-                        <input type="password" id="verifiedPassword" class="form-control" placeholder="Confirm Password" required>
-                        <br><a class="btn btn-lg btn-primary btn-block" onClick="resetPassword()">Reset</a>
+                        <input name = "conpassword" type="password" id="verifiedPassword" class="form-control" placeholder="Confirm Password" required>
+                        <input type="hidden" id="key" name="key" value=""/>
+                        <br><button type="submit" class="btn btn-lg btn-primary btn-block" >Reset</button>
                       </form>
                   </div>
                 </div>
@@ -123,36 +124,6 @@
 
 
 
-        <script>
-            function resetPassword() {
-              var token = document.location.href.split('token=')[1];
-              var password = document.forms[0].elements[0].value;
-              var verifiedPassword =  document.forms[0].elements[1].value;
-         
-              if (password !== verifiedPassword) {
-                window.alert('passwords do not match');
-              } else {
-                var data = {
-                  password: password,
-                  verifiedPassword: verifiedPassword,
-                  token: token,
-                };
-                $.ajax({
-                  type: 'POST',
-                  url: '/reset-password',
-                  data,
-                  success: function (data) {
-                    window.alert(data.message);
-                    window.location.replace('/index.html');
-                  },
-                  error: function (xhr) {
-                    window.alert(JSON.stringify(xhr));
-                    window.location.replace('/reset-password.html');
-                  }
-                });
-              }
-            }
-          </script>
 
 
 
@@ -173,6 +144,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+    <script>
+        let url = window.location.href
+        let key = url.split("=")
+        document.getElementById("key").value = key[1]
+        console.log(key[1])
+    </script>
 </body>
 
 </html>
