@@ -6,10 +6,13 @@
 package com.mycompany.webproject.servlet;
 
 import com.mycompany.webproject.entity.Category;
+import com.mycompany.webproject.entity.Customers;
+import com.mycompany.webproject.function.GenerateCode;
 import com.mycompany.webproject.model.Cart;
 import com.mycompany.webproject.model.Cart.LineItem;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -25,7 +28,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author glajaja
  */
-public class CartServlet extends HttpServlet {
+public class AddOrderServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,17 +52,28 @@ public class CartServlet extends HttpServlet {
         catsession.setAttribute("allcat", allcat);
         }
         
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession();
         if (session == null || session.getAttribute("cart") == null ) {
-            request.setAttribute("nocart", "Your cart are empthy. Please select you product");
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            request.getRequestDispatcher("/Cart.jsp").forward(request, response);
-            return ;
-            
+            request.getRequestDispatcher("").forward(request, response); //fail !!!!
         }
         
+        HttpSession emailsession = request.getSession();
+        Customers c = (Customers)emailsession.getAttribute("email");
         
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
+        Cart cart = (Cart)session.getAttribute("cart");
+        LocalDateTime now = LocalDateTime.now();
+        String orderid = GenerateCode.genorderid();
+        em.getTransaction().begin();
+        
+        em.createNativeQuery("INSERT INTO orders (orderid, email, created, amount, address) values ('"+orderid+"', '"+c.getEmail()+"', '"+now+"', "+cart.getTotalPrice()+", 'sgegegeg')").executeUpdate();
+        
+        for (LineItem order : cart.getItems()) {
+            em.createNativeQuery("INSERT INTO orderdetail (orderdetailid, orderid, product_id, price, quantity) VALUE ('"+orderid+order.getCartid()+"','"+orderid+"','"+order.getProduct().getProductId()+"','"+order.getProduct().getPrice()+"','"+order.getQuantity()+"')").executeUpdate();
+        }
+        em.getTransaction().commit();
+        em.close();
+        session.invalidate();
+        //request.getRequestDispatcher("/").forward(request, response); //orderdetail
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -88,13 +102,6 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.getAttribute("cart");
-        String cartid = request.getParameter("cartid");
-        String upquan = request.getParameter("updatequantity");
-        int updatequantity = Integer.parseInt(upquan);
-        Cart cart = (Cart) session.getAttribute("cart");
-        cart.update(cartid, updatequantity);
         processRequest(request, response);
     }
 

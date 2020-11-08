@@ -32,6 +32,22 @@
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.CartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OrderhistoryServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.OrderhistoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveProductFromCartServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.RemoveProductFromCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>orderdetailServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.orderdetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddOrderServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.AddOrderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrrationServlet</servlet-name>
         <url-pattern>/registrration</url-pattern>
@@ -63,6 +79,22 @@
     <servlet-mapping>
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/Cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderhistoryServlet</servlet-name>
+        <url-pattern>/Orderhistory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveProductFromCartServlet</servlet-name>
+        <url-pattern>/RemoveProductFromCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>orderdetailServlet</servlet-name>
+        <url-pattern>/orderdetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddOrderServlet</servlet-name>
+        <url-pattern>/AddOrder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
