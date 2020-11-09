@@ -19,7 +19,11 @@
 
         <title>Address</title>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<<<<<<< HEAD
         <link rel="icon" href="images/logo/ทดลอง2.png">
+=======
+
+>>>>>>> master
         <style>
             body {
                 margin-top: 20px;
@@ -74,9 +78,15 @@
                                                         <div
                                                             class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                                                             <div class="text-center text-sm-left mb-2 mb-sm-0">
+<<<<<<< HEAD
                                                                 <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${customer.firstname} ${customer.lastname}</h4>
                                                                 <div class="mt-1">
                                                                     <p style="color: lightslategray;">${customer.email}</p>
+=======
+                                                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
+                                                                <div class="mt-1">
+                                                                    <p style="color: lightslategray;">@Email</p>
+>>>>>>> master
 
                                                                 </div>
                                                             </div>
@@ -89,9 +99,15 @@
                                                     </ul>
                                                     <div class="tab-content pt-3">
                                                         <div class="tab-pane active">
+<<<<<<< HEAD
                                                                 <div class="row">
                                                                     <div class="col">
                                                                         <form class="form" action="address" method="POST">
+=======
+                                                            <form class="form" novalidate="">
+                                                                <div class="row">
+                                                                    <div class="col">
+>>>>>>> master
                                                                         <div class="row">
                                                                             <div class="col">
 
@@ -103,8 +119,13 @@
                                                                                             <%--<textarea class="form-control"
                                                                                                 rows="5" name="address" placeholder="address"
                                                                                                 value="address"></textarea>--%>
+<<<<<<< HEAD
                                                                                             <input class="form-control" type="text" name="address" value="${customer.address}"
                                                                                                    placeholder="${customer.address}">                                                                                    </div>
+=======
+                                                                                            <input class="form-control" type="text" name="address" value="address"
+                                                                                                   placeholder="address">                                                                                    </div>
+>>>>>>> master
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row">
@@ -112,9 +133,15 @@
                                                                                         <div class="form-group"
                                                                                              style="text-align: left;">
                                                                                             <label>Address 2</label>
+<<<<<<< HEAD
                                                                                             <input class="form-control" name="address1"
                                                                                                    rows="5" value="${customer.address1}"
                                                                                                       placeholder="${customer.address1}">
+=======
+                                                                                            <textarea class="form-control"
+                                                                                                      rows="5"
+                                                                                                      placeholder="My Address 2"></textarea>
+>>>>>>> master
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -161,9 +188,12 @@
                             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
                                     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
                             crossorigin="anonymous"></script>
+<<<<<<< HEAD
                             <script>
                                 console.log(`${customer.address}`, "Address")
                             </script>
+=======
+>>>>>>> master
                             </body>
 
                             </html>

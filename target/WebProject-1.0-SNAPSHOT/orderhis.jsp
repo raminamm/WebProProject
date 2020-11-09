@@ -252,158 +252,100 @@
                         <h2 style="text-align: left;" class="title-page">Order History</h2>
                         <nav>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="ProductList>Home</a></li>
                                 <li class="breadcrumb-item" aria-current="page">Order History</li>
                             </ol>
                         </nav>
                     </section>
-                    <div class="container-fluid">
+
+           <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-10 offset-lg-1">
                                 <div class="his_container">
-                                    <div class="his_items">
-                                        <ul class="his_list">
-                                            <li class="his_item clearfix">
-                                                <div class="his_item_image"><img
-                                                        src=""
-                                                        alt=""></div>
-                                                <div
-                                                    class="his_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                    <div class="his_item_name his_info_col">
-                                                        <div class="his_item_title">Name</div>
-                                                        <div class="his_item_text">T-Shirt</div>
-                                                    </div>
-                                                    <div class="his_item_color his_info_col">
-                                                        <div class="his_item_title">Size</div>
-                                                        <div class="his_item_text">M</div>
-                                                    </div>
-                                                    <div class="his_item_quantity his_info_col">
-                                                        <div class="his_item_title">Quantity</div>
-                                                        <div class="his_item_text">1</div>
-                                                    </div>
-                                                    <div class="his_item_price his_info_col">
-                                                        <div class="his_item_title">Price</div>
-                                                        <div class="his_item_text">22000</div>
-                                                    </div>
-                                                    <div class="his_item_total his_info_col">
-                                                        <div class="his_item_title">Date</div>
-                                                        <div class="his_item_text">date</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <a href="Orderdetail" class="notification-link">
+                                        <div class="his_items">
+                                            <ul class="his_list">
+                                                <li class="his_item clearfix">
+                                                    <div class="his_item_info d-flex flex-md-row flex-column justify-content-between">
+                                                        <div class="his_item_name his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Order No.</strong></div>
+                                                            <div class="his_item_text">02</div>
+                                                        </div>
+                                                        
+                                                        <div class="his_item_total his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Date</strong></div>
+                                                            <div class="his_item_text">date</div>
+                                                        </div>
 
-                                    <div class="his_items">
-                                        <ul class="his_list">
-                                            <li class="his_item clearfix">
-                                                <div class="his_item_image"><img
-                                                        src=""
-                                                        alt=""></div>
-                                                <div
-                                                    class="his_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                    <div class="his_item_name his_info_col">
-                                                        <div class="his_item_title">Name</div>
-                                                        <div class="his_item_text">T-Shirt</div>
-                                                    </div>
-                                                    <div class="his_item_color his_info_col">
-                                                        <div class="his_item_title">Size</div>
-                                                        <div class="his_item_text">M</div>
-                                                    </div>
-                                                    <div class="his_item_quantity his_info_col">
-                                                        <div class="his_item_title">Quantity</div>
-                                                        <div class="his_item_text">1</div>
-                                                    </div>
-                                                    <div class="his_item_price his_info_col">
-                                                        <div class="his_item_title">Price</div>
-                                                        <div class="his_item_text">22000</div>
-                                                    </div>
-                                                    <div class="his_item_total his_info_col">
-                                                        <div class="his_item_title">Date</div>
-                                                        <div class="his_item_text">date</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
 
-                                    <div class="his_items">
-                                        <ul class="his_list">
-                                            <li class="his_item clearfix">
-                                                <div class="his_item_image"><img
-                                                        src=""
-                                                        alt=""></div>
-                                                <div
-                                                    class="his_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                    <div class="his_item_name his_info_col">
-                                                        <div class="his_item_title">Name</div>
-                                                        <div class="his_item_text">T-Shirt</div>
-                                                    </div>
-                                                    <div class="his_item_color his_info_col">
-                                                        <div class="his_item_title">Size</div>
-                                                        <div class="his_item_text">M</div>
-                                                    </div>
-                                                    <div class="his_item_quantity his_info_col">
-                                                        <div class="his_item_title">Quantity</div>
-                                                        <div class="his_item_text">1</div>
-                                                    </div>
-                                                    <div class="his_item_price his_info_col">
-                                                        <div class="his_item_title">Price</div>
-                                                        <div class="his_item_text">22000</div>
-                                                    </div>
-                                                    <div class="his_item_total his_info_col">
-                                                        <div class="his_item_title">Date</div>
-                                                        <div class="his_item_text">date</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                                        <div class="his_item_color his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Address</strong></div>
+                                                            <div class="his_item_text">thailand</div>
+                                                        </div>
 
-                                    <div class="his_items">
-                                        <ul class="his_list">
-                                            <li class="his_item clearfix">
-                                                <div class="his_item_image"><img
-                                                        src=""
-                                                        alt=""></div>
-                                                <div
-                                                    class="his_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                    <div class="his_item_name his_info_col">
-                                                        <div class="his_item_title">Name</div>
-                                                        <div class="his_item_text">T-Shirt</div>
+                                                        <div class="his_item_quantity his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Quantity</strong></div>
+                                                            <div class="his_item_text">1</div>
+                                                        </div>
+
+                                                        <div class="his_item_total his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Total</strong></div>
+                                                            <div class="his_item_text">00 ฿</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="his_item_color his_info_col">
-                                                        <div class="his_item_title">Size</div>
-                                                        <div class="his_item_text">M</div>
-                                                    </div>
-                                                    <div class="his_item_quantity his_info_col">
-                                                        <div class="his_item_title">Quantity</div>
-                                                        <div class="his_item_text">1</div>
-                                                    </div>
-                                                    <div class="his_item_price his_info_col">
-                                                        <div class="his_item_title">Price</div>
-                                                        <div class="his_item_text">22000</div>
-                                                    </div>
-                                                    <div class="his_item_total his_info_col">
-                                                        <div class="his_item_title">Date</div>
-                                                        <div class="his_item_text">date</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- <div class="order_total">
-                                        <div class="order_total_content text-md-right">
-                                            <div class="order_total_title">Order Total:</div>
-                                            <div class="order_total_amount">₹22000</div>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div> -->
+                                    </a>
+            
+                                    <a href="Orderdetail" class="notification-link">
+                                        <div class="his_items">
+                                            <ul class="his_list">
+                                                <li class="his_item clearfix">
+                                                    <div class="his_item_info d-flex flex-md-row flex-column justify-content-between">
+                                                        <div class="his_item_name his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Order No.</strong></div>
+                                                            <div class="his_item_text">01</div>
+                                                        </div>
+                                                        
+                                                        <div class="his_item_total his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Date</strong></div>
+                                                            <div class="his_item_text">date</div>
+                                                        </div>
+
+
+                                                        <div class="his_item_color his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Address</strong></div>
+                                                            <div class="his_item_text">thailand</div>
+                                                        </div>
+
+                                                        <div class="his_item_quantity his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Quantity</strong></div>
+                                                            <div class="his_item_text">1</div>
+                                                        </div>
+
+                                                        <div class="his_item_total his_info_col">
+                                                            <div class="his_item_title"><strong style="font-size: 19px;">Total</strong></div>
+                                                            <div class="his_item_text">00 ฿</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </a>
+            
+            
+                                   
                                     <div class="back_buttons">
                                         <a style="text-decoration: none" href="ProductList" type="button" class="button back">Back</a> </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+          
+                    
+                    
+                    
                 </div>
 
 

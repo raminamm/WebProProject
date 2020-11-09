@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ProductDetailServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/ProfileServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/RemoveProductFromCartServlet.java
@@ -31,3 +32,36 @@
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/function/AES.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/addressServlet.java
 /Users/glajaja/NetBeansProjects/WebProProject/src/main/java/com/mycompany/webproject/servlet/orderdetailServlet.java
+=======
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\LogoutServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\LoginServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\function\sendMail.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Product.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\OrderhistoryServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\ResetPasswordServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\function\AES.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\ProductListServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\CheckOutServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Orderdetail.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\CartServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\JAXRSConfiguration.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\resources\JavaEE8Resource.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\model\Cart.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\AddProductToCartServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\ActivateServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\RemoveProductFromCartServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\AddOrderServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\NewServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\UpdatePasswordServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Orders.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\orderdetailServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\function\GenerateCode.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\registerServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\function\NewClass.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\ProductDetailServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Customers.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Customersforverify.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\servlet\AdminLoginServlet.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Category.java
+D:\WebProProject\src\main\java\com\mycompany\webproject\entity\Admin.java
+>>>>>>> master

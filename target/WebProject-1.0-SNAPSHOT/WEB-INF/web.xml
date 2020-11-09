@@ -48,6 +48,7 @@
         <servlet-name>AddOrderServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.AddOrderServlet</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>ProfileServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.ProfileServlet</servlet-class>
@@ -56,6 +57,8 @@
         <servlet-name>addressServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.addressServlet</servlet-class>
     </servlet>
+=======
+>>>>>>> master
     <servlet-mapping>
         <servlet-name>registrrationServlet</servlet-name>
         <url-pattern>/registrration</url-pattern>
@@ -104,6 +107,7 @@
         <servlet-name>AddOrderServlet</servlet-name>
         <url-pattern>/AddOrder</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>ProfileServlet</servlet-name>
         <url-pattern>/Profile</url-pattern>
@@ -112,6 +116,8 @@
         <servlet-name>addressServlet</servlet-name>
         <url-pattern>/address</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> master
     <session-config>
         <session-timeout>
             30

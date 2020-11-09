@@ -45,7 +45,6 @@ public class UpdatePasswordServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         String email = AES.decrypt(key);
         System.out.println("Email: " + email);
-        System.out.println(email);
         if (password.equals(conpassword)) {
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
             EntityManager em = emf.createEntityManager();

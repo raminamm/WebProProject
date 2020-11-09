@@ -96,5 +96,9 @@ public class NewClass {
     String date = ""+day+month+year+hour+minute+"";
     System.out.println(date);
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
 
 }}
