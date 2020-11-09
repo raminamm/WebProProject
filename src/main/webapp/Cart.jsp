@@ -141,7 +141,7 @@
                                                     <tr>
                                                         <th scope="col"> </th>
                                                         <th scope="col">Product</th>
-
+                                                        <th scope="col">Size</th>
                                                         <th scope="col" class="text-center">Quantity</th>
                                                         <th scope="col" class="text-right">Price</th>
                                                         <th> </th>
@@ -152,6 +152,7 @@
                                                         <tr>
                                                             <td><img style="width:210px ;height:210px ;" src="Product-images/${lineItem.category.category}/${lineItem.product.productId}.jpg" /> </td>
                                                             <td>${lineItem.product.name}</td>
+                                                    <td>${lineItem.size}</td>
                                                     <form action="Cart?cartid=${lineItem.cartid}" method="POST">
                                                         <td><input name="updatequantity" class="form-control" type="number" value="${lineItem.quantity}"/></td>
                                                     </form>
@@ -168,14 +169,14 @@
                                                     <td>Sub-Total</td>
                                                     <td class="text-right">${cart.getTotalPrice()} ฿</td>
                                                 </tr>
-                                                <tr>
+                                                <%--<tr>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
                                                     <td>Shipping</td>
                                                     <td class="text-right"> ฿</td>
-                                                </tr>
+                                                </tr>--%>
                                                 <tr>
                                                     <td></td>
                                                     <td></td>

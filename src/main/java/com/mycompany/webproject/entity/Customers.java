@@ -21,8 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -30,7 +28,6 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "customers")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Customers.findAll", query = "SELECT c FROM Customers c"),
     @NamedQuery(name = "Customers.findByEmail", query = "SELECT c FROM Customers c WHERE c.email = :email"),
@@ -40,7 +37,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Customers.findByDateOfBirth", query = "SELECT c FROM Customers c WHERE c.dateOfBirth = :dateOfBirth"),
     @NamedQuery(name = "Customers.findBySex", query = "SELECT c FROM Customers c WHERE c.sex = :sex"),
     @NamedQuery(name = "Customers.findByPassword", query = "SELECT c FROM Customers c WHERE c.password = :password"),
-    @NamedQuery(name = "Customers.findByAddress", query = "SELECT c FROM Customers c WHERE c.address = :address")})
+    @NamedQuery(name = "Customers.findByAddress", query = "SELECT c FROM Customers c WHERE c.address = :address"),
+    @NamedQuery(name = "Customers.findByAddress1", query = "SELECT c FROM Customers c WHERE c.address1 = :address1")})
 public class Customers implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -80,6 +78,9 @@ public class Customers implements Serializable {
     @Size(min = 1, max = 200)
     @Column(name = "address")
     private String address;
+    @Size(max = 200)
+    @Column(name = "address1")
+    private String address1;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "email")
     private List<Orders> ordersList;
 
@@ -162,7 +163,14 @@ public class Customers implements Serializable {
         this.address = address;
     }
 
-    @XmlTransient
+    public String getAddress1() {
+        return address1;
+    }
+
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
     public List<Orders> getOrdersList() {
         return ordersList;
     }

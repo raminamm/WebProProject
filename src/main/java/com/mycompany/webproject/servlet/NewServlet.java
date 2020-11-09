@@ -67,11 +67,13 @@ public class NewServlet extends HttpServlet {
 //                    request.setAttribute("message", "Success");
 //                    request.getRequestDispatcher("/registation.jsp").forward(request, response);
 
-        em.getTransaction().begin();
-        LocalDateTime now = LocalDateTime.now();       
-        em.createNativeQuery("INSERT INTO orders (orderid, email, created, amount, address) values ('1111111', 'aaa@hotmail.com', '"+now+"', 1200, 'sgegegeg')").executeUpdate();
-        em.getTransaction().commit();
-        em.close();
+//        em.getTransaction().begin();
+//        LocalDateTime now = LocalDateTime.now();       
+//        em.createNativeQuery("INSERT INTO orders (orderid, email, created, amount, address) values ('1111111', 'aaa@hotmail.com', '"+now+"', 1200, 'sgegegeg')").executeUpdate();
+//        em.getTransaction().commit();
+//        em.close();
+
+            
     }
     
         

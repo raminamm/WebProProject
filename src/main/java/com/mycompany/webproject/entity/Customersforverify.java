@@ -18,7 +18,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -26,7 +25,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "customersforverify")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Customersforverify.findAll", query = "SELECT c FROM Customersforverify c"),
     @NamedQuery(name = "Customersforverify.findByEmail", query = "SELECT c FROM Customersforverify c WHERE c.email = :email"),

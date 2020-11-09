@@ -52,7 +52,10 @@ public class ProductDetailServlet extends HttpServlet {
         }
         
         String productId = request.getParameter("productId");
-        Product p = em.find(Product.class, productId);        
+        Product p = em.find(Product.class, productId); 
+        
+//        String ransql = "SELECT * FROM Product ORDER BY random() LIMIT 5";
+//        Query 
         request.setAttribute("product", p);
         request.getRequestDispatcher("/ProductDetail.jsp").forward(request, response);
     }

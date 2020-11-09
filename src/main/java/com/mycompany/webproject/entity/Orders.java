@@ -23,8 +23,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -32,7 +30,6 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "orders")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o"),
     @NamedQuery(name = "Orders.findByOrderid", query = "SELECT o FROM Orders o WHERE o.orderid = :orderid"),
@@ -65,6 +62,9 @@ public class Orders implements Serializable {
     @JoinColumn(name = "email", referencedColumnName = "email")
     @ManyToOne(optional = false)
     private Customers email;
+    @JoinColumn(name = "discountId", referencedColumnName = "discountId")
+    @ManyToOne
+    private Discount discountId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "orderid")
     private List<Orderdetail> orderdetailList;
 
@@ -122,7 +122,14 @@ public class Orders implements Serializable {
         this.email = email;
     }
 
-    @XmlTransient
+    public Discount getDiscountId() {
+        return discountId;
+    }
+
+    public void setDiscountId(Discount discountId) {
+        this.discountId = discountId;
+    }
+
     public List<Orderdetail> getOrderdetailList() {
         return orderdetailList;
     }
