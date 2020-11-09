@@ -52,7 +52,7 @@ public class NewClass {
 //        String key = AES.encrypt("glaa656@hotmail.co.th");
 //        
 //        s.SendResetPasswordUrl("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/ResetPassword?key="+key+"");
-<<<<<<< Updated upstream
+
 //        for(int i = 0; i < 50; i++){
 //        String key = AES.encrypt("rachawas8040@gmail.com");
         String key = AES.encrypt("oatter@hotmail.com");
@@ -75,8 +75,7 @@ public class NewClass {
         
         
                    
-                   
-=======
+
 
 //        String key = AES.encrypt("6119053");
 //        System.out.println("Encrypt :"+key);
@@ -98,5 +97,5 @@ public class NewClass {
     System.out.println(date);
     
     
->>>>>>> Stashed changes
+
 }}
