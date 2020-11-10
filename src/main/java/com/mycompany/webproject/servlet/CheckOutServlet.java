@@ -39,7 +39,7 @@ public class CheckOutServlet extends HttpServlet {
         EntityManager em = emf.createEntityManager();
         String fname = request.getParameter("fname");
         String phone = request.getParameter("phone");
-        if()
+        //if()
         
         
         

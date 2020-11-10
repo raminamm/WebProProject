@@ -54,8 +54,12 @@ public class ProductDetailServlet extends HttpServlet {
         String productId = request.getParameter("productId");
         Product p = em.find(Product.class, productId); 
         
-//        String ransql = "SELECT * FROM Product ORDER BY random() LIMIT 5";
-//        Query 
+//        String sql = "select p from Product p where p.category.category like :category";
+//            Query qry = em.createQuery(sql).setMaxResults(5);
+//            qry.setParameter("category", "%" + p.getCategory() + "%");
+//            List<Product> ranpro = qry.getResultList();
+//        System.out.println(ranpro);
+//        request.setAttribute("ranproduct", ranpro);
         request.setAttribute("product", p);
         request.getRequestDispatcher("/ProductDetail.jsp").forward(request, response);
     }

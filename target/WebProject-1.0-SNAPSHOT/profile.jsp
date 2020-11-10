@@ -3,11 +3,7 @@
     Created on : Nov 4, 2020, 8:14:30 PM
     Author     : Rachawas
 --%>
-<<<<<<< HEAD
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-=======
-
->>>>>>> master
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -23,11 +19,7 @@
 
   <title>Profile</title>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<<<<<<< HEAD
   <link rel="icon" href="images/logo/ทดลอง2.png">
-=======
-
->>>>>>> master
   <style>
     body {
       margin-top: 20px;
@@ -57,11 +49,7 @@
           <h2 style="text-align: left;" class="title-page">Profile</h2>
           <nav>
             <ol class="breadcrumb">
-<<<<<<< HEAD
                 <li class="breadcrumb-item"><a href="ProductList">Home</a></li>
-=======
-                <li class="breadcrumb-item"><a href="ProductList.jsp">Home</a></li>
->>>>>>> master
               <li class="breadcrumb-item" aria-current="page">Profile</li>
             </ol>
           </nav>
@@ -88,15 +76,9 @@
                           </div>
                           <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                             <div class="text-center text-sm-left mb-2 mb-sm-0">
-<<<<<<< HEAD
                               <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${customer.firstname}</h4>
                               <div class="mt-1">
                                 <p style="color: lightslategray;">${customer.email}</p>
-=======
-                              <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                              <div class="mt-1">
-                                <p style="color: lightslategray;">@Email</p>
->>>>>>> master
                                 <!-- <button class="btn btn-primary" type="button">
                                   <i class="fa fa-fw fa-camera"></i>
                                   <span>Change Photo</span>
@@ -117,108 +99,57 @@
                                   <div class="row">
                                     <div class="col">
                                       <div class="form-group" style="text-align: left;">
-<<<<<<< HEAD
                                         <h5>Firstname</h5>
                                         <%--<input class="form-control" type="text" name="Firstname" value="Firstname"
                                           placeholder="Firstname">--%>
                                         <p style="color: #6c757d;">${customer.firstname}</p>
-=======
-                                        <label>Firstname</label>
-                                        <%--<input class="form-control" type="text" name="Firstname" value="Firstname"
-                                          placeholder="Firstname">--%>
-                                        <p>Firstname</p>
->>>>>>> master
                                       </div>
                                     </div>
                                     <div class="col">
                                       <div class="form-group" style="text-align: left;">
-<<<<<<< HEAD
                                         <h5>Lastname</h5>
                                         <%--<input class="form-control" type="text" name="Lastname" value="Lastname" placeholder="Lastname">
                                         --%><p style="color: #6c757d;">${customer.lastname}</p>
-=======
-                                        <label>Lastname</label>
-                                        <%--<input class="form-control" type="text" name="Lastname" value="Lastname" placeholder="Lastname">
-                                        --%><p>Lastname</p>
->>>>>>> master
                                       </div>
                                     </div>
                                   </div>
                                   <div class="row">
                                     <div class="col">
                                       <div class="form-group" style="text-align: left;">
-<<<<<<< HEAD
                                         <h5>Sex</h5>
                                         <%--<input class="form-control" type="text" placeholder="user@example.com">
                                       --%>
                                       <p style="color: #6c757d;">${customer.sex}</p>
-=======
-                                        <label>Sex</label>
-                                        <%--<input class="form-control" type="text" placeholder="user@example.com">
-                                      --%>
-                                      <p>sex</p>
->>>>>>> master
                                         </div>
                                     </div>
                                   </div>
                                   <div class="row">
                                     <div class="col">
                                       <div class="form-group" style="text-align: left;">
-<<<<<<< HEAD
                                         <h5>Email</h5>
                                         <%--<input class="form-control" type="text" placeholder="user@example.com">
                                       --%>
                                       <p style="color: #6c757d;">${customer.email}</p>
-=======
-                                        <label>Email</label>
-                                        <%--<input class="form-control" type="text" placeholder="user@example.com">
-                                      --%>
-                                      <p>Email</p>
->>>>>>> master
                                     </div>
                                     </div>
                                   </div>
                                   <div class="row">
                                     <div class="col">
                                       <div class="form-group" style="text-align: left;">
-<<<<<<< HEAD
                                         <h5>Birthday</h5>
                                         <%--<input class="form-control" type="text" placeholder="user@example.com">
                                       --%>
                                       <p style="color: #6c757d;"><fmt:formatDate value="${customer.dateOfBirth}" pattern="dd-MM-yyyy" /></p>
-=======
-                                        <label>Birthday</label>
-                                        <%--<input class="form-control" type="text" placeholder="user@example.com">
-                                      --%>
-                                      <p>Birthday</p>
->>>>>>> master
                                       </div>
                                     </div>
                                   </div>
                                   <div class="row">
                                     <div class="col">
                                       <div class="form-group" style="text-align: left;">
-<<<<<<< HEAD
                                         <h5>Phone</h5>
                                         <%--<input class="form-control" type="text" placeholder="user@example.com">
                                       --%>
                                       <p style="color: #6c757d;">${customer.phoneNo}</p>
-=======
-                                        <label>Phone</label>
-                                        <%--<input class="form-control" type="text" placeholder="user@example.com">
-                                      --%>
-                                      <p>Phone</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col mb-3">
-                                      <div class="form-group" style="text-align: left;">
-                                        <label>Address</label>
-                                        <%--<textarea class="form-control" rows="5" placeholder="My Address"></textarea>
-                                      --%>
-                                      <p>Address</p>
->>>>>>> master
                                       </div>
                                     </div>
                                   </div>

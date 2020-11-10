@@ -54,11 +54,11 @@ public class OrderhistoryServlet extends HttpServlet {
         Customers email = (Customers) session.getAttribute("email");
         if (session == null || email == null ) {
             //nologin
-            request.getRequestDispatcher("/orderhis.jsp").forward(request, response);
+            request.getRequestDispatcher("/Login").forward(request, response);
         }
-        String sql = "select o from orders o where o.customers.email like :email";
+        String sql = "select o from Orders o where o.email.email like :email";
         Query qry = em.createQuery(sql);
-        qry.setParameter("email", email.getEmail());
+        qry.setParameter("email", "%" + email.getEmail() + "%");
         List <Orders> order = qry.getResultList();
         request.setAttribute("order", order);
         request.getRequestDispatcher("/orderhis.jsp").forward(request, response);

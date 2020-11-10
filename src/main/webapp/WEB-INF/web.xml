@@ -42,7 +42,7 @@
     </servlet>
     <servlet>
         <servlet-name>orderdetailServlet</servlet-name>
-        <servlet-class>com.mycompany.webproject.servlet.orderdetailServlet</servlet-class>
+        <servlet-class>com.mycompany.webproject.servlet.OrderdetailServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddOrderServlet</servlet-name>

@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author glajaja
  */
-public class orderdetailServlet extends HttpServlet {
+public class OrderdetailServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,12 +49,12 @@ public class orderdetailServlet extends HttpServlet {
         }
         
         String orderid = request.getParameter("orderid");
-        String sql = "select o from Order o where o.order.orderid like :orderid";
+        String sql = "select o from Order o where o.orderid.orderid like :orderid";
             Query qry = em.createQuery(sql);
             qry.setParameter("orderid", "%" + orderid + "%");
             List<Orderdetail> orderdetail = qry.getResultList();
             request.setAttribute("ordertail", orderdetail);
-            request.getRequestDispatcher("/orderdetail.jsp").forward(request, response);
+            request.getRequestDispatcher("/Orderdetail.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

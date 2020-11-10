@@ -452,11 +452,11 @@
                                 <div class="product-gallery">
                                     <div class="product-gallery-thumbnails">
                                         <ol class="thumbnails-list list-unstyled">
-                                            <li><img src="ไว้ลอง/Loose fit t-shirt-D.OR.jpg" alt=""></li>
+<!--                                            <li><img src="ไว้ลอง/Loose fit t-shirt-D.OR.jpg" alt=""></li>
                                             <li><img src="ไว้ลอง/Loose fit t-shirt-Gray.jpg" alt=""></li>
                                             <li><img src="ไว้ลอง/Loose fit t-shirt-OR.jpg" alt=""></li>
                                             <li><img src="ไว้ลอง/Loose fit t-shirt-w.jpg" alt=""></li>
-                                            <li><img src="ไว้ลอง/Loose fit t-shirt-B.jpg" alt=""></li>
+                                            <li><img src="ไว้ลอง/Loose fit t-shirt-B.jpg" alt=""></li>-->
                                         </ol>
                                     </div>
                                     <div class="product-gallery-featured">
