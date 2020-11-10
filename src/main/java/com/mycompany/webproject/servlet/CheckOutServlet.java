@@ -39,39 +39,20 @@ public class CheckOutServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
-        EntityManager em = emf.createEntityManager();
-<<<<<<< Updated upstream
-        String fname = request.getParameter("fname");
-        String phone = request.getParameter("phone");
-        //if()
-=======
-//        String Redeem = request.getParameter("Redeem");
-        //try{
-            //Discount d = em.find((Discount.class),Redeem);
-            
-//        }catch(Exception) {
-//            
-//        
-//            }
-//       }
-//        String fname = request.getParameter("fname");
-//        String phone = request.getParameter("phone");
->>>>>>> Stashed changes
-        
-//        HttpSession name = request.getSession();
-//        Customers c = (Customers)name.getAttribute("email");
-//        if( c == null){
-//            request.getRequestDispatcher("/Login").forward(request, response);
-//        }
+              EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
+      EntityManager em = emf.createEntityManager();
+        String Redeem = request.getParameter("Redeem");
         HttpSession cart = request.getSession();
-        
-        if(cart.getAttribute("cart") == null){
-            request.getRequestDispatcher("Cart").forward(request, response);
+        Cart c = (Cart) cart.getAttribute("cart");
+        Discount d = em.find((Discount.class),Redeem);
+        if(d != null){
+            request.setAttribute("Redeem", d);
+            request.setAttribute("total",c.getTotalWithDiscount(d.getDiscount()));
+            request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
+            
         }
-        
-        request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
-               
+            request.setAttribute("massage", "Invalid code");
+            request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
         
     }
 
@@ -108,20 +89,7 @@ public class CheckOutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
-      EntityManager em = emf.createEntityManager();
-        String Redeem = request.getParameter("Redeem");
-        HttpSession cart = request.getSession();
-        Cart c = (Cart) cart.getAttribute("cart");
-        Discount d = em.find((Discount.class),Redeem);
-        if(d != null){
-            request.setAttribute("Redeem", d);
-            request.setAttribute("total",c.getTotalWithDiscount(d.getDiscount()));
-            request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
-            
-        }
-            request.setAttribute("massage", "Invalid code");
-            request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**

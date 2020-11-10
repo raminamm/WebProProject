@@ -171,7 +171,7 @@
         <div class="row" style="padding: 8px;padding-right: 50px;padding-left: 50px;border-top-width: 50px;padding-bottom: 50px;padding-top: 50px;">
           <div class="col-75">
             <div class="container">
-              <form action="">
+                <form action="AddOrder" method="POST" id="addorder">
                 <div class="row-2">
                   <div class="col-50">
                     <h3>Billing Address</h3>
@@ -179,21 +179,22 @@
                     <input type="text" id="fname" name="firstname" value="${email.firstname} ${email.lastname}">
                     <label for="Phone"><i class="fa fa-mobile"></i> Phone</label>
                     <input type="text" id="phone" name="phone" value="${email.phoneNo}">
+                    <input type="hidden" name="hidcode" value="${Redeem.getDiscountId()}"/>
                     <label for="email"><i class="fa fa-mobile"></i> Email</label>
                     <p style="text-align: left;color: #757575;">&nbsp;&nbsp;${email.email}</p>
 
                     <div class="d-block my-3">
                       <div class="custom-control custom-radio">
-                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked=""
-                          required="">
+                        <input id="credit" name="address" type="radio" class="custom-control-input" checked=""
+                               required="" value="${email.address}">
                         <label class="custom-control-label" for="credit"><i class="fa fa-address-card-o"></i> Address
                           <p style="color: #757575;">
                             ${email.address}
                           </p></label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="debit"><i class="fa fa-address-card-o"></i> Address 2
+                          <input id="debit" name="address" type="radio" class="custom-control-input" required="" value="${email.address1}">
+                        <label class="custom-control-label" for="debit" ><i class="fa fa-address-card-o"></i> Address 2
                           <p style="color: #757575;">
                             ${email.address1}
                           </p></label>
@@ -210,8 +211,9 @@
 
 
                 </div>
-
-              </form>
+                          
+          
+        </form>
             </div>
           </div>
           <div style="text-align: left;" class="col-25">
@@ -233,18 +235,18 @@
               </li>
               </c:forEach>
               <li class="list-group-item d-flex justify-content-between bg-light">
-                <div class="text-danger">
+                <div class="text-success">
                   <h6 class="my-0">Payment</h6>
                   <small>Cash on delivery</small>
                 </div>
-                <span class="text-danger">50 ฿</span>
+                <span class="text-success">50 ฿</span>
               </li>
 
               <li class="list-group-item d-flex justify-content-between bg-light">
-                <div class="text-success">
+                <div class="text-danger">
                   <h6 class="my-0">Promo code</h6>
                 </div>
-                <span class="text-success"> ${Redeem.getDiscount()} ฿</span>
+                <span class="text-danger"> ${Redeem.getDiscount()} ฿</span>
               </li>
 
               <li class="list-group-item d-flex justify-content-between">
@@ -255,27 +257,29 @@
 
 
             </ul>
-
+              
+              
+              <form action="CheckOut" method ="POST">
             <div class="input-group">
+                
               <div class="input-group-prepend">
                   
-                <div class="input-group-text" id="btnGroupAddon">Redeem</div>
+                      <input type="submit" class="input-group-text" id="btnGroupAddon" value="Redeem"/>
               
               </div>
-                <form action="CheckOut" method ="POST">
+                
               <input type="text" name="Redeem" class="form-control" placeholder="Promo code" aria-label="Input group example"
-                     aria-describedby="btnGroupAddon" value="${Redeem.getDiscountId()}">
-              <input type ="submit" name="submit">
-              <div class="alert warning">
-                            <span class="closebtn">&times;</span>
-                            ${message}
-              </div>
-              </form>
+                     aria-describedby="btnGroupAddon" value="${Redeem.getDiscountId()}"/>
+              
+              ${massage}
+              
             </div>
+            </form>
             
 
-
-            <input type="submit" value="Continue to checkout" class="btn btn-outline-dark">
+              
+              <button type="submit" value="Continue to checkout" class="btn btn-outline-dark" form="addorder">Continue to checkout</button>
+              
           </div>
 
 

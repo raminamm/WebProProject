@@ -74,7 +74,7 @@ public class Cart {
 
     
     public double getTotalWithDiscount(double discount){
-        double total = getTotalWithpayment()-discount;
+        double total = getTotalWithpayment()+discount;
         return total;
     }
     

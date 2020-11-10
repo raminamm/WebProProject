@@ -49,11 +49,11 @@ public class OrderdetailServlet extends HttpServlet {
         }
         
         String orderid = request.getParameter("orderid");
-        String sql = "select o from Order o where o.orderid.orderid like :orderid";
+        String sql = "select o from Orderdetail o where o.orderid.orderid like :orderid";
             Query qry = em.createQuery(sql);
             qry.setParameter("orderid", "%" + orderid + "%");
             List<Orderdetail> orderdetail = qry.getResultList();
-            request.setAttribute("ordertail", orderdetail);
+            request.setAttribute("orderdetail", orderdetail);
             request.getRequestDispatcher("/Orderdetail.jsp").forward(request, response);
     }
 

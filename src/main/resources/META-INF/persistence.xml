@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="com.mycompany_WebProject_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
-<<<<<<< Updated upstream
-    <class>com.mycompany.webproject.entity.Orders</class>
-    <class>com.mycompany.webproject.entity.Product</class>
-=======
-    <class>com.mycompany.webproject.entity.Orderdetail</class>
-    <class>com.mycompany.webproject.entity.Product</class>
-    <class>com.mycompany.webproject.entity.Orders</class>
-    <class>com.mycompany.webproject.entity.Discount</class>
->>>>>>> Stashed changes
     <class>com.mycompany.webproject.entity.Admin</class>
     <class>com.mycompany.webproject.entity.Category</class>
-    <class>com.mycompany.webproject.entity.Customersforverify</class>
     <class>com.mycompany.webproject.entity.Customers</class>
-<<<<<<< Updated upstream
-    <class>com.mycompany.webproject.entity.Orderdetail</class>
+    <class>com.mycompany.webproject.entity.Customersforverify</class>
     <class>com.mycompany.webproject.entity.Discount</class>
-=======
->>>>>>> Stashed changes
+    <class>com.mycompany.webproject.entity.Orderdetail</class>
+    <class>com.mycompany.webproject.entity.Orders</class>
+    <class>com.mycompany.webproject.entity.Product</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nogproject?useSSL=false"/>

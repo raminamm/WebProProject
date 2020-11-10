@@ -262,7 +262,7 @@
                     <i class="fa fa-user-circle fa-6 avatar" alt="Avatar"></i><b class="caret"></b></a>
                 <div class="dropdown-menu">
                     <a href="Profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-                    <a href="#" class="dropdown-item"><i class="fa fa-truck"></i> Purchase History</a>
+                    <a href="Orderhistory" class="dropdown-item"><i class="fa fa-truck"></i> Purchase History</a>
                     <a href="address" method="GET" class="dropdown-item"><i class="fa fa-address-card-o"></i> My Address</a>
                     <div class="divider dropdown-divider"></div>
                     <a href="${email==null ?'Login' : 'Logout'}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i>${email==null ?'Login' : 'Logout'} </a>

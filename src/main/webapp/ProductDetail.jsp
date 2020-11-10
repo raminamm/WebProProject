@@ -433,10 +433,9 @@
                     </section>-->
 
                     <section class="section-pagetop bg" style="padding: 1.5ex;">
-            <h2 class="title-page">Product Detail</h2>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/ProductList">Home</a></li>
+                    <li class="breadcrumb-item"><a href="ProductList">Home</a></li>
                     <li class="breadcrumb-item" aria-current="page">Product Detail</li>
                 </ol>
             </nav>
@@ -470,7 +469,7 @@
 
 
                             <div class="col-md-6">
-                                <form action="AddProductToCart" method="GET">
+                                <form action="AddProductToCart" method="POST">
                                 <div class="product-dtl">
                                     <div class="product-info">
                                         <div class="product-name">${product.name}</div>
@@ -501,16 +500,12 @@
 
 
                                     <div class="row">
-                                        <div class="col-xs-12 col-sm-6 col-md-6 pr-1">
+                                        <div class="col-xs-12 col-md-12 pr-1">
                                             <div class="form-group">
                                                 <button type="submit" class="round-black-btn" style="width: 100%;" name="productId" value="${product.productId}">Add to Cart</button>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 pl-1">
-                                            <div class="form-group">
-                                                <a type="submit" class="round-black-btn" style="width: 100%;color: #fff">Buy Now</a>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>

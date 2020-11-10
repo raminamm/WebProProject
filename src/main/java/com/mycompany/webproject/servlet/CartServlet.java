@@ -56,12 +56,10 @@ public class CartServlet extends HttpServlet {
             return ;
             
         }
-<<<<<<< Updated upstream
-  
-=======
+
         Cart c = (Cart)session.getAttribute("cart");
         session.setAttribute("total", c.getTotalPrice());
->>>>>>> Stashed changes
+
         
         request.getRequestDispatcher("/Cart.jsp").forward(request, response);
     }

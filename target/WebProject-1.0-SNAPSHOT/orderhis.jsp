@@ -263,43 +263,43 @@
                             <div class="col-lg-10 offset-lg-1">
                                 <div class="his_container">
                                     
-                                    <c:forEach items=""
-                                    <a href="Orderdetail" class="notification-link">
+                                    <c:forEach items="${order}" var="o" varStatus="vs">
+                                    <a href="orderdetail?orderid=${o.orderid}" class="notification-link">
                                         <div class="his_items">
                                             <ul class="his_list">
                                                 <li class="his_item clearfix">
                                                     <div class="his_item_info d-flex flex-md-row flex-column justify-content-between">
                                                         <div class="his_item_name his_info_col">
                                                             <div class="his_item_title"><strong style="font-size: 19px;">Order No.</strong></div>
-                                                            <div class="his_item_text">01</div>
+                                                            <div class="his_item_text">${o.orderid}</div>
                                                         </div>
                                                         
                                                         <div class="his_item_total his_info_col">
                                                             <div class="his_item_title"><strong style="font-size: 19px;">Date</strong></div>
-                                                            <div class="his_item_text">date</div>
+                                                            <div class="his_item_text">${o.created}</div>
                                                         </div>
 
 
                                                         <div class="his_item_color his_info_col">
                                                             <div class="his_item_title"><strong style="font-size: 19px;">Address</strong></div>
-                                                            <div class="his_item_text">thailand</div>
+                                                            <div class="his_item_text">${o.address}</div>
                                                         </div>
 
-                                                        <div class="his_item_quantity his_info_col">
+<!--                                                        <div class="his_item_quantity his_info_col">
                                                             <div class="his_item_title"><strong style="font-size: 19px;">Quantity</strong></div>
-                                                            <div class="his_item_text">1</div>
-                                                        </div>
+                                                            <div class="his_item_text"></div>
+                                                        </div>-->
 
                                                         <div class="his_item_total his_info_col">
                                                             <div class="his_item_title"><strong style="font-size: 19px;">Total</strong></div>
-                                                            <div class="his_item_text">00 ฿</div>
+                                                            <div class="his_item_text">${o.amount} ฿</div>
                                                         </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     </a>
-            
+                                </c:forEach>
             
                                    
                                     <div class="back_buttons">
