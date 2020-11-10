@@ -4,6 +4,7 @@
     Author     : Rachawas
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -175,11 +176,11 @@
                   <div class="col-50">
                     <h3>Billing Address</h3>
                     <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Name">
+                    <input type="text" id="fname" name="firstname" value="${email.firstname} ${email.lastname}">
                     <label for="Phone"><i class="fa fa-mobile"></i> Phone</label>
-                    <input type="text" id="phone" name="phone" placeholder="0999999999">
+                    <input type="text" id="phone" name="phone" value="${email.phoneNo}">
                     <label for="email"><i class="fa fa-mobile"></i> Email</label>
-                    <p style="text-align: left;color: #757575;">&nbsp;&nbsp;Email</p>
+                    <p style="text-align: left;color: #757575;">&nbsp;&nbsp;${email.email}</p>
 
                     <div class="d-block my-3">
                       <div class="custom-control custom-radio">
@@ -187,14 +188,14 @@
                           required="">
                         <label class="custom-control-label" for="credit"><i class="fa fa-address-card-o"></i> Address
                           <p style="color: #757575;">
-                            Address
+                            ${email.address}
                           </p></label>
                       </div>
                       <div class="custom-control custom-radio">
                         <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
                         <label class="custom-control-label" for="debit"><i class="fa fa-address-card-o"></i> Address 2
                           <p style="color: #757575;">
-                            Address 2
+                            ${email.address1}
                           </p></label>
 
                       </div>
@@ -219,29 +220,18 @@
             <ul class="list-group mb-3">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Your cart</span>
-                <span class="badge badge-secondary badge-pill">3</span>
+                <span class="badge badge-secondary badge-pill">${cart.getItemCount()}</span>
               </h4>
+                <c:forEach items="${cart.items}"var="lineItem" varStatus="vs">
+                    
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="my-0">Product name</h6>
-                  <small class="text-muted">description</small>
+                  <h6 class="my-0">${lineItem.product.name}</h6>
+                  <small class="text-muted"></small>
                 </div>
-                <span class="text-muted">12 ฿</span>
+                <span class="text-muted">${lineItem.price} x ${lineItem.quantity} ฿</span>
               </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Second product</h6>
-                  <small class="text-muted">description</small>
-                </div>
-                <span class="text-muted">8 ฿</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Third item</h6>
-                  <small class="text-muted">description</small>
-                </div>
-                <span class="text-muted">5 ฿</span>
-              </li>
+              </c:forEach>
               <li class="list-group-item d-flex justify-content-between bg-light">
                 <div class="text-danger">
                   <h6 class="my-0">Payment</h6>
@@ -254,12 +244,12 @@
                 <div class="text-success">
                   <h6 class="my-0">Promo code</h6>
                 </div>
-                <span class="text-success">-5 ฿</span>
+                <span class="text-success"> ${Redeem.getDiscount()} ฿</span>
               </li>
 
               <li class="list-group-item d-flex justify-content-between">
                 <span>Total</span>
-                <strong>70 ฿</strong>
+                <strong>${total} ฿</strong>
               </li>
 
 
@@ -268,10 +258,19 @@
 
             <div class="input-group">
               <div class="input-group-prepend">
+                  
                 <div class="input-group-text" id="btnGroupAddon">Redeem</div>
+              
               </div>
-              <input type="text" class="form-control" placeholder="Promo code" aria-label="Input group example"
-                aria-describedby="btnGroupAddon">
+                <form action="CheckOut" method ="POST">
+              <input type="text" name="Redeem" class="form-control" placeholder="Promo code" aria-label="Input group example"
+                     aria-describedby="btnGroupAddon" value="${Redeem.getDiscountId()}">
+              <input type ="submit" name="submit">
+              <div class="alert warning">
+                            <span class="closebtn">&times;</span>
+                            ${message}
+              </div>
+              </form>
             </div>
             
 

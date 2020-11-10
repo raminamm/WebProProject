@@ -5,6 +5,9 @@
  */
 package com.mycompany.webproject.servlet;
 
+import com.mycompany.webproject.entity.Customers;
+import com.mycompany.webproject.entity.Discount;
+import com.mycompany.webproject.model.Cart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.persistence.EntityManager;
@@ -16,6 +19,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,11 +41,37 @@ public class CheckOutServlet extends HttpServlet {
             throws ServletException, IOException {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
+<<<<<<< Updated upstream
         String fname = request.getParameter("fname");
         String phone = request.getParameter("phone");
         //if()
+=======
+//        String Redeem = request.getParameter("Redeem");
+        //try{
+            //Discount d = em.find((Discount.class),Redeem);
+            
+//        }catch(Exception) {
+//            
+//        
+//            }
+//       }
+//        String fname = request.getParameter("fname");
+//        String phone = request.getParameter("phone");
+>>>>>>> Stashed changes
         
+//        HttpSession name = request.getSession();
+//        Customers c = (Customers)name.getAttribute("email");
+//        if( c == null){
+//            request.getRequestDispatcher("/Login").forward(request, response);
+//        }
+        HttpSession cart = request.getSession();
         
+        if(cart.getAttribute("cart") == null){
+            request.getRequestDispatcher("Cart").forward(request, response);
+        }
+        
+        request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
+               
         
     }
 
@@ -57,7 +87,14 @@ public class CheckOutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession email = request.getSession();
+        if(email.getAttribute("email") == null){
+            request.getRequestDispatcher("Login").forward(request, response);
+        }
+        HttpSession cart = request.getSession();
+        Cart c = (Cart)cart.getAttribute("cart");
+        request.setAttribute("total",c.getTotalWithpayment());
+        request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
     }
 
     /**
@@ -71,7 +108,20 @@ public class CheckOutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+      EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
+      EntityManager em = emf.createEntityManager();
+        String Redeem = request.getParameter("Redeem");
+        HttpSession cart = request.getSession();
+        Cart c = (Cart) cart.getAttribute("cart");
+        Discount d = em.find((Discount.class),Redeem);
+        if(d != null){
+            request.setAttribute("Redeem", d);
+            request.setAttribute("total",c.getTotalWithDiscount(d.getDiscount()));
+            request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
+            
+        }
+            request.setAttribute("massage", "Invalid code");
+            request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
     }
 
     /**

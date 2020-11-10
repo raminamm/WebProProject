@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class Cart {
     private Map<String, LineItem> map ;
-
+    
     public Cart() {
         map = new HashMap(32);
     }
@@ -66,7 +66,18 @@ public class Cart {
         }
         return total ;
     }
+    
+    public double getTotalWithpayment(){
+        double total = getTotalPrice()+50.00;
+        return total;
+    }
 
+    
+    public double getTotalWithDiscount(double discount){
+        double total = getTotalWithpayment()-discount;
+        return total;
+    }
+    
     @Override
     public String toString() {
         return "Cart{" + "map=" + map + '}';

@@ -183,7 +183,7 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-right"><strong> ฿</strong></td>
+                                                    <td class="text-right"><strong>${total} ฿</strong></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -197,7 +197,11 @@
                                                 <!--                                     <button class="btn btn-lg btn-block btn btn-outline-dark text-uppercase">Continue Shopping</button>
                                                 -->                                </div>
                                             <div class="col-6 col-md-4">
+<<<<<<< Updated upstream
                                                 <a href="CheckOut" class="btn btn-lg btn-block btn btn-success text-uppercase">Buy</a>
+=======
+                                                <a href="CheckOut" class="btn btn-lg btn-block btn btn-success text-uppercase">Check Out</a>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </div>

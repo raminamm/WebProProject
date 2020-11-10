@@ -52,12 +52,16 @@ public class CartServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("cart") == null ) {
             request.setAttribute("nocart", "Your cart are empthy. Please select you product");
-        request.getRequestDispatcher("/Cart.jsp").forward(request, response);
             request.getRequestDispatcher("/Cart.jsp").forward(request, response);
             return ;
             
         }
+<<<<<<< Updated upstream
   
+=======
+        Cart c = (Cart)session.getAttribute("cart");
+        session.setAttribute("total", c.getTotalPrice());
+>>>>>>> Stashed changes
         
         request.getRequestDispatcher("/Cart.jsp").forward(request, response);
     }
