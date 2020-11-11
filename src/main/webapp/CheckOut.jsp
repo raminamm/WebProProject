@@ -149,9 +149,8 @@
   <nav>
       <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="ProductList">Home</a></li>
-          <li class="breadcrumb-item"><a href="">Product List</a></li>
-          <li class="breadcrumb-item"><a href="">Product detail</a></li>
-          <li class="breadcrumb-item"><a href="">Cart</a></li>
+          <li class="breadcrumb-item"><a href="ProductList">Product List</a></li>
+          <li class="breadcrumb-item"><a href="Cart">Cart</a></li>
           <li class="breadcrumb-item" aria-current="page">checkout</li>
       </ol>
   </nav>
