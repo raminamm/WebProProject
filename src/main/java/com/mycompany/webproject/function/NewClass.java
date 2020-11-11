@@ -45,9 +45,9 @@ public class NewClass {
 //                }catch (Exception ex){
 //                    ex.getMessage();
 //                }
-//    sendMail s = new sendMail();
-//    s.sendVerifyEmail("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
-//
+    sendMail s = new sendMail();
+    s.SendResetPasswordUrl("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
+
 //
 //        String key = AES.encrypt("glaa656@hotmail.co.th");
 //        
@@ -55,15 +55,15 @@ public class NewClass {
 
 //        for(int i = 0; i < 50; i++){
 //        String key = AES.encrypt("rachawas8040@gmail.com");
-        String key = AES.encrypt("oatter@hotmail.com");
-        System.out.println("Encrypt :"+key);
-//            
-//        }
-//        String dy = AES.decrypt("VcFCa4C++/2RsG1r/6vwFTwXMHuY1L/qR0nfBpkFkDA");
-        String dy = AES.decrypt("OUnNX139JicQlmE/Hf+IGMDjx3NAp74fkRP0FKw710w");
-        System.out.println("Dycrypt :"+dy);
-        
-        System.out.println("------");
+//        String key = AES.encrypt("oatter@hotmail.com");
+//        System.out.println("Encrypt :"+key);
+////            
+////        }
+////        String dy = AES.decrypt("VcFCa4C++/2RsG1r/6vwFTwXMHuY1L/qR0nfBpkFkDA");
+//        String dy = AES.decrypt("OUnNX139JicQlmE/Hf+IGMDjx3NAp74fkRP0FKw710w");
+//        System.out.println("Dycrypt :"+dy);
+//        
+//        System.out.println("------");
         
 //        String key1 = AES.encrypt("oatter@hotmail.com");
 //        StringBuilder str = new StringBuilder();
@@ -86,15 +86,17 @@ public class NewClass {
        // int e = Integer.parseInt(now.toString());
         //System.out.println(e);
         
-        GregorianCalendar c = new GregorianCalendar();
-    c.setTime(Date.from(Instant.now()));
-    int day = c.get(Calendar.DAY_OF_MONTH);
-    int month = c.get(Calendar.MONTH);
-    int year = c.get(Calendar.YEAR);
-    int hour = c.get(Calendar.HOUR);
-    int minute = c.get(Calendar.MINUTE);
-    String date = ""+day+month+year+hour+minute+"";
-    System.out.println(date);
+//        GregorianCalendar c = new GregorianCalendar();
+//    c.setTime(Date.from(Instant.now()));
+//    int day = c.get(Calendar.DAY_OF_MONTH);
+//    int month = c.get(Calendar.MONTH);
+//    int year = c.get(Calendar.YEAR);
+//    int hour = c.get(Calendar.HOUR);
+//    int minute = c.get(Calendar.MINUTE);
+//    String date = ""+day+month+year+hour+minute+"";
+//    System.out.println(date);
+//    
+
     
 
 
