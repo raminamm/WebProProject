@@ -369,25 +369,7 @@
                                 </div>
                             </a>
                                         
-                            <form action="AddProductToCart" method="POST"> 
-                             <div style="padding: 0.5em;" class="row">
-                <div class="col-sm">
-<!--                    <input type="hidden" name="productId" value="${product.productId}"/>
-                    <input type="hidden" name="quantity" value="1"/>-->
-                    <select id="size" name="size"class="btn btn-sm btn-outline-dark" style="width: 100%;" required="">
-                                <option selected>select size</option>
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
-                                <option>XL</option>
-                            </select>
-          
-                </div>
-                <div class="col-sm">
-                    <button type="submit" class="btn btn-sm btn-outline-dark" style="width: 100%;">Add to Cart</button>                </div>
-                    
-              </div>
-</form>
+
                         </div>         
 
                     </div>
