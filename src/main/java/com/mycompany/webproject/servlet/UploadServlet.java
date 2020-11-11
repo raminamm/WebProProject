@@ -26,7 +26,7 @@ import javax.servlet.http.Part;
  */
 public class UploadServlet extends HttpServlet {
 
-    private static final String SAVE_DIR = "uploadFiles";
+
     
             
     /**
@@ -41,10 +41,10 @@ public class UploadServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // gets absolute path of the web application
-        String appPath = request.getServletContext().getRealPath("");
+        String appPath = request.getServletContext().getRealPath("/Product-images");
         // constructs path of the directory to save uploaded file
-        String savePath = appPath + File.separator + SAVE_DIR;
-         
+        String savePath = appPath + File.separator ;
+         System.out.println("savepath :::::"+savePath);
         // creates the save directory if it does not exists
         File fileSaveDir = new File(savePath);
         if (!fileSaveDir.exists()) {

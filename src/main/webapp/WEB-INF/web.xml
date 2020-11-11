@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <filter>
+        <filter-name>AuthenFilter</filter-name>
+        <filter-class>com.mycompany.webproject.servlet.AuthenFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <servlet-name>addressServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <servlet-name>ProfileServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <servlet-name>AddOrderServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <servlet-name>orderdetailServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <servlet-name>OrderhistoryServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <servlet-name>LogoutServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>registrrationServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.registrrationServlet</servlet-class>

@@ -45,7 +45,6 @@ com/mycompany/webproject/entity/Orders_.class
 com/mycompany/webproject/function/sendMail.class
 com/mycompany/webproject/servlet/OrderhistoryServlet.class
 com/mycompany/webproject/controller/CustomersJpaController.class
-com/mycompany/webproject/servlet/LoginFilter.class
 com/mycompany/webproject/function/AES.class
 com/mycompany/webproject/model/Cart$LineItem.class
 com/mycompany/webproject/controller/exceptions/IllegalOrphanException.class

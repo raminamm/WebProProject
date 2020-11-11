@@ -42,15 +42,15 @@ public class OrderhistoryServlet extends HttpServlet {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
         
-        HttpSession catsession = request.getSession();
-        if(catsession.getAttribute("allcat")==null){
+        HttpSession session = request.getSession();
+        if(session.getAttribute("allcat")==null){
         String cat = "select c from Category c";
         Query c = em.createQuery(cat);
         List<Category> allcat = c.getResultList();
-        catsession.setAttribute("allcat", allcat);
+        session.setAttribute("allcat", allcat);
         }
         
-        HttpSession session = request.getSession(false);
+
         Customers email = (Customers) session.getAttribute("email");
 
         String sql = "select o from Orders o where o.email.email like :email";

@@ -68,12 +68,12 @@ public class CheckOutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession email = request.getSession();
-        if(email.getAttribute("email") == null){
-            request.getRequestDispatcher("Login").forward(request, response);
-        }
-        HttpSession cart = request.getSession();
-        Cart c = (Cart)cart.getAttribute("cart");
+        HttpSession session = request.getSession();
+//        if(email.getAttribute("email") == null){
+//            request.getRequestDispatcher("Login").forward(request, response);
+//        }
+        
+        Cart c = (Cart)session.getAttribute("cart");
         request.setAttribute("total",c.getTotalWithpayment());
         request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
     }

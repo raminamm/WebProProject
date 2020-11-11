@@ -63,8 +63,8 @@ public class AddOrderServlet extends HttpServlet {
             request.getRequestDispatcher("/Login").forward(request, response); //fail !!!!
         }
         
-        HttpSession emailsession = request.getSession();
-        Customers c = (Customers)emailsession.getAttribute("email");
+        
+        Customers c = (Customers)session.getAttribute("email");
         
         Cart cart = (Cart)session.getAttribute("cart");
         LocalDateTime now = LocalDateTime.now();
@@ -80,7 +80,7 @@ public class AddOrderServlet extends HttpServlet {
         }
         em.getTransaction().commit();
         em.close();
-        session.invalidate();
+        session.removeAttribute("cart");
         request.getRequestDispatcher("/ProductList").forward(request, response); //orderdetail
     }
 
