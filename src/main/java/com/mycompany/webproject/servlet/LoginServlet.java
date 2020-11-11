@@ -5,6 +5,7 @@
  */
 package com.mycompany.webproject.servlet;
 
+import com.mycompany.webproject.controller.CustomersJpaController;
 import com.mycompany.webproject.entity.Customers;
 import java.io.IOException;
 import javax.persistence.EntityManager;
@@ -50,8 +51,9 @@ public class LoginServlet extends HttpServlet {
 //        Customers c = em.createQuery("select c from Customers c where c.email = :email",Customers.class).
 //               setParameter("email", email).getSingleResult();
         try {
-            //Customers c = em.createNamedQuery("Customers.findByEmail", Customers.class).setParameter("email", email).getSingleResult();
-            Customers c = em.find(Customers.class, email);
+            //Customers c = em.find(Customers.class, email);
+            CustomersJpaController cc = new CustomersJpaController(emf);
+            Customers c = cc.findCustomers(email);
             if (c != null && c.getPassword().equals(password)) {
                 HttpSession session = request.getSession();
                     session.setAttribute("email", c);                   

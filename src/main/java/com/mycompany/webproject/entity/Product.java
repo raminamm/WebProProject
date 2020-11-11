@@ -20,16 +20,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Rachawas
+ * @author glajaja
  */
 @Entity
 @Table(name = "product")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p"),
     @NamedQuery(name = "Product.findByProductId", query = "SELECT p FROM Product p WHERE p.productId = :productId"),
@@ -116,7 +113,6 @@ public class Product implements Serializable {
         this.category = category;
     }
 
-    @XmlTransient
     public List<Orderdetail> getOrderdetailList() {
         return orderdetailList;
     }

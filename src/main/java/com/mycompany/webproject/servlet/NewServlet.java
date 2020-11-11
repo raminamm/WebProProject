@@ -49,29 +49,7 @@ public class NewServlet extends HttpServlet {
         EntityManagerFactory emf
                 = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
-        //String email = request.getParameter("email");
-        //String g = GenerateCode.gencode();
-
-                
-//        em.getTransaction().begin();
-//        em.createNativeQuery("Insert into customersforverify (email, firstname, lastname, phone_no, date_of_birth, sex, password, address, verifykey) values"
-//                + " ('" + email+"','"+fname+"','"+lname+"','"+phone_no+"','"+dob+"','"+sex+"','"+password+"','"+address+"','"+g+"')")
-//                .executeUpdate();
-//            em.getTransaction().commit();
-//            em.close();
-
-//                    String link = "http://localhost:8080/WebProProject/activatePage.jsp?key="+AES.encrypt(email + g);
-//                    sendMail sm = new sendMail();
-//                    sm.sendVerifyEmail(email, link);
-//
-//                    request.setAttribute("message", "Success");
-//                    request.getRequestDispatcher("/registation.jsp").forward(request, response);
-
-//        em.getTransaction().begin();
-//        LocalDateTime now = LocalDateTime.now();       
-//        em.createNativeQuery("INSERT INTO orders (orderid, email, created, amount, address) values ('1111111', 'aaa@hotmail.com', '"+now+"', 1200, 'sgegegeg')").executeUpdate();
-//        em.getTransaction().commit();
-//        em.close();
+        
 
             
     }

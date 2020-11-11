@@ -52,10 +52,7 @@ public class OrderhistoryServlet extends HttpServlet {
         
         HttpSession session = request.getSession(false);
         Customers email = (Customers) session.getAttribute("email");
-        if (session == null || email == null ) {
-            //nologin
-            request.getRequestDispatcher("/Login").forward(request, response);
-        }
+
         String sql = "select o from Orders o where o.email.email like :email";
         Query qry = em.createQuery(sql);
         qry.setParameter("email", "%" + email.getEmail() + "%");

@@ -21,16 +21,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Rachawas
+ * @author glajaja
  */
 @Entity
 @Table(name = "customers")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Customers.findAll", query = "SELECT c FROM Customers c"),
     @NamedQuery(name = "Customers.findByEmail", query = "SELECT c FROM Customers c WHERE c.email = :email"),
@@ -174,7 +171,6 @@ public class Customers implements Serializable {
         this.address1 = address1;
     }
 
-    @XmlTransient
     public List<Orders> getOrdersList() {
         return ordersList;
     }

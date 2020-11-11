@@ -49,12 +49,12 @@ public class ProfileServlet extends HttpServlet {
         catsession.setAttribute("allcat", allcat);
         }
         
-        HttpSession session = request.getSession();
-        Customers cs = (Customers)session.getAttribute("email");
-        if(cs==null){
-            request.getRequestDispatcher("/Login").forward(request, response);
-        }
-        request.setAttribute("customer", cs);
+//        HttpSession session = request.getSession();
+//        Customers cs = (Customers)session.getAttribute("email");
+//        if(cs==null){
+//            request.getRequestDispatcher("/Login").forward(request, response);
+//        }
+//        request.setAttribute("customer", cs);
         request.getRequestDispatcher("/profile.jsp").forward(request, response);
     }
 

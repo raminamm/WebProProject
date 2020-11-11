@@ -23,16 +23,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Rachawas
+ * @author glajaja
  */
 @Entity
 @Table(name = "orders")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o"),
     @NamedQuery(name = "Orders.findByOrderid", query = "SELECT o FROM Orders o WHERE o.orderid = :orderid"),
@@ -133,7 +130,6 @@ public class Orders implements Serializable {
         this.discountId = discountId;
     }
 
-    @XmlTransient
     public List<Orderdetail> getOrderdetailList() {
         return orderdetailList;
     }

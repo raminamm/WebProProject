@@ -5,6 +5,7 @@
  */
 package com.mycompany.webproject.servlet;
 
+import com.mycompany.webproject.controller.CustomersJpaController;
 import com.mycompany.webproject.entity.Customers;
 import com.mycompany.webproject.function.AES;
 import com.mycompany.webproject.function.GenerateCode;
@@ -54,7 +55,8 @@ public class registerServlet extends HttpServlet {
             String address = request.getParameter("address");
             LocalDate dob = LocalDate.parse(date_of_birth);
 
-            Customers c = em.find(Customers.class, email);
+            CustomersJpaController cc = new CustomersJpaController(emf);
+            Customers c = cc.findCustomers(email);
             if (c == null) {
 
                 String g = GenerateCode.gencode();

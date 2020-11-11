@@ -52,9 +52,6 @@ public class addressServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         Customers cs = (Customers) session.getAttribute("email");
-        if (cs == null) {
-            request.getRequestDispatcher("/Login").forward(request, response);
-        }
 
 //        Customers cus = em.find(Customers.class, cs.getEmail());
 //        Query q = em.createNativeQuery("select * from customers where email like '"+cs.getEmail()+"'");
@@ -65,8 +62,6 @@ public class addressServlet extends HttpServlet {
                 "SELECT c FROM Customers c WHERE c.email = ?1", Customers.class);
         String email = cs.getEmail();
         Customers c = query.setParameter(1, email).getSingleResult();
-        System.out.println(c.toString());
-        System.out.println(cs.getAddress() + ":" + cs.getAddress1());
         request.setAttribute("customer", cs);
         request.getRequestDispatcher("/address.jsp").forward(request, response);
 
