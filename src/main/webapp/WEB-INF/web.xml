@@ -42,7 +42,7 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthenFilter</filter-name>
-        <servlet-name>CheckServlet</servlet-name>
+        <servlet-name>CheckOutServlet</servlet-name>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
@@ -106,6 +106,10 @@
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.UploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckOutServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.CheckOutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrrationServlet</servlet-name>
         <url-pattern>/registrration</url-pattern>
@@ -165,6 +169,10 @@
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/Upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckOutServlet</servlet-name>
+        <url-pattern>/CheckOut</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

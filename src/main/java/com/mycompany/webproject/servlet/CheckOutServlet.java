@@ -5,7 +5,6 @@
  */
 package com.mycompany.webproject.servlet;
 
-import com.mycompany.webproject.entity.Customers;
 import com.mycompany.webproject.entity.Discount;
 import com.mycompany.webproject.model.Cart;
 import java.io.IOException;
@@ -13,9 +12,7 @@ import java.io.PrintWriter;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,9 +20,8 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Rachawas
+ * @author glajaja
  */
-@WebServlet(name = "CheckOutServlet", urlPatterns = {"/CheckOut"})
 public class CheckOutServlet extends HttpServlet {
 
     /**
@@ -39,21 +35,21 @@ public class CheckOutServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-              EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
-      EntityManager em = emf.createEntityManager();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_WebProject_war_1.0-SNAPSHOTPU");
+        EntityManager em = emf.createEntityManager();
         String Redeem = request.getParameter("Redeem");
         HttpSession cart = request.getSession();
         Cart c = (Cart) cart.getAttribute("cart");
-        Discount d = em.find((Discount.class),Redeem);
-        if(d != null){
+        Discount d = em.find((Discount.class), Redeem);
+        if (d != null) {
             request.setAttribute("Redeem", d);
-            request.setAttribute("total",c.getTotalWithDiscount(d.getDiscount()));
+            request.setAttribute("total", c.getTotalWithDiscount(d.getDiscount()));
             request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
-            
+
         }
-            request.setAttribute("massage", "Invalid code");
-            request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
-        
+        request.setAttribute("massage", "Invalid code");
+        request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -72,9 +68,9 @@ public class CheckOutServlet extends HttpServlet {
 //        if(email.getAttribute("email") == null){
 //            request.getRequestDispatcher("Login").forward(request, response);
 //        }
-        
-        Cart c = (Cart)session.getAttribute("cart");
-        request.setAttribute("total",c.getTotalWithpayment());
+
+        Cart c = (Cart) session.getAttribute("cart");
+        request.setAttribute("total", c.getTotalWithpayment());
         request.getRequestDispatcher("/CheckOut.jsp").forward(request, response);
     }
 
