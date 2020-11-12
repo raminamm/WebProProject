@@ -40,6 +40,12 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenFilter</filter-name>
+        <servlet-name>CheckServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>registrrationServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.registrrationServlet</servlet-class>

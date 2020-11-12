@@ -27,6 +27,7 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "Orderdetail.findAll", query = "SELECT o FROM Orderdetail o"),
     @NamedQuery(name = "Orderdetail.findByOrderdetailid", query = "SELECT o FROM Orderdetail o WHERE o.orderdetailid = :orderdetailid"),
+    @NamedQuery(name = "Orderdetail.findBySize", query = "SELECT o FROM Orderdetail o WHERE o.size = :size"),
     @NamedQuery(name = "Orderdetail.findByPrice", query = "SELECT o FROM Orderdetail o WHERE o.price = :price"),
     @NamedQuery(name = "Orderdetail.findByQuantity", query = "SELECT o FROM Orderdetail o WHERE o.quantity = :quantity")})
 public class Orderdetail implements Serializable {
@@ -38,6 +39,9 @@ public class Orderdetail implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "orderdetailid")
     private String orderdetailid;
+    @Size(max = 10)
+    @Column(name = "size")
+    private String size;
     @Basic(optional = false)
     @NotNull
     @Column(name = "price")
@@ -72,6 +76,14 @@ public class Orderdetail implements Serializable {
 
     public void setOrderdetailid(String orderdetailid) {
         this.orderdetailid = orderdetailid;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public int getPrice() {

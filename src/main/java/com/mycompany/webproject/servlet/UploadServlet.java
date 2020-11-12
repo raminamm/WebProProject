@@ -27,7 +27,7 @@ import javax.servlet.http.Part;
 public class UploadServlet extends HttpServlet {
 
 
-    
+    private static final String SAVE_DIR = "uploadFiles";
             
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +41,10 @@ public class UploadServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // gets absolute path of the web application
-        String appPath = request.getServletContext().getRealPath("/Product-images");
+        String appPath = request.getServletContext().getRealPath("");
         // constructs path of the directory to save uploaded file
-        String savePath = appPath + File.separator ;
-         System.out.println("savepath :::::"+savePath);
+        String savePath = appPath + File.separator + SAVE_DIR;
+//        System.out.println("apppath ;"+appPath+"savepath :"+savePath);
         // creates the save directory if it does not exists
         File fileSaveDir = new File(savePath);
         if (!fileSaveDir.exists()) {
@@ -55,10 +55,15 @@ public class UploadServlet extends HttpServlet {
             String fileName = extractFileName(part);
             // refines the fileName in case it is an absolute path
             fileName = new File(fileName).getName();
+            System.out.println("FileName: " + fileName);
+            System.out.println("Part: " + part);
+            part.getInputStream();
+            System.out.println("Save Path: " + savePath);
             part.write(savePath + File.separator + fileName);
         }
+        
         request.setAttribute("message", "Upload has been done successfully!");
-        getServletContext().getRequestDispatcher("/message.jsp").forward(
+        request.getRequestDispatcher("/message.jsp").forward(
                 request, response);
     }
     /**
@@ -68,6 +73,7 @@ public class UploadServlet extends HttpServlet {
         String contentDisp = part.getHeader("content-disposition");
         String[] items = contentDisp.split(";");
         for (String s : items) {
+            System.out.println(s);
             if (s.trim().startsWith("filename")) {
                 return s.substring(s.indexOf("=") + 2, s.length()-1);
             }
@@ -88,7 +94,8 @@ public class UploadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("/upload.jsp").forward(
+                request, response);
     }
 
     /**

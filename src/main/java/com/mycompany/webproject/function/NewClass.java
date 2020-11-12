@@ -8,6 +8,8 @@ package com.mycompany.webproject.function;
 import com.mycompany.webproject.entity.Category;
 import com.mycompany.webproject.entity.Product;
 import com.mycompany.webproject.model.Cart;
+import java.io.File;
+import java.io.IOException;
 import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,7 +33,7 @@ import java.util.List;
  * @author glajaja
  */
 public class NewClass {
-    
+
     public static void main(String[] args) {
 //        try{   
 //                String sql = "select * from category";
@@ -45,9 +47,19 @@ public class NewClass {
 //                }catch (Exception ex){
 //                    ex.getMessage();
 //                }
-    sendMail s = new sendMail();
-    s.SendResetPasswordUrl("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
-
+        sendMail s = new sendMail();
+        s.SendResetPasswordUrl("glaa656@hotmail.co.th", "http://localhost:8080/WebProProject/activatePage.jsp?email=");
+        try {
+            File myObj = new File("filename.txt");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
 //
 //        String key = AES.encrypt("glaa656@hotmail.co.th");
 //        
@@ -64,28 +76,19 @@ public class NewClass {
 //        System.out.println("Dycrypt :"+dy);
 //        
 //        System.out.println("------");
-        
 //        String key1 = AES.encrypt("oatter@hotmail.com");
 //        StringBuilder str = new StringBuilder();
 //                   str.append("http://localhost:8080/WebProProject/UpdatePassword?key=");
 //                   str.append(key1);
 //                   System.out.println(str.toString());
 //                   
-                   
-        
-        
-                   
-
-
 //        String key = AES.encrypt("6119053");
 //        System.out.println("Encrypt :"+key);
 //        String dy = AES.decrypt(key);
 //        System.out.println("Dycrypt :"+dy);
-
         //LocalDateTime now = LocalDateTime.now();
-       // int e = Integer.parseInt(now.toString());
+        // int e = Integer.parseInt(now.toString());
         //System.out.println(e);
-        
 //        GregorianCalendar c = new GregorianCalendar();
 //    c.setTime(Date.from(Instant.now()));
 //    int day = c.get(Calendar.DAY_OF_MONTH);
@@ -96,8 +99,5 @@ public class NewClass {
 //    String date = ""+day+month+year+hour+minute+"";
 //    System.out.println(date);
 //    
-
-    
-
-
-}}
+    }
+}
