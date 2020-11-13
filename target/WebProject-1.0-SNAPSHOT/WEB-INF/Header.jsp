@@ -255,6 +255,8 @@
  
                     <a href="Cart" class="nav-item nav-link"><span>Cart </span><i class="fa fa-cart-arrow-down fa-6"><span
                                 class="badge"><%--( 1 )--%>(${cart.getItemCount()})</span></i></a>
+                                
+                                <a class="py-2 d-none d-md-inline-block" href="Contact.jsp" style="text-decoration:none">Contact</a>
  
  
             <div class="nav-item dropdown">

@@ -15,7 +15,7 @@
     </head>
     <body>
         <center>
-            <form method="post" action="Upload" enctype="multipart/form-data">
+            <form method="POST" action="Upload" enctype="multipart/form-data">
                 Select file to upload:
                 <input type="file" name="uploadFile" />
                 <br/><br/>

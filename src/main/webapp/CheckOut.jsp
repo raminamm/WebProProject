@@ -3,8 +3,6 @@
     Created on : Nov 8, 2020, 8:35:22 PM
     Author     : Rachawas
 --%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -143,7 +141,6 @@
 </script>
 
 
-
 <section class="section-pagetop" style="padding: 1.5ex;">
   <h2 class="title-page">Checkout</h2>
   <nav>
@@ -165,7 +162,6 @@
                 <br />มีความกว้างทั้งหมดไม่เกินความกว้าง
                 <br />และสูงของ จอภาพ -->
 
-                
 
         <div class="row" style="padding: 8px;padding-right: 50px;padding-left: 50px;border-top-width: 50px;padding-bottom: 50px;padding-top: 50px;">
           <div class="col-75">

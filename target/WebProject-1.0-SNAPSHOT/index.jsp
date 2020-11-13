@@ -114,7 +114,7 @@
             <div class="inner">
                 <h3 class="masthead-brand">NOG</h3>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="/WebProProject/index.jsp">Home</a>
+                    <a class="nav-link active" href="ProductList">Home</a>
                     
                     <a class="nav-link"href="${email==null ?'Login' : 'Logout'}">
                     ${email==null ?'Login' : 'Logout'}
@@ -131,7 +131,7 @@
                 ไม่ระคายผิว พิสูจน์แล้วโดยผู้เชี่ยวชาญ ท่านสามารถเข้ามาเยี่ยมชมสินค้าเราก่อนได้ ทางเรามีสินค้าสำหรับท่านสุภาพบุรุษให้เลือกชมมากมาย
             </p><br>
             <p class="lead">
-                <a href="ProductList" class="btn btn-lg btn-danger">เข้าสู่หน้าหลัก</a>
+                <a href="ProductList" class="btn btn-lg btn-danger">Home</a>
             </p>
         </main>
 
