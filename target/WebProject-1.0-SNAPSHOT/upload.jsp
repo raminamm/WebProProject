@@ -6,9 +6,9 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
+<<<<<<< HEAD
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>File Upload Demo</title>
@@ -23,4 +23,29 @@
             </form>
         </center>
     </body>
+=======
+<head>
+    <title>Uploading a file</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+          integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" 
+          crossorigin="anonymous">
+    <style>
+        main { margin:1em }
+    </style>
+</head>
+<body>
+<main>
+<form class="pure-form pure-form-stacked" method="post" action="UploadFile"
+      enctype="multipart/form-data">
+    <fieldset>
+        <legend>File:</legend>
+        <input  type="file" name="myfile">
+        <button type="submit" class="pure-button pure-button-primary">Upload</button>
+    </fieldset>
+</form>
+</main>
+</body>
+>>>>>>> master
 </html>

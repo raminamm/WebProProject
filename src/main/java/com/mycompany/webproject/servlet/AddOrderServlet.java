@@ -73,10 +73,10 @@ public class AddOrderServlet extends HttpServlet {
         Discount d = em.find(Discount.class, discountId);
         em.getTransaction().begin();
         
-        em.createNativeQuery("INSERT INTO orders (orderid, email, created, discountId, amount, address) values ('"+orderid+"', '"+c.getEmail()+"', '"+now+"','"+discountId+"', "+cart.getTotalWithpayment()+", '"+address+"')").executeUpdate();
+        em.createNativeQuery("INSERT INTO orders (orderid, email, created, discountId, amount, address) values ('"+orderid+"', '"+c.getEmail()+"', '"+now+"','"+discountId+"', "+cart.getTotalWithpayment()+",'"+firstname+" "+phone+" "+address+"')").executeUpdate();
         
         for (LineItem order : cart.getItems()) {
-            em.createNativeQuery("INSERT INTO orderdetail (orderdetailid, orderid, product_id, price, quantity) VALUE ('"+orderid+order.getCartid()+"','"+orderid+"','"+order.getProduct().getProductId()+"','"+order.getProduct().getPrice()+"','"+order.getQuantity()+"')").executeUpdate();
+            em.createNativeQuery("INSERT INTO orderdetail (orderdetailid, orderid, product_id, size, price, quantity) VALUE ('"+orderid+order.getCartid()+"','"+orderid+"','"+order.getProduct().getProductId()+"','"+order.getSize()+"','"+order.getProduct().getPrice()+"','"+order.getQuantity()+"')").executeUpdate();
         }
         em.getTransaction().commit();
         em.close();
