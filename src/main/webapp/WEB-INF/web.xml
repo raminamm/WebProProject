@@ -103,10 +103,6 @@
         <servlet-class>com.mycompany.webproject.servlet.addressServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UploadServlet</servlet-name>
-        <servlet-class>com.mycompany.webproject.servlet.UploadServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>CheckOutServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.CheckOutServlet</servlet-class>
     </servlet>
@@ -165,10 +161,6 @@
     <servlet-mapping>
         <servlet-name>addressServlet</servlet-name>
         <url-pattern>/address</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UploadServlet</servlet-name>
-        <url-pattern>/Upload</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CheckOutServlet</servlet-name>

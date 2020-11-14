@@ -82,8 +82,8 @@ public class registerServlet extends HttpServlet {
             }
             request.setAttribute("message", "This Email is already taken");
             request.getRequestDispatcher("/register.jsp").forward(request, response);
-        } catch (IOException ex) {
-            request.setAttribute("message", ex.getMessage());
+        } catch (Exception ex) {
+            request.setAttribute("message", "This Email is waiting for verify");
             request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
     }
