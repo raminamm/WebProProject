@@ -50,12 +50,7 @@ public class AddproductServlet extends HttpServlet {
         String price = request.getParameter("price");
         String category = request.getParameter("category");
         String des = request.getParameter("des");
-        /*String fileInput = request.getParameter("fileInput");*/
-        //double dprice = Double.parseDouble(price);
-        /*Query qry = em.createQuery(sql);
-        List <Product> product = qry.getResultList();
-        request.setAttribute("addproduct", product);*/
-        
+
         
 
         em.getTransaction().begin();

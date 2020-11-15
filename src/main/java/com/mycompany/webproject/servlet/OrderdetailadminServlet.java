@@ -51,8 +51,7 @@ public class OrderdetailadminServlet extends HttpServlet {
         
         String sql = "select o from Orderdetail o where o.orderid.orderid like '"+orderid+"'";
         Query qry = em.createQuery(sql);
-//        String sql = "select *from Orderdetail where orderid like '"+orderid+"'";
-//        Query qry = em.createNativeQuery(sql);
+
         List <Orderdetail> orderdetail = qry.getResultList();
         System.out.println(sql);
         System.out.println(orderdetail);

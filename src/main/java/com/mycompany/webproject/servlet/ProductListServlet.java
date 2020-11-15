@@ -73,9 +73,7 @@ public class ProductListServlet extends HttpServlet {
         qry.setParameter("search", "%" + sch + "%");
         List<Product> allpd = qry.getResultList();
 
-//        for (Product p : allpd) {
-//            System.out.println(p.getCategoryname()+","+p.getProductId()+","+p.getName());
-//        }
+
         request.setAttribute("allpd", allpd);
         request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
     }

@@ -58,47 +58,46 @@ public class UploadimageServlet extends HttpServlet {
             return;
         }
  
-        // configures upload settings
+       
         DiskFileItemFactory factory = new DiskFileItemFactory();
-        // sets memory threshold - beyond which files are stored in disk
+        
         factory.setSizeThreshold(MEMORY_THRESHOLD);
-        // sets temporary location to store files
+       
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
  
         ServletFileUpload upload = new ServletFileUpload(factory);
          
-        // sets maximum size of upload file
+        
         upload.setFileSizeMax(MAX_FILE_SIZE);
          
-        // sets maximum size of request (include file + form data)
+        
         upload.setSizeMax(MAX_REQUEST_SIZE);
  
-        // constructs the directory path to store upload file
-        // this path is relative to application's directory
+    
         String uploadPath = getServletContext().getRealPath("")
                 + File.separator + UPLOAD_DIRECTORY;
          
-        // creates the directory if it does not exist
+      
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
  
         try {
-            // parses the request's content to extract file data
+            
             @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
  
             if (formItems != null && formItems.size() > 0) {
-                // iterates over form's fields
+               
                 for (FileItem item : formItems) {
-                    // processes only fields that are not form fields
+                    
                     if (!item.isFormField()) {
                         String fileName = pdid+".jpg";//new File(item.getName()).getName();
                         String filePath = uploadPath + File.separator + category +File.separator+fileName;
                         File storeFile = new File(filePath);
                         System.out.println("filepath : "+filePath);
-                        // saves the file on disk
+                       
                         item.write(storeFile);
                         request.setAttribute("message",
                             "Upload has been done successfully!");

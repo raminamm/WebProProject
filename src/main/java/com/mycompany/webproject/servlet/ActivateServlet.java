@@ -53,9 +53,7 @@ public class ActivateServlet extends HttpServlet {
         
         String verifykey = AES.decrypt(key);
         
-//        String customer = "select c from customersforverify c where email like"+email+"and verifykey like"+verifykey;
-//        Query query = em.createQuery(customer);
-//        Customersforverify cus = query.getSingleResult();
+
         Customersforverify cus = em.find(Customersforverify.class, email);
         System.out.println(cus);
         if(cus!=null&&verifykey.equals(cus.getVerifykey())){            

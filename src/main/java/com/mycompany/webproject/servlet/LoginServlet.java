@@ -46,12 +46,9 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         boolean remember = request.getParameter("remember") != null;
-        //int id = Integer.parseInt(email);
 
-//        Customers c = em.createQuery("select c from Customers c where c.email = :email",Customers.class).
-//               setParameter("email", email).getSingleResult();
         try {
-            //Customers c = em.find(Customers.class, email);
+            
             CustomersJpaController cc = new CustomersJpaController(emf);
             Customers c = cc.findCustomers(email);
             if (c != null && c.getPassword().equals(password)) {
@@ -89,7 +86,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+
         request.getRequestDispatcher("/logIn.jsp").forward(request, response);
     }
 
