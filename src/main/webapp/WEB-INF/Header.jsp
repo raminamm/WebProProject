@@ -247,10 +247,9 @@
                     <a class="dropdown-item" href="ProductList?category=${c.category}">${c.category}</a>
                 </c:forEach> 
             </div>
-            <form class="form-inline my-2 my-md-0">
+            <form action="ProductList" method="GET" class="form-inline my-2 my-md-0">
                 <input class="form-control" type="text" placeholder="Search for products" maxlength="128"
-                    aria-label="Search" autocomplete="off" value="${param.search}" style="width: 500px;" name="search"
-                    action="ProductList" method="GET">
+                    aria-label="Search" autocomplete="off" value="${param.search}" style="width: 500px;" name="search"/>
             </form>
  
                     <a href="Cart" class="nav-item nav-link"><span>Cart </span><i class="fa fa-cart-arrow-down fa-6"><span

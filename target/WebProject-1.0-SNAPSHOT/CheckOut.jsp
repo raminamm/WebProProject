@@ -3,10 +3,6 @@
     Created on : Nov 8, 2020, 8:35:22 PM
     Author     : Rachawas
 --%>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>

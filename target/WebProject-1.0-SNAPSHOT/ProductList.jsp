@@ -383,7 +383,7 @@
             <div class="container">
 
                 <div class="row">
-                    <c:forEach items="${pd}" var="p" varStatus="vs">
+                    <c:forEach items="${allpd}" var="p" varStatus="vs">
 
                         <div class="col-md-4">
                             <div class="gallery card mb-4 shadow-sm">

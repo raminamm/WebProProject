@@ -49,7 +49,7 @@
                         <h2 style="text-align: left;" class="title-page">Address</h2>
                         <nav>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="ProductList.jsp">Home</a></li>
+                                <li class="breadcrumb-item"><a href="ProductList">Home</a></li>
                                 <li class="breadcrumb-item" aria-current="page">My Address</li>
                             </ol>
                         </nav>
