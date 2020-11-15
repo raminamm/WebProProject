@@ -3,7 +3,10 @@
     Created on : Nov 8, 2020, 8:35:22 PM
     Author     : Rachawas
 --%>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
@@ -221,16 +224,16 @@
                 <span class="text-muted">Your cart</span>
                 <span class="badge badge-secondary badge-pill">${cart.getItemCount()}</span>
               </h4>
-                <c:forEach items="${cart.items}"var="lineItem" varStatus="vs">
-                    
+              
+                <c:forEach items="${cart.getItems()}" var="c" varStatus="vs">   
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="my-0">${lineItem.product.name}</h6>
-                  <small class="text-muted"></small>
+                  <h6 class="my-0"></h6>
+                  <small class="text-muted">${c.product.name}</small>
                 </div>
-                <span class="text-muted">${lineItem.price} x ${lineItem.quantity} ฿</span>
+                <span class="text-muted">${c.price} x ${c.quantity} ฿</span>
               </li>
-              </c:forEach>
+                </c:forEach>
               <li class="list-group-item d-flex justify-content-between bg-light">
                 <div class="text-success">
                   <h6 class="my-0">Payment</h6>

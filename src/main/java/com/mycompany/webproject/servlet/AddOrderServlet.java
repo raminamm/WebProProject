@@ -9,6 +9,7 @@ import com.mycompany.webproject.entity.Category;
 import com.mycompany.webproject.entity.Customers;
 import com.mycompany.webproject.entity.Discount;
 import com.mycompany.webproject.function.GenerateCode;
+import com.mycompany.webproject.function.sendMail;
 import com.mycompany.webproject.model.Cart;
 import com.mycompany.webproject.model.Cart.LineItem;
 import java.io.IOException;
@@ -71,6 +72,13 @@ public class AddOrderServlet extends HttpServlet {
         String orderid = GenerateCode.genorderid();
         
         Discount d = em.find(Discount.class, discountId);
+        if(d==null){
+            //รหัสผิด
+        }
+        
+        sendMail s = new sendMail();
+        s.SendOrder(c.getEmail(), orderid, cart, d.getDiscount(), address);
+        
         em.getTransaction().begin();
         
         em.createNativeQuery("INSERT INTO orders (orderid, email, created, discountId, amount, address) values ('"+orderid+"', '"+c.getEmail()+"', '"+now+"','"+discountId+"', "+cart.getTotalWithpayment()+",'"+firstname+" "+phone+" "+address+"')").executeUpdate();
