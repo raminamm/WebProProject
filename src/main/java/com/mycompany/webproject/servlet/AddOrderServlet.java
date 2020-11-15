@@ -89,7 +89,7 @@ public class AddOrderServlet extends HttpServlet {
         em.getTransaction().commit();
         em.close();
         session.removeAttribute("cart");
-        request.getRequestDispatcher("/ProductList").forward(request, response); //orderdetail
+        request.getRequestDispatcher("/Orderhistory").forward(request, response); //orderdetail
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
