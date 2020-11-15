@@ -3,6 +3,7 @@
     Created on : Nov 5, 2020, 4:59:54 PM
     Author     : NAMM
 --%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
@@ -260,7 +261,7 @@
                     </section>
 
 
-<div class="container-fluid">
+                <div class="container-fluid">
                         <div class="col">
                             <p class="mt-5 mb-5" style="color: #000000;font-size: 20px;"><b>${email.email}</b>'s order list </p>
                         </div>
@@ -287,7 +288,7 @@
                                                     </div>
                                                     <div class="his_item_price his_info_col">
                                                         <div class="his_item_title"><strong style="font-size: 19px;">Price</strong></div>
-                                                        <div class="his_item_text">${od.price}</div>
+                                                        <div class="his_item_text"><fmt:formatNumber pattern="#,###" value="${od.price}"/></div>
                                                     </div>
 
                                                 </div>

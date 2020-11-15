@@ -1,31 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.webproject.servlet;
 
+import com.mycompany.webproject.entity.Product;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
- 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+import javax.servlet.http.HttpSession;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
- 
-/**
- * A Java servlet that handles file upload from client.
- *
- * @author www.codejava.net
- */@WebServlet(name = "FileUploadServlet", urlPatterns = {"/uploadFile"})
 
-public class FileUploadServlet extends HttpServlet {
+/**
+ *
+ * @author glajaja
+ */
+public class UploadimageServlet extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
      
     // location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = "upload";
+    private static final String UPLOAD_DIRECTORY = "Product-images";
  
     // upload settings
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
@@ -33,12 +36,20 @@ public class FileUploadServlet extends HttpServlet {
     private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
  
     /**
-     * Upon receiving file upload submission, parses the request to read
-     * upload data and saves the file on disk.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
      */
-    protected void doPost(HttpServletRequest request,
-            HttpServletResponse response) throws ServletException, IOException {
-        // checks if the request actually contains upload file
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String pdid = (String) session.getAttribute("pdid");
+        String category = (String)session.getAttribute("category");
+        System.out.println(category);
         if (!ServletFileUpload.isMultipartContent(request)) {
             // if not, we stop here
             PrintWriter writer = response.getWriter();
@@ -83,10 +94,10 @@ public class FileUploadServlet extends HttpServlet {
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
                     if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
+                        String fileName = pdid+".jpg";//new File(item.getName()).getName();
+                        String filePath = uploadPath + File.separator + category +File.separator+fileName;
                         File storeFile = new File(filePath);
- 
+                        System.out.println("filepath : "+filePath);
                         // saves the file on disk
                         item.write(storeFile);
                         request.setAttribute("message",
@@ -98,8 +109,50 @@ public class FileUploadServlet extends HttpServlet {
             request.setAttribute("message",
                     "There was an error: " + ex.getMessage());
         }
-        // redirects client to message page
+        session.removeAttribute("category");
+        session.removeAttribute("pdid");
         getServletContext().getRequestDispatcher("/message.jsp").forward(
                 request, response);
+    
     }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
 }

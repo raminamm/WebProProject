@@ -45,8 +45,8 @@ public class AdminLoginServlet extends HttpServlet {
         Admin ad = em.find(Admin.class, userName);
          if (ad != null && ad.getPassword().equals(password)) {
         HttpSession session = request.getSession();
-                session.setAttribute("email", ad);                                                     
-                request.getRequestDispatcher("/index.html").forward(request, response);
+                session.setAttribute("admin", ad);                                                     
+                request.getRequestDispatcher("Orderlistadmin").forward(request, response);
             } else {
                 request.setAttribute("message", "Invalid username  or password");
                 request.getRequestDispatcher("/LoginAdmin.jsp").forward(request, response);
@@ -55,6 +55,7 @@ public class AdminLoginServlet extends HttpServlet {
             request.setAttribute("message", "Invalid username or password");
             request.getRequestDispatcher("/LoginAdmin.jsp").forward(request, response);
         }
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

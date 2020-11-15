@@ -106,6 +106,42 @@
         <servlet-name>CheckOutServlet</servlet-name>
         <servlet-class>com.mycompany.webproject.servlet.CheckOutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddproductServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.AddproductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutadminServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.LogoutadminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderlistadminServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.OrderlistadminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderdetailadminServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.OrderdetailadminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadimageServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.UploadimageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProductServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.EditProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCategoryServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.DeleteCategoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveProductServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.RemoveProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCategoryServlet</servlet-name>
+        <servlet-class>com.mycompany.webproject.servlet.AddCategoryServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrrationServlet</servlet-name>
         <url-pattern>/registrration</url-pattern>
@@ -165,6 +201,42 @@
     <servlet-mapping>
         <servlet-name>CheckOutServlet</servlet-name>
         <url-pattern>/CheckOut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddproductServlet</servlet-name>
+        <url-pattern>/Addproduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutadminServlet</servlet-name>
+        <url-pattern>/Logoutadmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderlistadminServlet</servlet-name>
+        <url-pattern>/Orderlistadmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderdetailadminServlet</servlet-name>
+        <url-pattern>/Orderdetailadmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadimageServlet</servlet-name>
+        <url-pattern>/Uploadimage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProductServlet</servlet-name>
+        <url-pattern>/EditProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCategoryServlet</servlet-name>
+        <url-pattern>/DeleteCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveProductServlet</servlet-name>
+        <url-pattern>/RemoveProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCategoryServlet</servlet-name>
+        <url-pattern>/AddCategory</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

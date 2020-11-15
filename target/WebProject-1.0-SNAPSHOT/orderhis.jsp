@@ -3,6 +3,7 @@
     Created on : Nov 5, 2020, 4:59:54 PM
     Author     : NAMM
 --%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
@@ -276,7 +277,7 @@
                                                         
                                                         <div class="his_item_total his_info_col">
                                                             <div class="his_item_title"><strong style="font-size: 19px;">Date</strong></div>
-                                                            <div class="his_item_text">${o.created}</div>
+                                                            <div class="his_item_text"><fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${o.created}" /></div>
                                                         </div>
 
 
@@ -292,7 +293,7 @@
 
                                                         <div class="his_item_total his_info_col">
                                                             <div class="his_item_title"><strong style="font-size: 19px;">Total</strong></div>
-                                                            <div class="his_item_text">${o.amount} ฿</div>
+                                                            <div class="his_item_text"><fmt:formatNumber pattern="#,###" value="${o.amount}"/> ฿</div>
                                                         </div>
                                                     </div>
                                                 </li>

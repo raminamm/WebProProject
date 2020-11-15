@@ -4,6 +4,7 @@
     Author     : Rachawas
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -247,133 +248,58 @@
                 <br />และสูงของ จอภาพ -->
 
 
-
+                        <div class="col">
+                            <p class="mt-5 mb-5" style="color: #000000;font-size: 20px;">Order detail </p>
+                        </div> 
+                
+                
                 <div class="his_section">
                     <div class="container-fluid">
-                        <div class="col">
-                            <p class="mt-5 mb-5" style="color: #000000;font-size: 20px;"><b>NAME</b>'s order list </p>
-                        </div>
                         <div class="row">
                             <div class="col-lg-10 offset-lg-1">
+                                
+                        <c:forEach items="${orderdetailadmin}" var="o" varStatus="vs"> 
+                                
                                 <div class="his_container">
                                     <div class="his_items">
                                         <ul class="his_list">
                                             <li class="his_item clearfix">
-                                                <div class="his_item_image"><img src="" alt=""></div>
+                                                <div class="his_item_image"><img src="Product-images/${o.productId.category.category}/${o.productId.productId}.jpg" alt=""></div> 
                                                 <div class="his_item_info d-flex flex-md-row flex-column justify-content-between">
                                                     <div class="his_item_name his_info_col">
                                                         <div class="his_item_title"><strong style="font-size: 19px;">Name</strong></div>
-                                                        <div class="his_item_text">T-Shirt</div>
+                                                        <div class="his_item_text">${o.productId.name}</div><%--T-Shirt--%>
                                                     </div>
                                                     <div class="his_item_color his_info_col">
                                                         <div class="his_item_title"><strong style="font-size: 19px;">Size</strong></div>
-                                                        <div class="his_item_text">M</div>
+                                                        <div class="his_item_text">${o.size}</div>
                                                     </div>
                                                     <div class="his_item_quantity his_info_col">
                                                         <div class="his_item_title"><strong style="font-size: 19px;">Quantity</strong></div>
-                                                        <div class="his_item_text">1</div>
+                                                        <div class="his_item_text">${o.quantity}</div>
                                                     </div>
                                                     <div class="his_item_price his_info_col">
                                                         <div class="his_item_title"><strong style="font-size: 19px;">Price</strong></div>
-                                                        <div class="his_item_text">22000</div>
+                                                        <div class="his_item_text">${o.price}</div>
                                                     </div>
 
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
-            
-                                        <div class="his_items">
-                                            <ul class="his_list">
-                                                <li class="his_item clearfix">
-                                                    <div class="his_item_image"><img src="" alt=""></div>
-                                                    <div class="his_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                        <div class="his_item_name his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Name</strong></div>
-                                                            <div class="his_item_text">T-Shirt</div>
-                                                        </div>
-                                                        <div class="his_item_color his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Size</strong></div>
-                                                            <div class="his_item_text">M</div>
-                                                        </div>
-                                                        <div class="his_item_quantity his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Quantity</strong></div>
-                                                            <div class="his_item_text">1</div>
-                                                        </div>
-                                                        <div class="his_item_price his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Price</strong></div>
-                                                            <div class="his_item_text">22000</div>
-                                                        </div>
-
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="his_items">
-                                            <ul class="his_list">
-                                                <li class="his_item clearfix">
-                                                    <div class="his_item_image"><img src="" alt=""></div>
-                                                    <div class="his_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                        <div class="his_item_name his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Name</strong></div>
-                                                            <div class="his_item_text">T-Shirt</div>
-                                                        </div>
-                                                        <div class="his_item_color his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Size</strong></div>
-                                                            <div class="his_item_text">M</div>
-                                                        </div>
-                                                        <div class="his_item_quantity his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Quantity</strong></div>
-                                                            <div class="his_item_text">1</div>
-                                                        </div>
-                                                        <div class="his_item_price his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Price</strong></div>
-                                                            <div class="his_item_text">22000</div>
-                                                        </div>
-
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="his_items">
-                                            <ul class="his_list">
-                                                <li class="his_item clearfix">
-                                                    <div class="his_item_image"><img src="" alt=""></div>
-                                                    <div class="his_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                        <div class="his_item_name his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Name</strong></div>
-                                                            <div class="his_item_text">T-Shirt</div>
-                                                        </div>
-                                                        <div class="his_item_color his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Size</strong></div>
-                                                            <div class="his_item_text">M</div>
-                                                        </div>
-                                                        <div class="his_item_quantity his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Quantity</strong></div>
-                                                            <div class="his_item_text">1</div>
-                                                        </div>
-                                                        <div class="his_item_price his_info_col">
-                                                            <div class="his_item_title"><strong style="font-size: 19px;">Price</strong></div>
-                                                            <div class="his_item_text">22000</div>
-                                                        </div>
-
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-            
-                        
-            
-                                   
-                                    <div class="back_buttons">
-                                        <a style="text-decoration: none" href="ProductList" type="button" class="button back">Back</a> </div>
+                                    
                                 </div>
+                                                    </c:forEach>
+                                    <div class="back_buttons">
+                                        <a style="text-decoration: none" href="Orderlistadmin" type="button" class="button back">Back</a> </div>                            
                             </div>
                         </div>
+                                                    
+                
                     </div>
+                                                        
                 </div>
+                                                    
 
 
 

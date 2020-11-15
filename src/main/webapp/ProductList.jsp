@@ -367,7 +367,15 @@
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="ProductList">Home</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Product List</li>
+                        <c:choose>
+                            <c:when test="${cate!=null}">
+                                <li class="breadcrumb-item" aria-current="page">${cate}</li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="breadcrumb-item" aria-current="page">Product List</li>
+                            </c:otherwise>
+                        </c:choose>
+                        
                     </ol>
                 </nav>
             </section>
@@ -375,7 +383,7 @@
             <div class="container">
 
                 <div class="row">
-                    <c:forEach items="${allpd}" var="p" varStatus="vs">
+                    <c:forEach items="${pd}" var="p" varStatus="vs">
 
                         <div class="col-md-4">
                             <div class="gallery card mb-4 shadow-sm">
@@ -402,7 +410,7 @@
                                         <p class="card-text">${p.name}</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <small class="text-muted">ราคา <fmt:formatNumber pattern="#,###.00" value="${p.price}"/> บาท</small>
+                                                <small class="text-muted">ราคา <fmt:formatNumber pattern="#,###" value="${p.price}"/> บาท</small>
                                             </div>
                                         </div>
                                     </div>

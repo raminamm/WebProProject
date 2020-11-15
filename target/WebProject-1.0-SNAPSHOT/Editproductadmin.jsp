@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Edit Product</title>
-    <link href="admin/css/templatemo-style.css" rel="stylesheet"/>
+    <link href="admin/css/templatemoa-style.css" rel="stylesheet"/>
     <link href="admin/css/fontawesome.min.css" rel="stylesheet"/>
     <link href="admin/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="icon" href="logo/ทดลอง2.png">

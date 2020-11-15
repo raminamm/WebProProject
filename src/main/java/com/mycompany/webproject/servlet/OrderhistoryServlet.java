@@ -53,7 +53,7 @@ public class OrderhistoryServlet extends HttpServlet {
 
         Customers email = (Customers) session.getAttribute("email");
 
-        String sql = "select o from Orders o where o.email.email like :email";
+        String sql = "select o from Orders o where o.email.email like :email ORDER BY o.created DESC";
         Query qry = em.createQuery(sql);
         qry.setParameter("email", "%" + email.getEmail() + "%");
         List <Orders> order = qry.getResultList();

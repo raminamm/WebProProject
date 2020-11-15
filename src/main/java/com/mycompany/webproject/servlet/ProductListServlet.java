@@ -57,6 +57,7 @@ public class ProductListServlet extends HttpServlet {
             Query qry = em.createQuery(sql);
             qry.setParameter("category", "%" + category + "%");
             List<Product> allpd = qry.getResultList();
+            request.setAttribute("cate", category);
             request.setAttribute("allpd", allpd);
             request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
         }
